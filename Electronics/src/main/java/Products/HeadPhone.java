@@ -6,23 +6,19 @@ package Products;
 import Product_Class.Product;
 
 /**
- * @author devoza
+ * @author devoz
  *
  */
-public class TV extends Product{
+public class HeadPhone extends Product{
 
-	String tvName;
-	String tvColor;
-	String tvSize;
-	String tvMusicSystem;
+	String hName;
+	String hSoundQuality;
 	
-	public TV(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String tvName,
-			String tvColor, String tvSize, String tvMusicSystem) {
+	public HeadPhone(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String hName,
+			String hSoundQuality) {
 		super(p_Id, p_Type, p_Description, p_price, p_Quantity);
-		this.tvName = tvName;
-		this.tvColor = tvColor;
-		this.tvSize = tvSize;
-		this.tvMusicSystem = tvMusicSystem;
+		this.hName = hName;
+		this.hSoundQuality = hSoundQuality;
 	}
 	
 	@Override
@@ -75,36 +71,20 @@ public class TV extends Product{
 		this.p_Quantity = p_Quantity;
 	}
 
-	public String getTvName() {
-		return tvName;
+	public String gethName() {
+		return hName;
 	}
 
-	public void setTvName(String tvName) {
-		this.tvName = tvName;
+	public void sethName(String hName) {
+		this.hName = hName;
 	}
 
-	public String getTvColor() {
-		return tvColor;
+	public String gethSoundQuality() {
+		return hSoundQuality;
 	}
 
-	public void setTvColor(String tvColor) {
-		this.tvColor = tvColor;
+	public void sethSoundQuality(String hSoundQuality) {
+		this.hSoundQuality = hSoundQuality;
 	}
-
-	public String getTvSize() {
-		return tvSize;
-	}
-
-	public void setTvSize(String tvSize) {
-		this.tvSize = tvSize;
-	}
-
-	public String getTvMusicSystem() {
-		return tvMusicSystem;
-	}
-
-	public void setTvMusicSystem(String tvMusicSystem) {
-		this.tvMusicSystem = tvMusicSystem;
-	}
-
+	
 }
