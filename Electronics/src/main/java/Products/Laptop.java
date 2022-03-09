@@ -5,7 +5,7 @@ package Products;
 import Product_Class.Product;
 
 /**
- * @author devoz
+ * @author devoza
  *
  */
 public class Laptop extends Product{
