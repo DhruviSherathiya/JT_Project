@@ -29,8 +29,14 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/")
-	public ModelAndView listEmployee(ModelAndView model) throws IOException {
+	public ModelAndView login(ModelAndView model) throws IOException {
 		model.setViewName("login");
+		return model;
+	}
+	
+	@RequestMapping(value = "register")
+	public ModelAndView register(ModelAndView model) throws IOException {
+		model.setViewName("register");
 		return model;
 	}
 }
