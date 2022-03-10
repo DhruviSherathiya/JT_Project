@@ -1,22 +1,22 @@
 package Orders;
 
 public class Order_items {
-	String product_name;
+	String product_Name;
 	int quantity;
-	int product_price;
+	int product_Price;
 	
-	public Order_items(String product_name, int quantity, int product_price) {
+	public Order_items(String product_Name, int quantity, int product_Price) {
 		super();
-		this.product_name = product_name;
+		this.product_Name = product_Name;
 		this.quantity = quantity;
-		this.product_price = product_price;
+		this.product_Price = product_Price;
 	}
 	
-	public String getProduct_name() {
-		return product_name;
+	public String getProduct_Name() {
+		return product_Name;
 	}
-	public void setProduct_name(String product_name) {
-		this.product_name = product_name;
+	public void setProduct_Name(String product_Name) {
+		this.product_Name = product_Name;
 	}
 	public int getQuantity() {
 		return quantity;
@@ -24,10 +24,10 @@ public class Order_items {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public int getProduct_price() {
-		return product_price;
+	public int getProduct_Price() {
+		return product_Price;
 	}
-	public void setProduct_price(int product_price) {
-		this.product_price = product_price;
+	public void setProduct_Price(int product_Price) {
+		this.product_Price = product_Price;
 	}
 }
