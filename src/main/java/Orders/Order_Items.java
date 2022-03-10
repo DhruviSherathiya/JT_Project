@@ -1,9 +1,9 @@
 package Orders;
 
 public class Order_Items {
-	private String product_name;
-	private int quantity;
-	private int product_price;
+	 String product_name;
+	 int quantity;
+	 int product_price;
 	
 	
 	public Order_Items(String product_name, int quantity, int product_price) {
