@@ -47,12 +47,23 @@ public class UserController {
 		return model;
 	}
 	
-	@RequestMapping(value = "/saveEmployee")
-	public ModelAndView saveEmployee() {
-		
-		User user = new User("Dev", "7201066052", "dev@gmai.com", "12/12/2002", "Admin", "Bhavnagar", "Bhavnagar", "devmeet");
-		userService.addUser(user);
-		
+	/*
+	 * @RequestMapping(value = "/saveUser") public ModelAndView saveEmployee() {
+	 * 
+	 * User user = new User("Dev", "7201066052", "dev@gmai.com", "12/12/2002",
+	 * "Admin", "Bhavnagar", "Bhavnagar", "devmeet"); userService.addUser(user);
+	 * 
+	 * return new ModelAndView("redirect:/"); }
+	 */
+	
+	@RequestMapping(value = "/saveUser", method = RequestMethod.POST)
+	public ModelAndView saveEmployee(@ModelAttribute User user) {
+		if (user.getUserId() == 0) { // if employee id is 0 then creating the
+			// employee other updating the employee
+			userService.addUser(user);
+		} else {
+			userService.updateUser(user);
+		}
 		return new ModelAndView("redirect:/");
 	}
 }
