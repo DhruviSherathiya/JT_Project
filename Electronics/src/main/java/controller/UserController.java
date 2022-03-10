@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import model.User;
+import service.UserService;
+
 /**
  * @author devoza
  *
@@ -27,6 +30,10 @@ public class UserController {
 	public UserController() {
 		System.out.println("UserController()");
 	}
+	
+	@Autowired
+	private UserService userService;
+
 
 	@RequestMapping(value = "/")
 	public ModelAndView login(ModelAndView model) throws IOException {
@@ -38,5 +45,14 @@ public class UserController {
 	public ModelAndView register(ModelAndView model) throws IOException {
 		model.setViewName("register");
 		return model;
+	}
+	
+	@RequestMapping(value = "/saveEmployee")
+	public ModelAndView saveEmployee() {
+		
+		User user = new User("Dev", "7201066052", "dev@gmai.com", "12/12/2002", "Admin", "Bhavnagar", "Bhavnagar", "devmeet");
+		userService.addUser(user);
+		
+		return new ModelAndView("redirect:/");
 	}
 }

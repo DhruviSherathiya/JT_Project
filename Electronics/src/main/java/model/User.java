@@ -46,9 +46,17 @@ public class User implements Serializable {
 	
 	@Column
 	private String shipping;
+	
+	
 		
-	public User(int userId, String userName, String phoneNumber, String email, String dob,String role, String billing, String shipping, String password){
-        this.userId = userId;
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+		System.out.println("User No-arg constructor");
+	}
+
+	public User(String userName, String phoneNumber, String email, String dob,String role, String billing, String shipping, String password){
+		/* this.userId = userId; */
         this.userName = userName;
         this.phoneNumber = phoneNumber;
         this.email = email;
