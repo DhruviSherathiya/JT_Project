@@ -1,4 +1,4 @@
-package Orders;
+package model;
 
 public class Order_items {
 	String product_Name;

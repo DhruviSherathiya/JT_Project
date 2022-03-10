@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Product_Class;
+package model;
 
 /**
  * @author devoza

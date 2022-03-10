@@ -1,8 +1,7 @@
 /**
  * 
  */
-package Products;
-import Product_Class.Product;
+package model;
 
 /**
  * @author devoza
