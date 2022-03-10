@@ -1,17 +1,48 @@
 package Users;
 
-public class User {
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+public class User implements Serializable {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId;
+	
+	@Column
 	private String userName;
-	private String phoneNumber;
-	private String email;
-	private String dateOfBirth;
-	private String role;
-	private Address billing;
-	private Address shipping;
+	
+	@Column
 	private String password;
 	
-	public User(int userId, String userName, String phoneNumber, String email, String dob,String role, Address billing, Address shipping, String password){
+	@Column
+	private String email;
+	
+	@Column
+	private String phoneNumber;
+	
+	@Column
+	private String dateOfBirth;
+	
+	@Column
+	private String role;
+	/*
+	 * private Address billing; private Address shipping;
+	 */
+	
+	@Column
+	private String billing;
+	
+	@Column
+	private String shipping;
+		
+	public User(int userId, String userName, String phoneNumber, String email, String dob,String role, String billing, String shipping, String password){
         this.userId = userId;
         this.userName = userName;
         this.phoneNumber = phoneNumber;
@@ -20,7 +51,7 @@ public class User {
         this.role = role;
         this.billing = billing;
         this.shipping = shipping;
-        this.setPassword(password);
+        this.password = password;
     }
 	
 	public int getUserId() {
@@ -71,19 +102,19 @@ public class User {
 		this.role = role;
 	}
 	
-	public Address getBilling() {
+	public String getBilling() {
 		return billing;
 	}
 	
-	public void setBilling(Address billing) {
+	public void setBilling(String billing) {
 		this.billing = billing;
 	}
 	
-	public Address getShipping() {
+	public String getShipping() {
 		return shipping;
 	}
 	
-	public void setShipping(Address shipping) {
+	public void setShipping(String shipping) {
 		this.shipping = shipping;
 	}
 	
