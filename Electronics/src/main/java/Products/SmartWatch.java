@@ -96,6 +96,6 @@ public class SmartWatch extends Product {
 	
 	public void settConnectivity(String tConnectivity) {
 		this.tConnectivity = tConnectivity;
-	}	
-	
+
+	}		
 }

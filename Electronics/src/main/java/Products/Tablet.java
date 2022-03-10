@@ -109,5 +109,6 @@ public class Tablet extends Product {
 	public void settSize(String tSize) {
 		this.tSize = tSize;
 	}	
-	
+
 }
+	
