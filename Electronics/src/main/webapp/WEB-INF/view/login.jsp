@@ -23,72 +23,39 @@ if (session.getAttribute("user_name") == null) {
 </head>
 <body>
 
-	<div class="container col-md-4 mt-5 p-5"
-		style="border: 2px solid black !important; margin-top: 150px !important;">
+	<div class="container col-md-4 mt-5 p-5">
 		<center>
 			<h2>Login Form</h2>
 		</center>
-		<form method="POST" class="row g-3 needs-validation mt-4" novalidate>
-			<div class="col-12">
-				<label for="validationCustomUsername" class="form-label">Username</label>
-				<div class="input-group has-validation">
-					<span class="input-group-text" id="inputGroupPrepend">@</span> <input
-						type="text" class="form-control" id="validationCustomUsername"
-						aria-describedby="inputGroupPrepend" name="username" required>
-					<div class="invalid-feedback">Please choose a username.</div>
+		
+		<form class="mt-4">
+		
+			<div class="form-floating mb-3">
+			  <input type="text" class="form-control" id="floatingInput" placeholder="Enter You Username" required>
+			  <label for="floatingInput">Username</label>
+			</div>
+			<div class="form-floating">
+			  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+			  <label for="floatingPassword">Password</label>
+			</div>
+			
+			<div class="row">
+			
+				<div class="col-md-3">
+					<div class="col mt-4">
+				    	<button type="submit" class="btn btn-primary mb-3">Submit</button>
+				    </div>
 				</div>
-			</div>
-			<div class="col-12">
-				<label for="validationCustom03" class="form-label">Password</label>
-				<input type="password" class="form-control" id="validationCustom03"
-					minlength="6" maxlength="10" name="password" required>
-				<div id="passwordHelpBlock" class="form-text">Your password
-					must be 6-10 characters long, contain letters and numbers, and must
-					not contain spaces, special characters, or emoji.</div>
-				<div class="invalid-feedback">Please provide a valid password.
+				<div class="col-md-3">
+					<div class="col mt-4">
+				    	<a href="register" class="btn btn-primary">Register</a>
+				    </div>
 				</div>
+			
 			</div>
-			<div class="col-12 mt-3">
-				<button class="btn btn-primary stretched-link" type="submit">Submit
-					form</button>
-			</div>
-			<!-- <div class="col-12 mt-3"> -->
-
-			<!-- </div> -->
-
-			<!-- <a href="register" class="link-primary">Register</a> -->
-
+		
 		</form>
-
-
 	</div>
-
-	</script>
-
-	<script>
-		//Example starter JavaScript for disabling form submissions if there are invalid fields
-		(function() {
-			'use strict'
-
-			// Fetch all the forms we want to apply custom Bootstrap validation styles to
-			var forms = document.querySelectorAll('.needs-validation')
-
-			var smit = document.getElementById("smit");
-			smit.addEventListener("click", formvalidate(), false);
-
-			// Loop over them and prevent submission
-			Array.prototype.slice.call(forms).forEach(function(form) {
-				form.addEventListener('submit', function(event) {
-					if (!form.checkValidity()) {
-						event.preventDefault()
-						event.stopPropagation()
-					}
-
-					form.classList.add('was-validated')
-				}, false)
-			})
-		})()
-	</script>
 
 </body>
 </html>

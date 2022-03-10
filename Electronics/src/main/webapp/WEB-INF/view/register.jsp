@@ -66,15 +66,17 @@
 					id="floatingTextarea2" style="height: 100px" required></textarea>
 				<label for="floatingTextarea2">Shipping Address</label>
 			</div>
-			<div class="form-check form-check-inline col-md-6">
-				<input class="form-check-input" type="radio"
-					name="role" id="inlineRadio1" value="option1">
-				<label class="form-check-label" for="inlineRadio1">User</label>
-			</div>
-			<div class="form-check form-check-inline col-md-6">
-				<input class="form-check-input" type="radio"
-					name="role" id="inlineRadio2" value="option2">
-				<label class="form-check-label" for="inlineRadio2">Admin</label>
+			<div class="col-12">
+				<div class="form-check form-check-inline col-md-6">
+					<input class="form-check-input" type="radio"
+						name="role" id="inlineRadio1" value="option1">
+					<label class="form-check-label" for="inlineRadio1">User</label>
+				</div>
+				<div class="form-check form-check-inline col-md-6">
+					<input class="form-check-input" type="radio"
+						name="role" id="inlineRadio2" value="option2">
+					<label class="form-check-label" for="inlineRadio2">Admin</label>
+				</div>
 			</div>
 			<div class="col-12">
 				<div class="form-check">
