@@ -48,6 +48,56 @@ public class Tablet extends Product {
 		this.tStorage = tStorage;
 		this.tSize = tSize;
 	}
+	@Override
+	public int getP_Id() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public void setP_Id(int p_Id) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public String getP_Type() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void setP_Type(String p_Type) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public String getP_Description() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void setP_Description(String p_Description) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public double getP_Price() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public void setP_Price(double p_Price) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public int getP_Quantity() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public void setP_Quantity(int p_Quantity) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }
