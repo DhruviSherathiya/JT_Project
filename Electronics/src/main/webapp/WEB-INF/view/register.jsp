@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Register User</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -21,63 +22,66 @@
 		<center>
 			<h2>Register Form</h2>
 		</center>
-		<form class="row g-3 needs-validation" novalidate>
+		<form:form action="addUser" method="post" modelAttribute="user" class="row g-3 needs-validation">
+			<form:hidden path="userId"/>
+			<form:hidden path="role" value="user"/>
 			<div class="col-md-4">
 				<label for="validationCustomUsername" class="form-label">Username</label>
 				<div class="input-group has-validation">
-					<span class="input-group-text" id="inputGroupPrepend">@</span> <input
+					<span class="input-group-text" id="inputGroupPrepend">@</span> 
+					<form:input
 						type="text" class="form-control" id="validationCustomUsername"
-						aria-describedby="inputGroupPrepend" required>
+						aria-describedby="inputGroupPrepend" path="userName" />
 					<div class="invalid-feedback">Please choose a username.</div>
 					<div class="valid-feedback">Nice Username!</div>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<label for="validationCustom01" class="form-label">Password</label>
-				<input type="password" class="form-control" id="validationCustom01" required>
+				<form:input type="password" class="form-control" id="validationCustom01" path="password" />
 				<div class="invalid-feedback">Please choose a Password.</div>
 				<div class="valid-feedback">Looks Good!</div>
 			</div>
 			<div class="col-md-4">
-				<label for="validationCustom02" class="form-label">Email</label> <input
-					type="email" class="form-control" id="validationCustom02" required>
+				<label for="validationCustom02" class="form-label">Email</label> 
+				<form:input type="email" class="form-control" id="validationCustom02" path="email" />
 				<div class="invalid-feedback">Please choose a Email!</div>
 				<div class="valid-feedback">Fine!</div>
 			</div>
 			<div class="col-md-6">
 				<label for="validationCustom03" class="form-label">Phone
-					Number</label> <input type="text" class="form-control"
-					id="validationCustom03" required>
+					Number</label> <form:input type="text" class="form-control"
+					id="validationCustom03" path="phoneNumber" />
 				<div class="invalid-feedback">Please provide a valid Phone Number!</div>
 			</div>
 			<div class="col-md-3">
 				<label for="validationCustom05" class="form-label">Date Of
-					Birth</label> <input type="date" class="form-control"
-					id="validationCustom05" required>
+					Birth</label> 
+				<form:input type="date" class="form-control" id="validationCustom05" path="dateOfBirth" />
 				<div class="invalid-feedback">Please provide a valid dob.</div>
 			</div>
 			<div class="form-floating col-md-6">
-				<textarea class="form-control" placeholder="Leave a comment here"
-					id="floatingTextarea2" style="height: 100px" required></textarea>
+				<form:textarea class="form-control" placeholder="Leave a comment here"
+					id="floatingTextarea2" style="height: 100px" path="billing"></form:textarea>
 				<label for="floatingTextarea2">Billing Address</label>
 			</div>
 			<div class="form-floating col-md-6">
-				<textarea class="form-control" placeholder="Leave a comment here"
-					id="floatingTextarea2" style="height: 100px" required></textarea>
+				<form:textarea class="form-control" placeholder="Leave a comment here"
+					id="floatingTextarea2" style="height: 100px" path="shipping"></form:textarea>
 				<label for="floatingTextarea2">Shipping Address</label>
 			</div>
-			<div class="col-12">
+			<%-- <div class="col-12">
 				<div class="form-check form-check-inline col-md-6">
-					<input class="form-check-input" type="radio"
-						name="role" id="inlineRadio1" value="option1">
+					<form:input class="form-check-input" type="radio"
+						name="role" id="inlineRadio1" value="option1" path="role" />
 					<label class="form-check-label" for="inlineRadio1">User</label>
 				</div>
 				<div class="form-check form-check-inline col-md-6">
-					<input class="form-check-input" type="radio"
-						name="role" id="inlineRadio2" value="option2">
+					<form:input class="form-check-input" type="radio"
+						name="role" id="inlineRadio2" value="option2" path="role" />
 					<label class="form-check-label" for="inlineRadio2">Admin</label>
 				</div>
-			</div>
+			</div> --%>
 			<div class="col-12">
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" value=""
@@ -91,7 +95,7 @@
 			<div class="col-12">
 				<button class="btn btn-primary" type="submit">Submit form</button>
 			</div>
-		</form>
+		</form:form>
 	</div>
 	
 	<script>

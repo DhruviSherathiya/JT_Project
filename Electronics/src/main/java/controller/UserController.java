@@ -43,6 +43,8 @@ public class UserController {
 	
 	@RequestMapping(value = "register")
 	public ModelAndView register(ModelAndView model) throws IOException {
+		User user = new User();
+		model.addObject(user);
 		model.setViewName("register");
 		return model;
 	}
@@ -55,6 +57,15 @@ public class UserController {
 	 * 
 	 * return new ModelAndView("redirect:/"); }
 	 */
+	
+	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
+	public ModelAndView addUser(@ModelAttribute User user) {
+		 // if employee id is 0 then creating the
+			// employee other updating the employee
+			userService.addUser(user);
+		
+		return new ModelAndView("redirect:/");
+	}
 	
 	@RequestMapping(value = "/saveUser", method = RequestMethod.POST)
 	public ModelAndView saveEmployee(@ModelAttribute User user) {
