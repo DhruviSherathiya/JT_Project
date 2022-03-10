@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isELIgnored = "false" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 
 <%
 session = request.getSession();
@@ -23,19 +26,35 @@ if (session.getAttribute("user_name") == null) {
 </head>
 <body>
 
-	<div class="container col-md-4 mt-5 p-5">
-		<center>
+	<div class="container col-md-4 mt-5">
+		<center class="mb-4">
 			<h2>Login Form</h2>
 		</center>
 		
-		<form class="mt-4">
+		<c:if test = "${not empty error_message}">
+			<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+	        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+				  ${error_message}
+				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+        </c:if>
+		
+		
+	</div>
+
+	<div class="container col-md-4">
+		
+		
+		
+		
+		<form  action="checkLogin" method="post">
 		
 			<div class="form-floating mb-3">
-			  <input type="text" class="form-control" id="floatingInput" placeholder="Enter You Username" required>
+			  <input type="text" class="form-control" id="floatingInput" name="username" placeholder="Enter You Username" required>
 			  <label for="floatingInput">Username</label>
 			</div>
 			<div class="form-floating">
-			  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+			  <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" required>
 			  <label for="floatingPassword">Password</label>
 			</div>
 			
