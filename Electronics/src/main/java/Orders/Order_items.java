@@ -1,12 +1,11 @@
 package Orders;
 
-public class Order_Items {
-	 String product_name;
-	 int quantity;
-	 int product_price;
+public class Order_items {
+	String product_name;
+	int quantity;
+	int product_price;
 	
-	
-	public Order_Items(String product_name, int quantity, int product_price) {
+	public Order_items(String product_name, int quantity, int product_price) {
 		super();
 		this.product_name = product_name;
 		this.quantity = quantity;
@@ -31,5 +30,4 @@ public class Order_Items {
 	public void setProduct_price(int product_price) {
 		this.product_price = product_price;
 	}
-	
 }
