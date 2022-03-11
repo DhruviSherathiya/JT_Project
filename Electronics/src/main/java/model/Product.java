@@ -22,6 +22,11 @@ import javax.persistence.Table;
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Product {
 	
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="pId")

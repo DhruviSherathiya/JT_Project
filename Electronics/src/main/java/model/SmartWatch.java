@@ -17,6 +17,10 @@ public class SmartWatch extends Product {
 		this.sConnectivity = sConnectivity;
 	}
 	
+	public SmartWatch() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public int getP_Id() {
 		return p_Id;

@@ -28,6 +28,10 @@ public class HeadPhone extends Product{
 		this.hSoundQuality = hSoundQuality;
 	}
 	
+	public HeadPhone() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public int getP_Id() {
 		return p_Id;

@@ -18,6 +18,10 @@ public class Tablet extends Product {
 		this.tSize = tSize;
 	}
 	
+	public Tablet() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public int getP_Id() {
 		return p_Id;

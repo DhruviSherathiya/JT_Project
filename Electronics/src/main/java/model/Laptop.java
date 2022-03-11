@@ -45,6 +45,11 @@ public class Laptop extends Product{
 		this.lGraphics = lGraphics;
 	}
 	
+	public Laptop() {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+
 	@Override
 	public int getP_Id() {
 		return p_Id;

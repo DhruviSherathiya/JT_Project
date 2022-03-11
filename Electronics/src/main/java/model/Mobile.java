@@ -47,6 +47,10 @@ public class Mobile extends Product {
 		this.mCamera = mCamera;
 	}
 	
+	public Mobile() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public int getP_Id() {
 		return p_Id;

@@ -35,6 +35,10 @@ public class TV extends Product{
 		this.tvMusicSystem = tvMusicSystem;
 	}
 	
+	public TV() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public int getP_Id() {
 		return p_Id;
