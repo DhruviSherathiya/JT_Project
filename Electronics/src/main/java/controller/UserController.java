@@ -76,20 +76,20 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
-	public ModelAndView addUser(@RequestParam("username") String uname, @RequestParam("email") String email, @ModelAttribute User user, ModelAndView model) {
+	public ModelAndView addUser(@ModelAttribute User user, ModelAndView model) {
 
-		List<User> users = userService.getAllUsers();
+		List<User> AllUsers = userService.getAllUsers();
 		
 		boolean flag = false;
 		
-		for(User oneuser : users) {
-			if(oneuser.getUserName().equalsIgnoreCase(uname) || oneuser.getEmail().equalsIgnoreCase(email)) {
+		for(User oneuser : AllUsers) {
+			if(oneuser.getUserName().equalsIgnoreCase(user.getUserName()) || oneuser.getEmail().equalsIgnoreCase(user.getEmail())) {
 				flag = true;
-				if(oneuser.getUserName().equalsIgnoreCase(uname)) {
-					model.addObject("error_msg","Username is already taken..!");
+				if(oneuser.getUserName().equalsIgnoreCase(user.getUserName())) {
+					model.addObject("error_msg","Username is already taken.. Please try again using different Username !");
 				}
 				else {
-					model.addObject("error_msg","Email is already taken..!");
+					model.addObject("error_msg","Email is already taken..! Please try again using different Email !");
 				}
 				model.setViewName("register");
 			}
@@ -97,6 +97,7 @@ public class UserController {
 		
 		if(flag == false) {
 			userService.addUser(user);
+			model.addObject("success_msg","Registration Successful");
 			model.setViewName("login");
 		}
 		

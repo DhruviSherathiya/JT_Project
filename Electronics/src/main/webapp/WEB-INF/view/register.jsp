@@ -20,19 +20,18 @@
 </head>
 <body>
 
-		<c:if test = "${not empty error_msg}">
-			<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-	        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-				  ${error_message}
-				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>
-        </c:if>
-
 	<div class="container col-md-8 mt-4 p-5">
 		<center>
 			<h2>Register Form</h2>
 		</center>
-		<form:form action="addUser" method="post" modelAttribute="user" class="row g-3 needs-validation">
+		<c:if test = "${not empty error_msg}">
+			<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+	        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+				  ${error_msg}
+				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+        </c:if>
+		<form:form action="addUser" method="post" modelAttribute="user" class="row g-3 needs-validation" novalidate="novalidate">
 			<form:hidden path="userId"/>
 			<form:hidden path="role" value="user"/>
 			<div class="col-md-4">
@@ -42,7 +41,7 @@
 					<form:input
 						type="text" class="form-control" name="username" id="validationCustomUsername"
 						aria-describedby="inputGroupPrepend" path="userName" required="required"/>
-					<div class="invalid-feedback">Please choose a username.</div>
+					    <div class="invalid-feedback">Please choose a username. ${error_msg}</div>
 					<div class="valid-feedback">Nice Username!</div>
 				</div>
 			</div>
@@ -80,18 +79,6 @@
 					id="floatingTextarea2" style="height: 100px" path="shipping" name="shipping" required="required"></form:textarea>
 				<label for="floatingTextarea2">Shipping Address</label>
 			</div>
-			<%-- <div class="col-12">
-				<div class="form-check form-check-inline col-md-6">
-					<form:input class="form-check-input" type="radio"
-						name="role" id="inlineRadio1" value="option1" path="role" />
-					<label class="form-check-label" for="inlineRadio1">User</label>
-				</div>
-				<div class="form-check form-check-inline col-md-6">
-					<form:input class="form-check-input" type="radio"
-						name="role" id="inlineRadio2" value="option2" path="role" />
-					<label class="form-check-label" for="inlineRadio2">Admin</label>
-				</div>
-			</div> --%>
 			<div class="col-12">
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" value=""
@@ -115,7 +102,6 @@
 
 		  // Fetch all the forms we want to apply custom Bootstrap validation styles to
 		  var forms = document.querySelectorAll('.needs-validation')
-
 		  // Loop over them and prevent submission
 		  Array.prototype.slice.call(forms)
 		    .forEach(function (form) {
