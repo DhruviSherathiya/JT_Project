@@ -3,16 +3,38 @@
  */
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 /**
  * @author devoza
  *
  */
+
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Product {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="pId")
 	protected int p_Id;
+	
+	@Column(name="p_Type")
 	protected String p_Type;
+	
+	@Column(name="p_Description")
 	protected String p_Description;
+	
+	@Column(name="p_Price")
 	protected double p_Price;
+	
+	@Column(name="p_Quantity")
     protected int p_Quantity;
     
 	public Product(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity) {

@@ -3,17 +3,33 @@
  */
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
 /**
  * @author devoza
  *
  */
+
+@Entity
 public class Laptop extends Product{
 	
+	@Column(name="Name")
 	private String lName;
+	
+	@Column(name="Ram")
 	private String lRam;
+	
+	@Column(name="Processor")
 	private String lProcessor;
+	
+	@Column(name="Storage")
 	private String lStorage;
+	
+	@Column(name="Color")
 	private String lColor;
+	
+	@Column(name="Graphics")
 	private String lGraphics;
 	
 	public Laptop(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String lName,
