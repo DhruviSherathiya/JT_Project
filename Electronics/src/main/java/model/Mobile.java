@@ -3,18 +3,36 @@
  */
 package model;
 
+import javax.persistence.*;
+
 /**
  * @author devoza
  *
  */
-public class Mobile extends Product {
 
+@Entity
+@Table(name="Mobile")
+public class Mobile extends Product {
+	
+	@Column(name="Name")
 	String mName;
+	
+	@Column(name="Color")
 	String mColor;
+	
+	@Column(name="ChargerType")
 	String mChargerType;
+	
+	@Column(name="Ram")
 	String mRam;
+	
+	@Column(name="Processor")
 	String mProcessor;
+	
+	@Column(name="Storage")
 	String mStorage;
+	
+	@Column(name="Camera")
 	String mCamera;
 	
 	public Mobile(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String mName,

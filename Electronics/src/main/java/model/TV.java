@@ -3,16 +3,27 @@
  */
 package model;
 
+import javax.persistence.*;
 
 /**
  * @author devoza
  *
  */
+
+@Entity
+@Table(name="TV")
 public class TV extends Product{
 
+	@Column(name="Name")
 	String tvName;
+	
+	@Column(name="Color")
 	String tvColor;
+	
+	@Column(name="Size")
 	String tvSize;
+	
+	@Column(name="MusicSystem")
 	String tvMusicSystem;
 	
 	public TV(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String tvName,
