@@ -5,6 +5,7 @@ package model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * @author devoza
@@ -12,6 +13,7 @@ import javax.persistence.Entity;
  */
 
 @Entity
+@Table(name = "Laptop")
 public class Laptop extends Product{
 	
 	@Column(name="Name")

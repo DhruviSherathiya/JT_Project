@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 /**
  * @author devoza
@@ -17,6 +18,7 @@ import javax.persistence.InheritanceType;
  */
 
 @Entity
+@Table(name = "Product")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Product {
 	
