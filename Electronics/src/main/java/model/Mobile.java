@@ -20,7 +20,7 @@ public class Mobile extends Product {
 	@Column(name="Color")
 	String mColor;
 	
-	@Column(name="ChargerType")
+	@Column(name="Charger_Type")
 	String mChargerType;
 	
 	@Column(name="Ram")

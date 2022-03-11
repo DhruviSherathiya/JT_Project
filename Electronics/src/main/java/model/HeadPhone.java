@@ -18,7 +18,7 @@ public class HeadPhone extends Product{
 	@Column(name="Name")
 	String hName;
 	
-	@Column(name="SoundQuality")
+	@Column(name="Sound_Quality")
 	String hSoundQuality;
 	
 	public HeadPhone(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String hName,

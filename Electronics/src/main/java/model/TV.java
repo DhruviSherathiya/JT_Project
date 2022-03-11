@@ -23,7 +23,7 @@ public class TV extends Product{
 	@Column(name="Size")
 	String tvSize;
 	
-	@Column(name="MusicSystem")
+	@Column(name="Music_System")
 	String tvMusicSystem;
 	
 	public TV(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String tvName,

@@ -1,11 +1,34 @@
 package model;
 
-public class Order_items {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Order_Items")
+public class Order_Items {
+	
+	@Id
+	@Column(name="id")
+	private Integer id;
+	
+	@ManyToOne
+	@JoinColumn(name = "Order_ID")
+	Order order;
+	
+	@Column(name="Product_Name")
 	String product_Name;
+	
+	@Column(name="Quantity")
 	int quantity;
+	
+	@Column(name="Product_Price")
 	int product_Price;
 	
-	public Order_items(String product_Name, int quantity, int product_Price) {
+	public Order_Items(String product_Name, int quantity, int product_Price) {
 		super();
 		this.product_Name = product_Name;
 		this.quantity = quantity;
