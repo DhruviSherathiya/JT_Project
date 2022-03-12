@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Laptop Management Screen</title>
+<title>Mobile Management Screen</title>
 </head>
 <body>
 
 	<div align="center">
-		<h1>Laptop List</h1>
+		<h1>Mobile List</h1>
 		
 		<table border="1">
 
@@ -20,27 +20,29 @@
 			<th>Color</th>
 			<th>Processor</th>
 			<th>Ram</th>
-			<th>Graphics</th>
+			<th>Camera</th>
+			<th>Charger Type</th>
 			<th>Description</th>
 			<th>Quantity</th>
 			<th>Price</th>
 
-			<c:forEach var="laptop" items="${listLaptop}">
+			<c:forEach var="mobile" items="${listMobile}">
 				<tr>
 
-					<td>${laptop.p_Id}</td>
-					<td>${laptop.lName}</td>
-					<td>${laptop.lStorage}</td>
-					<td>${laptop.lColor}</td>
-					<td>${laptop.lProcessor}</td>
-					<td>${laptop.lRam}</td>
-					<td>${laptop.lGraphics}</td>
-					<td>${laptop.p_Description}</td>
-					<td>${laptop.p_Quantity}</td>
-					<td>${laptop.p_Price}</td>
-					<td><a href="editLaptop?id=${laptop.id}">Edit</a>
+					<td>${mobile.p_Id}</td>
+					<td>${mobile.mName}</td>
+					<td>${mobile.mStorage}</td>
+					<td>${mobile.mColor}</td>
+					<td>${mobile.mProcessor}</td>
+					<td>${mobile.mRam}</td>
+					<td>${mobile.mCamera}</td>
+					<td>${mobile.mChargerType}</td>
+					<td>${mobile.p_Description}</td>
+					<td>${mobile.p_Quantity}</td>
+					<td>${mobile.p_Price}</td>
+					<td><a href="editMobile?id=${mobile.id}">Edit</a>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a
-						href="deleteLaptop?id=${laptop.id}">Delete</a></td>
+						href="deleteMobile?id=${mobile.id}">Delete</a></td>
 
 				</tr>
 			</c:forEach>
