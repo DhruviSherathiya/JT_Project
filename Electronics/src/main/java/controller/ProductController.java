@@ -147,6 +147,44 @@ public class ProductController {
 		} else {
 			laptopService.updateLaptop(laptop);
 		}
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/Product/laptop");
+	}
+	
+	@RequestMapping(value = "/newHeadPhone", method = RequestMethod.GET)
+	public ModelAndView newHeadPhone(ModelAndView model) {
+		HeadPhone headphone = new HeadPhone();
+		model.addObject("headphone", headphone);
+		model.setViewName("HeadPhoneForm");
+		return model;
+	}
+	
+	@RequestMapping(value = "/saveHeadPhone", method = RequestMethod.POST)
+	public ModelAndView saveEmployee(@ModelAttribute HeadPhone headphone) {
+		if (headphone.getP_Id() == 0) { // if employee id is 0 then creating the
+			// employee other updating the employee
+			headphoneService.addHeadPhone(headphone);
+		} else {
+			headphoneService.updateHeadPhone(headphone);
+		}
+		return new ModelAndView("redirect:/Product/headphone");
+	}
+	
+	@RequestMapping(value = "/newMobile", method = RequestMethod.GET)
+	public ModelAndView newMobile(ModelAndView model) {
+		Mobile mobile = new Mobile();
+		model.addObject("mobile", mobile);
+		model.setViewName("MobileForm");
+		return model;
+	}
+	
+	@RequestMapping(value = "/saveMobile", method = RequestMethod.POST)
+	public ModelAndView saveEmployee(@ModelAttribute Mobile mobile) {
+		if (mobile.getP_Id() == 0) { // if employee id is 0 then creating the
+			// employee other updating the employee
+			mobileService.addMobile(mobile);
+		} else {
+			mobileService.updateMobile(mobile);
+		}
+		return new ModelAndView("redirect:/Product/mobile");
 	}
 }
