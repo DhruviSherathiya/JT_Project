@@ -187,4 +187,61 @@ public class ProductController {
 		}
 		return new ModelAndView("redirect:/Product/mobile");
 	}
+	
+	@RequestMapping(value = "/newSmartWatch", method = RequestMethod.GET)
+	public ModelAndView newSmartWatch(ModelAndView model) {
+		SmartWatch smartwatch = new SmartWatch();
+		model.addObject("smartwatch", smartwatch);
+		model.setViewName("SmartWatchForm");
+		return model;
+	}
+	
+	@RequestMapping(value = "/saveSmartWatch", method = RequestMethod.POST)
+	public ModelAndView saveSmartWatch(@ModelAttribute SmartWatch smartwatch) {
+		if (smartwatch.getP_Id() == 0) { // if employee id is 0 then creating the
+			// employee other updating the employee
+			smartwatchService.addSmartWatch(smartwatch);
+		} else {
+			smartwatchService.updateSmartWatch(smartwatch);
+		}
+		return new ModelAndView("redirect:/Product/smartwatch");
+	}
+	
+	@RequestMapping(value = "/newTablet", method = RequestMethod.GET)
+	public ModelAndView newTablet(ModelAndView model) {
+		Tablet tablet = new Tablet();
+		model.addObject("tablet", tablet);
+		model.setViewName("TabletForm");
+		return model;
+	}
+	
+	@RequestMapping(value = "/saveTablet", method = RequestMethod.POST)
+	public ModelAndView saveTablet(@ModelAttribute Tablet tablet) {
+		if (tablet.getP_Id() == 0) { // if employee id is 0 then creating the
+			// employee other updating the employee
+			tabletService.addTablet(tablet);
+		} else {
+			tabletService.updateTablet(tablet);
+		}
+		return new ModelAndView("redirect:/Product/tablet");
+	}
+	
+	@RequestMapping(value = "/newTV", method = RequestMethod.GET)
+	public ModelAndView newTV(ModelAndView model) {
+		TV tv = new TV();
+		model.addObject("tv", tv);
+		model.setViewName("TVForm");
+		return model;
+	}
+	
+	@RequestMapping(value = "/saveTV", method = RequestMethod.POST)
+	public ModelAndView saveTablet(@ModelAttribute TV tv) {
+		if (tv.getP_Id() == 0) { // if employee id is 0 then creating the
+			// employee other updating the employee
+			tvService.addTV(tv);
+		} else {
+			tvService.updateTV(tv);
+		}
+		return new ModelAndView("redirect:/Product/tv");
+	}
 }
