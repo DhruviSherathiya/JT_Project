@@ -45,6 +45,8 @@ public class ProductController {
 	private TVService tvService;
 	@Autowired
 	private SmartWatchService smartwatchService;
+	@Autowired
+	private TabletService tabletService;
 	
 	@RequestMapping(value = "/laptop")
 	public ModelAndView listLaptop(ModelAndView model) throws IOException {
@@ -83,6 +85,14 @@ public class ProductController {
 		List<SmartWatch> listSmartWatch = smartwatchService.getAllSmartWatchs();
 		model.addObject("listSmartWatch", listSmartWatch);
 		model.setViewName("smartwatch");
+		return model;
+	}
+	
+	@RequestMapping(value = "/tablet")
+	public ModelAndView listTablet(ModelAndView model) throws IOException {
+		List<Tablet> listTablet = tabletService.getAllTablets();
+		model.addObject("listTablet", listTablet);
+		model.setViewName("tablet");
 		return model;
 	}
 
