@@ -30,6 +30,7 @@ public class Tablet extends Product{
 	
 	@Column(name="Size")
 	private String tSize;
+	
 	public Tablet(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String tName,
 			String tColor, String tRam, String tStorage, String tSize) {
 		super(p_Id, p_Type, p_Description, p_price, p_Quantity);
