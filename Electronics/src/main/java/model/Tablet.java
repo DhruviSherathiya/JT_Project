@@ -1,13 +1,35 @@
+/**
+ * 
+ */
 package model;
 
-public class Tablet extends Product {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * @author devoza
+ *
+ */
+
+@Entity
+@Table(name = "Tablet")
+public class Tablet extends Product{
 	
-	String tName;
-	String tColor;
-	String tRam;
-	String tStorage;
-	String tSize;
+	@Column(name="Name")
+	private String tName;
+		
+	@Column(name="Color")
+	private String tColor;
 	
+	@Column(name="Ram")
+	private String tRam;
+	
+	@Column(name="Storage")
+	private String tStorage;
+	
+	@Column(name="Size")
+	private String tSize;
 	public Tablet(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String tName,
 			String tColor, String tRam, String tStorage, String tSize) {
 		super(p_Id, p_Type, p_Description, p_price, p_Quantity);

@@ -1,10 +1,32 @@
+/**
+ * 
+ */
 package model;
 
-public class SmartWatch extends Product {
-	String sName;
-	String sColor;
-	String sSize;
-	String sConnectivity;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * @author devoza
+ *
+ */
+
+@Entity
+@Table(name = "SmartWatch")
+public class SmartWatch extends Product{
+	
+	@Column(name="Name")
+	private String sName;
+		
+	@Column(name="Color")
+	private String sColor;
+	
+	@Column(name="Size")
+	private String sSize;
+	
+	@Column(name="Connectivity")
+	private String sConnectivity;
 	
 //product_id, product_type, product_description, name, color, price, quantity, size, connectivity	
 	
