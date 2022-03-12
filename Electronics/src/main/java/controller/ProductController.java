@@ -130,4 +130,23 @@ public class ProductController {
 //		}
 //		return model;
 //	}
+	
+	@RequestMapping(value = "/newLaptop", method = RequestMethod.GET)
+	public ModelAndView newLaptop(ModelAndView model) {
+		Laptop laptop = new Laptop();
+		model.addObject("laptop", laptop);
+		model.setViewName("LaptopForm");
+		return model;
+	}
+	
+	@RequestMapping(value = "/saveLaptop", method = RequestMethod.POST)
+	public ModelAndView saveEmployee(@ModelAttribute Laptop laptop) {
+		if (laptop.getP_Id() == 0) { // if employee id is 0 then creating the
+			// employee other updating the employee
+			laptopService.addLaptop(laptop);
+		} else {
+			laptopService.updateLaptop(laptop);
+		}
+		return new ModelAndView("redirect:/");
+	}
 }

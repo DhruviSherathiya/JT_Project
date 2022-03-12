@@ -45,9 +45,9 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<!-- <h4>
-			New Employee Register <a href="newEmployee">here</a>
-		</h4> -->
+		<h4>
+			New Laptop <a href="newLaptop">here</a>
+		</h4>
 	</div>
 
 </body>
