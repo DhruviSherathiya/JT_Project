@@ -8,5 +8,8 @@
 </head>
 <body>
 User Home page
+<h3>Welcome ${uname}</h3>
+	<a href="/Electronics/profile">Profile</a><br>
+	<a href="/Electronics/logout">Logout</a><br>
 </body>
 </html>

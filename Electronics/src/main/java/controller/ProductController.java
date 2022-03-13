@@ -11,6 +11,7 @@ package controller;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,79 +48,125 @@ public class ProductController {
 	private SmartWatchService smartwatchService;
 	@Autowired
 	private TabletService tabletService;
-	
+		
 	@RequestMapping(value = "/laptop")
-	public ModelAndView listLaptop(ModelAndView model) throws IOException {
-		List<Laptop> listLaptop = laptopService.getAllLaptops();
-		model.addObject("listLaptop", listLaptop);
-		model.setViewName("laptop");
+	public ModelAndView listLaptop(ModelAndView model, HttpServletRequest request) throws IOException {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("uid") != null) {
+			List<Laptop> listLaptop = laptopService.getAllLaptops();
+			model.addObject("listLaptop", listLaptop);
+			model.setViewName("laptop");
+		}
+		else {
+			return new ModelAndView("redirect:/");
+		}
+		
 		return model;
 	}
 	
 	@RequestMapping(value = "/headphone")
-	public ModelAndView listheadphone(ModelAndView model) throws IOException {
-		List<HeadPhone> listHeadPhone = headphoneService.getAllHeadPhones();
-		model.addObject("listHeadPhone", listHeadPhone);
-		model.setViewName("headphone");
+	public ModelAndView listheadphone(ModelAndView model, HttpServletRequest request) throws IOException {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("uid") != null) {
+			List<HeadPhone> listHeadPhone = headphoneService.getAllHeadPhones();
+			model.addObject("listHeadPhone", listHeadPhone);
+			model.setViewName("headphone");
+		}
+		else {
+			return new ModelAndView("redirect:/");
+		}
 		return model;
 	}
 	
 	@RequestMapping(value = "/mobile")
-	public ModelAndView listmobile(ModelAndView model) throws IOException {
-		List<Mobile> listMobile = mobileService.getAllMobiles();
-		model.addObject("listMobile", listMobile);
-		model.setViewName("mobile");
+	public ModelAndView listmobile(ModelAndView model, HttpServletRequest request) throws IOException {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("uid") != null) {
+			List<Mobile> listMobile = mobileService.getAllMobiles();
+			model.addObject("listMobile", listMobile);
+			model.setViewName("mobile");
+		}
+		else {
+			return new ModelAndView("redirect:/");
+		}
 		return model;
 	}
 	
 	@RequestMapping(value = "/tv")
-	public ModelAndView listTv(ModelAndView model) throws IOException {
-		List<TV> listTV = tvService.getAllTVs();
-		model.addObject("listTV", listTV);
-		model.setViewName("tv");
+	public ModelAndView listTv(ModelAndView model, HttpServletRequest request) throws IOException {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("uid") != null) {
+			List<TV> listTV = tvService.getAllTVs();
+			model.addObject("listTV", listTV);
+			model.setViewName("tv");
+		}
+		else {
+			return new ModelAndView("redirect:/");
+		}
 		return model;
 	}
 	
 	@RequestMapping(value = "/smartwatch")
-	public ModelAndView listSmartWatch(ModelAndView model) throws IOException {
-		List<SmartWatch> listSmartWatch = smartwatchService.getAllSmartWatchs();
-		model.addObject("listSmartWatch", listSmartWatch);
-		model.setViewName("smartwatch");
+	public ModelAndView listSmartWatch(ModelAndView model, HttpServletRequest request) throws IOException {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("uid") != null) {
+			List<SmartWatch> listSmartWatch = smartwatchService.getAllSmartWatchs();
+			model.addObject("listSmartWatch", listSmartWatch);
+			model.setViewName("smartwatch");
+		}
+		else {
+			return new ModelAndView("redirect:/");
+		}
+		
 		return model;
 	}
 	
 	@RequestMapping(value = "/tablet")
-	public ModelAndView listTablet(ModelAndView model) throws IOException {
-		List<Tablet> listTablet = tabletService.getAllTablets();
-		model.addObject("listTablet", listTablet);
-		model.setViewName("tablet");
+	public ModelAndView listTablet(ModelAndView model, HttpServletRequest request) throws IOException {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("uid") != null) {
+			List<Tablet> listTablet = tabletService.getAllTablets();
+			model.addObject("listTablet", listTablet);
+			model.setViewName("tablet");
+		}
+		else {
+			return new ModelAndView("redirect:/");
+		}
 		return model;
 	}
 	
 	@RequestMapping(value = "/inventory")
-	public ModelAndView listInventory(ModelAndView model) throws IOException {
-		List<Laptop> listLaptop = laptopService.getAllLaptops();
-		List<HeadPhone> listHeadPhone = headphoneService.getAllHeadPhones();
-		List<Mobile> listMobile = mobileService.getAllMobiles();
-		List<TV> listTV = tvService.getAllTVs();
-		List<SmartWatch> listSmartWatch = smartwatchService.getAllSmartWatchs();
-		List<Tablet> listTablet = tabletService.getAllTablets();
-		model.addObject("listLaptop", listLaptop);
-		model.addObject("listHeadPhone", listHeadPhone);
-		model.addObject("listMobile", listMobile);
-		model.addObject("listTV", listTV);
-		model.addObject("listSmartWatch", listSmartWatch);
-		model.addObject("listTablet", listTablet);
-		model.setViewName("inventory");
+	public ModelAndView listInventory(ModelAndView model, HttpServletRequest request) throws IOException {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("uid") != null) {
+			List<Laptop> listLaptop = laptopService.getAllLaptops();
+			List<HeadPhone> listHeadPhone = headphoneService.getAllHeadPhones();
+			List<Mobile> listMobile = mobileService.getAllMobiles();
+			List<TV> listTV = tvService.getAllTVs();
+			List<SmartWatch> listSmartWatch = smartwatchService.getAllSmartWatchs();
+			List<Tablet> listTablet = tabletService.getAllTablets();
+			model.addObject("listLaptop", listLaptop);
+			model.addObject("listHeadPhone", listHeadPhone);
+			model.addObject("listMobile", listMobile);
+			model.addObject("listTV", listTV);
+			model.addObject("listSmartWatch", listSmartWatch);
+			model.addObject("listTablet", listTablet);
+			model.setViewName("inventory");
+		}
+		else {
+			return new ModelAndView("redirect:/");
+		}
+		
 		return model;
 	}
 
-//	@RequestMapping(value = "/newProduct", method = RequestMethod.GET)
+//	@RequestMapping(value = "/newProduct")
 //	public ModelAndView newProduct(@RequestParam("radio-stacked") String pType, ModelAndView model) {
 //		if(pType.equals("laptop")) {
 //			Laptop laptop = new Laptop();
 //			model.addObject("pType", laptop);
 //			model.setViewName("EmployeeForm");
+//			return new ModelAndView("redirect:/Product/laptop");
 //		}
 //		else if(pType.equals("mobile")) {
 //			Mobile mobile = new Mobile();

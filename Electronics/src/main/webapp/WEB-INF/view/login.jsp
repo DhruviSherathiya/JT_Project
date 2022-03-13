@@ -4,10 +4,6 @@
 <%@ page isELIgnored = "false" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 
-<%
-session = request.getSession();
-if (session.getAttribute("user_name") == null) {
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +18,7 @@ if (session.getAttribute("user_name") == null) {
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous"></script>
-</head>
+
 </head>
 <body>
 
@@ -52,9 +48,6 @@ if (session.getAttribute("user_name") == null) {
 
 	<div class="container col-md-4">
 		
-		
-		
-		
 		<form  action="checkLogin" method="post">
 		
 			<div class="form-floating mb-3">
@@ -70,7 +63,7 @@ if (session.getAttribute("user_name") == null) {
 			
 				<div class="col-md-3">
 					<div class="col mt-4">
-				    	<button type="submit" class="btn btn-primary mb-3">Submit</button>
+				    	<button type="submit" class="btn btn-primary mb-3">Login</button>
 				    </div>
 				</div>
 				<div class="col-md-3">
@@ -86,12 +79,3 @@ if (session.getAttribute("user_name") == null) {
 
 </body>
 </html>
-<%
-}
-
-else {
-// Session is already created.
-response.sendRedirect("CustomerHomePage.jsp");
-// So i again redirect them to their home page
-}
-%>

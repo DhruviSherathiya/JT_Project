@@ -38,8 +38,21 @@ public class UserController {
 
 
 	@RequestMapping(value = "/")
-	public ModelAndView login(ModelAndView model) throws IOException {
-		model.setViewName("login");
+	public ModelAndView login(ModelAndView model, HttpServletRequest request) throws IOException {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("uid") != null) {
+			User user = userService.getUser((int)session.getAttribute("uid"));
+			if(user.getRole().equalsIgnoreCase("admin")) {
+				model.setViewName("adminhome");
+			}
+			else {
+				model.setViewName("userhome");
+			}
+		}
+		else {
+			model.setViewName("login");
+		}
+		
 		return model;
 	}
 	
@@ -49,6 +62,14 @@ public class UserController {
 		model.addObject(user);
 		model.setViewName("register");
 		return model;
+	}
+	
+	@RequestMapping(value = "logout")
+	public ModelAndView logout(ModelAndView model, HttpServletRequest request) throws IOException {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		return new ModelAndView("redirect:/");
 	}
 	
 	@RequestMapping(value = "/checkLogin")
@@ -123,10 +144,20 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/users")
-	public ModelAndView listUser(ModelAndView model) throws IOException {
-		List<User> listUser = userService.getAllUsers();
-		model.addObject("listUser", listUser);
-		model.setViewName("userList");
+	public ModelAndView listUser(ModelAndView model, HttpServletRequest request) throws IOException {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("uid") != null) {
+			User user = userService.getUser((int)session.getAttribute("uid"));
+			if(user.getRole().equals("admin")) {
+				List<User> listUser = userService.getAllUsers();
+				model.addObject("listUser", listUser);
+				model.setViewName("userList");
+			}
+		}
+		else {
+			return new ModelAndView("redirect:/");
+		}
+		
 		return model;
 	}
 	
@@ -148,12 +179,17 @@ public class UserController {
 	
 	@RequestMapping(value = "/updateProfile")
 	public ModelAndView updateProfile(ModelAndView model, HttpServletRequest request, @ModelAttribute User user) throws IOException {
-
+			
+		HttpSession session = request.getSession();
+		if(session.getAttribute("uid") != null) {
 			model.setViewName("ProfilePage");
 			userService.updateUser(user);	
 			model.addObject("success_msg","Profile updated successfuly...");
-			return model;
-
-	}
-	
+		}
+		else {
+			return new ModelAndView("redirect:/");
+		}	
+		
+		return model;
+	}	
 }

@@ -19,7 +19,7 @@
 <body>
 
 	<div align="center" class="container col-8 mt-5">
-		<h1>Tablet List</h1>
+		<h1>TV List</h1>
 		
 		<table class="table table-striped table-hover mt-5">
 			<thead>
