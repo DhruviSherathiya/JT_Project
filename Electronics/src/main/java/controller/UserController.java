@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import model.Tablet;
 import model.User;
 import service.UserService;
 
@@ -113,5 +114,13 @@ public class UserController {
 			userService.updateUser(user);
 		}
 		return new ModelAndView("redirect:/");
+	}
+	
+	@RequestMapping(value = "/users")
+	public ModelAndView listUser(ModelAndView model) throws IOException {
+		List<User> listUser = userService.getAllUsers();
+		model.addObject("listUser", listUser);
+		model.setViewName("userList");
+		return model;
 	}
 }

@@ -95,6 +95,24 @@ public class ProductController {
 		model.setViewName("tablet");
 		return model;
 	}
+	
+	@RequestMapping(value = "/inventory")
+	public ModelAndView listInventory(ModelAndView model) throws IOException {
+		List<Laptop> listLaptop = laptopService.getAllLaptops();
+		List<HeadPhone> listHeadPhone = headphoneService.getAllHeadPhones();
+		List<Mobile> listMobile = mobileService.getAllMobiles();
+		List<TV> listTV = tvService.getAllTVs();
+		List<SmartWatch> listSmartWatch = smartwatchService.getAllSmartWatchs();
+		List<Tablet> listTablet = tabletService.getAllTablets();
+		model.addObject("listLaptop", listLaptop);
+		model.addObject("listHeadPhone", listHeadPhone);
+		model.addObject("listMobile", listMobile);
+		model.addObject("listTV", listTV);
+		model.addObject("listSmartWatch", listSmartWatch);
+		model.addObject("listTablet", listTablet);
+		model.setViewName("inventory");
+		return model;
+	}
 
 //	@RequestMapping(value = "/newProduct", method = RequestMethod.GET)
 //	public ModelAndView newProduct(@RequestParam("radio-stacked") String pType, ModelAndView model) {
