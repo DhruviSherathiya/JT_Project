@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,15 +52,20 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/checkLogin")
-	public ModelAndView checklogin(@RequestParam("username") String uname, @RequestParam("password") String pass, ModelAndView model) throws IOException {
+	public ModelAndView checklogin(@RequestParam("username") String uname, @RequestParam("password") String pass, ModelAndView model, HttpServletRequest request) throws IOException {
 		
 		List<User> users = userService.getAllUsers();
 		boolean flag = false;
-		
 		for(User user : users) {
 			if(user.getUserName().equals(uname) && user.getPassword().equals(pass)) {
+				
 				String role = user.getRole();
 				flag = true;
+				
+				HttpSession session = request.getSession();
+				session.setAttribute("uname", uname);
+				session.setAttribute("uid", user.getUserId());
+		
 				if(role.equalsIgnoreCase("user")) {
 					model.setViewName("userhome");
 				}
@@ -123,4 +129,31 @@ public class UserController {
 		model.setViewName("userList");
 		return model;
 	}
+	
+	@RequestMapping(value = "/profile")
+	public ModelAndView Profile(ModelAndView model, HttpServletRequest request) throws IOException {
+
+		HttpSession session = request.getSession();
+		if(session.getAttribute("uid") != null) {
+			User user = userService.getUser((int)session.getAttribute("uid"));
+			model.addObject("user", user);
+			model.setViewName("ProfilePage");
+		}
+		else {
+			return new ModelAndView("redirect:/");
+		}
+		
+		return model;
+	}
+	
+	@RequestMapping(value = "/updateProfile")
+	public ModelAndView updateProfile(ModelAndView model, HttpServletRequest request, @ModelAttribute User user) throws IOException {
+
+			model.setViewName("ProfilePage");
+			userService.updateUser(user);	
+			model.addObject("success_msg","Profile updated successfuly...");
+			return model;
+
+	}
+	
 }

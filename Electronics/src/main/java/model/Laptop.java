@@ -7,13 +7,16 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 /**
  * @author devoza
  *
  */
 
 @Entity
-@Table(name = "Laptop")
+@Table(name = "Laptop") 
 public class Laptop extends Product{
 	
 	@Column(name="Name")
