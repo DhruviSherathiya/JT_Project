@@ -14,8 +14,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import model.HeadPhone;
+import model.Laptop;
+import model.Mobile;
+import model.SmartWatch;
+import model.TV;
 import model.Tablet;
 import model.User;
+import service.HeadPhoneService;
+import service.LaptopService;
+import service.MobileService;
+import service.SmartWatchService;
+import service.TVService;
+import service.TabletService;
 import service.UserService;
 
 /**
@@ -35,8 +46,20 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
-
-
+	
+	@Autowired
+	private LaptopService laptopService;
+	@Autowired
+	private HeadPhoneService headphoneService;
+	@Autowired
+	private MobileService mobileService;
+	@Autowired
+	private TVService tvService;
+	@Autowired
+	private SmartWatchService smartwatchService;
+	@Autowired
+	private TabletService tabletService;
+	
 	@RequestMapping(value = "/")
 	public ModelAndView login(ModelAndView model, HttpServletRequest request) throws IOException {
 		HttpSession session = request.getSession();
@@ -88,6 +111,19 @@ public class UserController {
 				session.setAttribute("uid", user.getUserId());
 		
 				if(role.equalsIgnoreCase("user")) {
+					List<Laptop> listLaptop = laptopService.getAllLaptops();
+					List<HeadPhone> listHeadPhone = headphoneService.getAllHeadPhones();
+					List<Mobile> listMobile = mobileService.getAllMobiles();
+					List<TV> listTV = tvService.getAllTVs();
+					List<SmartWatch> listSmartWatch = smartwatchService.getAllSmartWatchs();
+					List<Tablet> listTablet = tabletService.getAllTablets();
+					model.addObject("listLaptop", listLaptop);
+					model.addObject("listHeadPhone", listHeadPhone);
+					model.addObject("listMobile", listMobile);
+					model.addObject("listTV", listTV);
+					model.addObject("listSmartWatch", listSmartWatch);
+					model.addObject("listTablet", listTablet);
+					model.setViewName("inventory");
 					model.setViewName("userhome");
 				}
 				else if(role.equalsIgnoreCase("admin")) {
