@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%-- <%@ include file = "usernavbar.jsp" %> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,13 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous"></script>
-
+<!-- <script type = "text/javascript">  
+    window.onload = function () {  
+        document.onkeydown = function (e) {  
+            return (e.which || e.keyCode) != 116;  
+        };  
+    }  
+</script>  -->
 <style>
 
 .carousel .item {
@@ -127,8 +134,8 @@
 </style>
 </head>
 <body>
-
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<% session = request.getSession(); %>
+	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Welcome ${uname}</a>
 			<button class="navbar-toggler" type="button"
@@ -140,7 +147,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Home</a></li>
+						aria-current="page" href="/Electronics/Electronicshome/">Home</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="/Electronics/profile">Profile</a></li>
 					<li class="nav-item"><a class="nav-link"
@@ -186,6 +193,9 @@
     <div class="carousel-item">
       <img src="https://promotions.newegg.com/asus/22-0013/1920x660@2x.jpg" class="d-block w-100" alt="...">
     </div>
+    <div class="carousel-item">
+      <img src="http://www.anshudisplay.com/images/slider-1.jpg" class="d-block w-100" alt="...">
+    </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -222,33 +232,73 @@
 	</div> --%>
 
 	<!-- Topic Cards -->
-	<div id="cards_landscape_wrap-2">
+	
+	<div id="cards_landscape_wrap-2" class="mt-4 p-5">
+	<h1>Laptops</h1>
 		<div class="container">
 			<div class="row">
 				<c:forEach var="laptop" items="${listLaptop}">
 					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-						<a href="">
+						<!-- <a href=""> -->
 							<div class="card-flyer">
 								<div class="text-box">
-									<div class="image-box" style="padding: 10%;">
+									<div class="image-box" style="padding: 15%;">
 										<img
 											src="https://rukminim1.flixcart.com/image/312/312/ktaeqvk0/computer/b/7/4/15s-gy0501au-thin-and-light-laptop-hp-original-imag6z6muntqnzzc.jpeg?q=70"
 											alt="" />
 									</div>
-									<div class="text-container">
+									<form action="/Electronics/buyProduct">
+										<div class="text-container">
 										<h6>${laptop.lName}</h6>
-										<p>${laptop.p_Description}</p>
-										<a href="#" class="btn btn-primary mt-3">Buy</a> <a href="#"
-											class="btn btn-primary mt-3">Add To Cart</a>
+										<p class="mb-3">${laptop.p_Description}</p>
+										<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${laptop.p_Quantity}">
+										<input type="hidden" name="pid" value="${laptop.p_Id}">
+										<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+										<a href="#" class="btn btn-primary">Add To Cart</a>
 									</div>
+									
+									</form>
 								</div>
 							</div>
-						</a>
+						<!-- </a> -->
 					</div>
 				</c:forEach>
 			</div>
 		</div>
 	</div>
-
+	
+	<div id="cards_landscape_wrap-2">
+	<h1>Mobiles</h1>
+		<div class="container">
+			<div class="row">
+				<c:forEach var="mobile" items="${listMobile}">
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<!-- <a href=""> -->
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box" style="padding: 15%;">
+										<img style="width: 150px;"
+											src="https://m.media-amazon.com/images/I/61+Q6Rh3OQL._AC_UL480_QL65_.jpg"
+											alt="" />
+									</div>
+									<form action="/Electronics/buyProduct">
+									<div class="text-container">
+										<h6>${mobile.mName}</h6>
+										<p class="mb-3">${mobile.p_Description}</p>
+										<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${laptop.p_Quantity}">
+										<input type="hidden" name="pid" value="${mobile.p_Id}">
+										<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+										<a href="#" class="btn btn-primary">Add To Cart</a>
+									</div>
+									</form>
+								</div>
+							</div>
+						<!-- </a> -->
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+	</div>
+	
 </body>
 </html>

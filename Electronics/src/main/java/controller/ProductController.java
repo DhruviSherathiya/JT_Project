@@ -64,6 +64,14 @@ public class ProductController {
 		return model;
 	}
 	
+	@RequestMapping(value = "/buyProduct")
+	public ModelAndView buyProduct(ModelAndView model, HttpServletRequest request) throws IOException {
+		HttpSession session = request.getSession();
+		
+		model.setViewName("userhome");
+		return model;
+	}
+	
 	@RequestMapping(value = "/headphone")
 	public ModelAndView listheadphone(ModelAndView model, HttpServletRequest request) throws IOException {
 		HttpSession session = request.getSession();
