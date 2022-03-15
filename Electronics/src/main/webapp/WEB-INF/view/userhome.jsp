@@ -282,8 +282,8 @@
 						<!-- <a href=""> -->
 							<div class="card-flyer">
 								<div class="text-box">
-									<div class="image-box" style="padding: 15%;">
-										<img style="width: 150px;"
+									<div class="image-box" style="padding: 10%;">
+										<img style="width: 260px;"
 											src="${mobile.img_Url}"
 											alt="" />
 									</div>
