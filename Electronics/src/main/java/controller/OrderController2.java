@@ -21,12 +21,12 @@ import model.User;
  */
 
 @Controller
-public class OrderController {
+public class OrderController2 {
 
 	private static final Logger logger = Logger
 			.getLogger(UserController.class);
 
-	public OrderController() {
+	public OrderController2() {
 		System.out.println("UserController()");
 	}
 	

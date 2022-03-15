@@ -31,8 +31,8 @@ public class SmartWatch extends Product{
 //product_id, product_type, product_description, name, color, price, quantity, size, connectivity	
 	
 	public SmartWatch(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String sName,
-			String sColor, String sSize, String sConnectivity) {
-		super(p_Id, p_Type, p_Description, p_price, p_Quantity);
+			String sColor, String sSize, String imageurl, String sConnectivity) {
+		super(p_Id, p_Type, p_Description, p_price, p_Quantity, imageurl);
 		this.sName = sName;
 		this.sColor = sColor;
 		this.sSize = sSize;
@@ -123,5 +123,16 @@ public class SmartWatch extends Product{
 	public void setsConnectivity(String sConnectivity) {
 		this.sConnectivity = sConnectivity;
 
-	}		
+	}	
+	
+	@Override
+	public String getImg_Url() {
+		return img_Url;
+	}
+
+	@Override
+	public void setImg_Url(String url) {
+		this.img_Url = url;
+	}
+
 }

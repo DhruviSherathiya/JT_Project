@@ -43,14 +43,24 @@ public abstract class Product {
 	
 	@Column(name="p_Quantity")
     protected int p_Quantity;
+	
+	@Column(name="Image")
+	protected String img_Url;
     
-	public Product(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity) {
+	/*
+	 * public Product(int p_Id, String p_Type, String p_Description, double p_price,
+	 * int p_Quantity) { super(); this.p_Id = p_Id; this.p_Type = p_Type;
+	 * this.p_Description = p_Description; this.p_Price = p_price; this.p_Quantity =
+	 * p_Quantity; }
+	 */
+	public Product(int p_Id, String p_Type, String p_Description, double p_Price, int p_Quantity, String img_Url) {
 		super();
 		this.p_Id = p_Id;
 		this.p_Type = p_Type;
 		this.p_Description = p_Description;
-		this.p_Price = p_price;
+		this.p_Price = p_Price;
 		this.p_Quantity = p_Quantity;
+		this.img_Url = img_Url;
 	}
 	
 	public abstract int getP_Id();
@@ -72,5 +82,9 @@ public abstract class Product {
 	public abstract int getP_Quantity();
 	
 	public abstract void setP_Quantity(int p_Quantity);
+	
+	public abstract String getImg_Url();
+	
+	public abstract void setImg_Url(String url);
 
 }

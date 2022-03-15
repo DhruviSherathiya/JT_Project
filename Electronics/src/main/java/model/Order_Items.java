@@ -1,5 +1,6 @@
 package model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +23,17 @@ public class Order_Items {
 	@JoinColumn(name = "Order_ID")
 	Order order;
 	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Product product;
+	
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
 	@Column(name="Product_Name")
 	String product_Name;
 	
@@ -54,6 +66,10 @@ public class Order_Items {
 		this.product_Price = product_Price;
 	}
 	
+	public Order_Items() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getProduct_Name() {
 		return product_Name;
 	}

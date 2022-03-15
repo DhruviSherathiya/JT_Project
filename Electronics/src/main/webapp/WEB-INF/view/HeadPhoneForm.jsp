@@ -87,6 +87,12 @@
 					<div class="invalid-feedback">Please provide a valid city.</div>
 				</div>
 				<div class="col-md-12 mt-3">
+					<label for="validationCustom03" class="form-label">URL</label>
+					<form:input type="text" class="form-control"
+						id="validationCustom03" path="img_Url" required="required" />
+					<div class="invalid-feedback">Please provide a valid city.</div>
+				</div>
+				<div class="col-md-12 mt-3">
 					<label for="validationCustom03" class="form-label">Quantity</label>
 					<form:input type="text" class="form-control"
 						id="validationCustom03" path="p_Quantity" required="required" />

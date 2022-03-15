@@ -27,8 +27,8 @@ public class TV extends Product{
 	String tvMusicSystem;
 	
 	public TV(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String tvName,
-			String tvColor, String tvSize, String tvMusicSystem) {
-		super(p_Id, p_Type, p_Description, p_price, p_Quantity);
+			String tvColor, String tvSize, String imageurl, String tvMusicSystem) {
+		super(p_Id, p_Type, p_Description, p_price, p_Quantity, imageurl);
 		this.tvName = tvName;
 		this.tvColor = tvColor;
 		this.tvSize = tvSize;
@@ -119,6 +119,16 @@ public class TV extends Product{
 
 	public void setTvMusicSystem(String tvMusicSystem) {
 		this.tvMusicSystem = tvMusicSystem;
+	}
+
+	@Override
+	public String getImg_Url() {
+		return img_Url;
+	}
+
+	@Override
+	public void setImg_Url(String url) {
+		this.img_Url = url;
 	}
 
 }

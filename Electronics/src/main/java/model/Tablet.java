@@ -32,8 +32,8 @@ public class Tablet extends Product{
 	private String tSize;
 	
 	public Tablet(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String tName,
-			String tColor, String tRam, String tStorage, String tSize) {
-		super(p_Id, p_Type, p_Description, p_price, p_Quantity);
+			String tColor, String tRam, String tStorage, String imageurl, String tSize) {
+		super(p_Id, p_Type, p_Description, p_price, p_Quantity, imageurl);
 		this.tName = tName;
 		this.tColor = tColor;
 		this.tRam = tRam;
@@ -134,6 +134,17 @@ public class Tablet extends Product{
 	public void settSize(String tSize) {
 		this.tSize = tSize;
 	}	
+	
+	@Override
+	public String getImg_Url() {
+		return img_Url;
+	}
+
+	@Override
+	public void setImg_Url(String url) {
+		this.img_Url = url;
+	}
+
 
 }
 	

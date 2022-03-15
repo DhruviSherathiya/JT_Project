@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="HeadPhone")
 public class HeadPhone extends Product{
-	
+
 	@Column(name="Name")
 	String hName;
 	
@@ -22,8 +22,8 @@ public class HeadPhone extends Product{
 	String hSoundQuality;
 	
 	public HeadPhone(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String hName,
-			String hSoundQuality) {
-		super(p_Id, p_Type, p_Description, p_price, p_Quantity);
+			String imageurl, String hSoundQuality) {
+		super(p_Id, p_Type, p_Description, p_price, p_Quantity, imageurl);
 		this.hName = hName;
 		this.hSoundQuality = hSoundQuality;
 	}
@@ -98,4 +98,14 @@ public class HeadPhone extends Product{
 		this.hSoundQuality = hSoundQuality;
 	}
 	
+	@Override
+	public String getImg_Url() {
+		return img_Url;
+	}
+
+	@Override
+	public void setImg_Url(String url) {
+		this.img_Url = url;
+	}
+
 }

@@ -1,4 +1,12 @@
+	/**
+ * 
+ */
 package dao;
+
+/**
+ * @author devoz
+ *
+ */
 
 import java.util.List;
 
@@ -35,7 +43,7 @@ public class CartDAOImpl implements CartDAO{
 	}
 	
 	public List<Cart> getCartByUser(User user){
-		String sql = "SELECT * FROM Cart WHERE userId = :e_nm";
+		String sql = "SELECT * FROM Cart WHERE User_ID = :e_nm";
 		SQLQuery query = sessionFactory.getCurrentSession().createSQLQuery(sql);
 		query.addEntity(Cart.class);
 		query.setParameter("e_nm", user.getUserId());
@@ -53,4 +61,5 @@ public class CartDAOImpl implements CartDAO{
 		sessionFactory.getCurrentSession().update(cart);
 		return cart;
 	}
+	
 }

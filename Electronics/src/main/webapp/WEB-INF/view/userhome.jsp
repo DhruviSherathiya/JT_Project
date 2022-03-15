@@ -8,6 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -147,11 +148,12 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/Electronics/Electronicshome/">Home</a></li>
+						aria-current="page" href="/Electronics/"><i class="fa fa-fw fa-home"></i> Home</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="/Electronics/profile">Profile</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="/Electronics/logout">Logout</a></li>
+						
+					
+					
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -163,6 +165,11 @@
 							<li><a class="dropdown-item" href="#">Something else
 									here</a></li>
 						</ul></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/Electronics/logout"><i class="fa fa-sign-out"></i>Logout</a></li>	
+				</ul>
+				<ul class="nav navbar-nav navbar-right px-4">
+					<li class="nav-item"><a class="nav-link" href="/Electronics/myCart"><i class="fa fa-shopping-cart"></i>MyCart</a></li>
 				</ul>
 				<form class="d-flex">
 					<input class="form-control me-2" type="search" placeholder="Search"
@@ -173,7 +180,7 @@
 		</div>
 	</nav>
 
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" style="height: 100vh;">
   <div class="carousel-inner">
     <!-- <div class="carousel-item active">
       <img src="https://www.devsnews.com/template/epixx-prev/epixx/assets/img/slider/main-Banner-2.jpg" alt="...">
@@ -182,19 +189,40 @@
       <img src="https://fdn.gsmarena.com/imgroot/news/21/01/google-store-fitbit/inline/-1200/gsmarena_001.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
+      <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Wireless/A52020/LP/Web.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
       <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/CEPC/Wearables/OnePlus/Watch/13thMay/PC-BANNER_13th.jpg" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://promotions.newegg.com/gigabyte/22-0303/1920x660@2x.jpg" class="d-block w-100" alt="...">
+      <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img18/Wireless/OPPOF11Pro/OpenSale/LP/PC/2._CB469241851_.jpg" class="d-block w-100" alt="...">
     </div>
-    <div class="carousel-item">
+    <!-- <div class="carousel-item">
       <img src="https://promotions.newegg.com/nepro/22-0407/1920x660@2x.jpg" class="d-block w-100" alt="...">
-    </div>
+    </div> -->
     <div class="carousel-item">
-      <img src="https://promotions.newegg.com/asus/22-0013/1920x660@2x.jpg" class="d-block w-100" alt="...">
-    </div>
+      <img src="https://acsoft.co.uk/wp-content/uploads/2017/01/Slider.jpg" class="d-block w-100" alt="...">
+    </div> 
     <div class="carousel-item">
       <img src="http://www.anshudisplay.com/images/slider-1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://truvison.com/wp-content/uploads/2014/12/Websie_Slider1-inner-page.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://demo.codezeel.com/opencart/OPC06/OPC060143/image/cache/catalog/main-banner-1-1131x498.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Wireless/MobileAccessories/OnePlus_accessories/PC_accesories_banner._CB443675846_.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://m.media-amazon.com/images/S/aplus-media/vc/6c538caa-ea73-4397-9a63-286b1b575dd6.__CR0,0,1464,600_PT0_SX1464_V1___.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Laptops/DELL/Microsite/PC/D17796502_IN_PC_GGD_Dell_Microsite_Banner_2A.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/62382b79-ce1d-442d-b639-76f53b4b7fc0.__CR0,0,1464,600_PT0_SX1464_V1___.jpeg" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -207,29 +235,6 @@
   </button>
 </div>
 
-
-
-	<%-- 
-	<div class="container col-md-8">
-		<div class="row row-cols-4 row-cols-md-4 g-4">
-			<c:forEach var="laptop" items="${listLaptop}">
-				<div class="col">
-					<div class="card h-100">
-						<img src="..." class="card-img-top" alt="...">
-						<div class="card-img-overlay">
-    						<a href="#" class="card-link">Quick View</a>
-  						</div>
-						<div class="card-body">
-							<h5 class="card-title">${laptop.lName}</h5>
-							<p class="card-text">${laptop.p_Description}</p>
-							<a href="#" class="card-link">Buy</a>
-    						<a href="#" class="card-link">Add To Cart</a>
-						</div>
-					</div>
-				</div>
-			</c:forEach>
-		</div>
-	</div> --%>
 
 	<!-- Topic Cards -->
 	
@@ -244,18 +249,19 @@
 								<div class="text-box">
 									<div class="image-box" style="padding: 15%;">
 										<img
-											src="https://rukminim1.flixcart.com/image/312/312/ktaeqvk0/computer/b/7/4/15s-gy0501au-thin-and-light-laptop-hp-original-imag6z6muntqnzzc.jpeg?q=70"
+											src="${laptop.img_Url}"
 											alt="" />
 									</div>
-									<form action="/Electronics/buyProduct">
+									<form action="/Electronics/addtocart" method="post">
 										<div class="text-container">
-										<h6>${laptop.lName}</h6>
-										<p class="mb-3">${laptop.p_Description}</p>
-										<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${laptop.p_Quantity}">
-										<input type="hidden" name="pid" value="${laptop.p_Id}">
-										<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
-										<a href="#" class="btn btn-primary">Add To Cart</a>
-									</div>
+											<h6 class="mb-3">${laptop.lName}</h6>
+											
+											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${laptop.p_Quantity}">
+											<input type="hidden" name="pid" value="${laptop.p_Id}">
+											<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
+										
+										</div>
 									
 									</form>
 								</div>
@@ -278,18 +284,19 @@
 								<div class="text-box">
 									<div class="image-box" style="padding: 15%;">
 										<img style="width: 150px;"
-											src="https://m.media-amazon.com/images/I/61+Q6Rh3OQL._AC_UL480_QL65_.jpg"
+											src="${mobile.img_Url}"
 											alt="" />
 									</div>
-									<form action="/Electronics/buyProduct">
-									<div class="text-container">
-										<h6>${mobile.mName}</h6>
-										<p class="mb-3">${mobile.p_Description}</p>
-										<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${laptop.p_Quantity}">
-										<input type="hidden" name="pid" value="${mobile.p_Id}">
-										<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
-										<a href="#" class="btn btn-primary">Add To Cart</a>
-									</div>
+									<form action="/Electronics/addtocart" method="post">
+										<div class="text-container">
+											<h6 class="mb-3">${mobile.mName}</h6>
+											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${laptop.p_Quantity}">
+											<input type="hidden" name="pid" value="${mobile.p_Id}">
+											<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
+										
+										</div>
+									
 									</form>
 								</div>
 							</div>
@@ -300,5 +307,7 @@
 		</div>
 	</div>
 	
+									
+									
 </body>
 </html>

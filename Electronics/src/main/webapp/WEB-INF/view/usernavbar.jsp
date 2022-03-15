@@ -7,6 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>User Navbar</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -19,7 +20,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Welcome ${uname}</a>
 			<button class="navbar-toggler" type="button"
@@ -31,11 +32,12 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/Electronicshome/">Home</a></li>
+						aria-current="page" href="/Electronics/"><i class="fa fa-fw fa-home"></i> Home</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="/Electronics/profile">Profile</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="/Electronics/logout">Logout</a></li>
+						
+					
+					
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,6 +49,11 @@
 							<li><a class="dropdown-item" href="#">Something else
 									here</a></li>
 						</ul></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/Electronics/logout"><i class="fa fa-sign-out"></i>Logout</a></li>	
+				</ul>
+				<ul class="nav navbar-nav navbar-right px-4">
+					<li class="nav-item"><a class="nav-link" href="/Electronics/myCart"><i class="fa fa-shopping-cart"></i>MyCart</a></li>
 				</ul>
 				<form class="d-flex">
 					<input class="form-control me-2" type="search" placeholder="Search"
@@ -56,6 +63,5 @@
 			</div>
 		</div>
 	</nav>
-
 </body>
 </html>

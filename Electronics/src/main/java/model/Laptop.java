@@ -38,8 +38,8 @@ public class Laptop extends Product{
 	private String lGraphics;
 	
 	public Laptop(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String lName,
-			String lRam, String lProcessor, String lStorage, String lColor, String lGraphics) {
-		super(p_Id, p_Type, p_Description, p_price, p_Quantity);
+			String lRam, String lProcessor, String lStorage, String lColor, String imageurl, String lGraphics) {
+		super(p_Id, p_Type, p_Description, p_price, p_Quantity, imageurl);
 		this.lName = lName;
 		this.lRam = lRam;
 		this.lProcessor = lProcessor;
@@ -150,5 +150,15 @@ public class Laptop extends Product{
 	public void setlGraphics(String lGraphics) {
 		this.lGraphics = lGraphics;
 	}
-	
+
+	@Override
+	public String getImg_Url() {
+		return img_Url;
+	}
+
+	@Override
+	public void setImg_Url(String url) {
+		this.img_Url = url;
+	}
+
 }

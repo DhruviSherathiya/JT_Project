@@ -36,8 +36,8 @@ public class Mobile extends Product {
 	String mCamera;
 	
 	public Mobile(int p_Id, String p_Type, String p_Description, double p_price, int p_Quantity, String mName,
-			String mColor, String mChargerType, String mRam, String mProcessor, String mStorage, String mCamera) {
-		super(p_Id, p_Type, p_Description, p_price, p_Quantity);
+			String mColor, String mChargerType, String mRam, String mProcessor, String mStorage, String imageurl, String mCamera) {
+		super(p_Id, p_Type, p_Description, p_price, p_Quantity, imageurl);
 		this.mName = mName;
 		this.mColor = mColor;
 		this.mChargerType = mChargerType;
@@ -157,4 +157,14 @@ public class Mobile extends Product {
 		this.mCamera = mCamera;
 	}
 	
+	@Override
+	public String getImg_Url() {
+		return img_Url;
+	}
+
+	@Override
+	public void setImg_Url(String url) {
+		this.img_Url = url;
+	}
+
 }

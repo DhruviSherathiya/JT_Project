@@ -1,63 +1,52 @@
+/**
+ * 
+ */
 package model;
 
-import java.io.Serializable;
+/**
+ * @author devoza
+ *
+ */
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "cart")
-public class Cart implements Serializable{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+@Table(name="Cart")
+public class Cart {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int cartId;
+	@Column(name="cart_Id")
+	private int cart_id;
 	
-	@Column
-	private double totalPrice;
-	
-	@Column
-	private int quantity;
+	@Column(name="Quantity")
+	private int cart_quantity;
 	
 	@ManyToOne
+	@JoinColumn(name = "Product_ID")
 	private Product product;
 	
 	@ManyToOne
+	@JoinColumn(name = "User_ID")
 	private User user;
 	
-	public int getCartId() {
-		return cartId;
+	@Column(name="Price")
+	private double cart_Amount;
+	
+	public int getCart_id() {
+		return cart_id;
 	}
 
-	public void setCartId(int cartId) {
-		this.cartId = cartId;
+	public void setCart_id(int cart_id) {
+		this.cart_id = cart_id;
 	}
 
-	public double getTotalPrice() {
-		return totalPrice;
+	public int getCart_quantity() {
+		return cart_quantity;
 	}
 
-	public void setTotalPrice(double totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setCart_quantity(int cart_quantity) {
+		this.cart_quantity = cart_quantity;
 	}
 
 	public Product getProduct() {
@@ -72,8 +61,30 @@ public class Cart implements Serializable{
 		return user;
 	}
 
-	public void setCustomer(User user) {
+	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public double getCart_Amount() {
+		return cart_Amount;
+	}
+
+	public void setCart_Amount(double cart_Amount) {
+		this.cart_Amount = cart_Amount;
+	}
+
+	public Cart(int cart_id, int cart_quantity, Product product, User user, double cart_Amount) {
+		super();
+		this.cart_id = cart_id;
+		this.cart_quantity = cart_quantity;
+		this.product = product;
+		this.user = user;
+		this.cart_Amount = cart_Amount;
+	}
+
+	public Cart() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	
