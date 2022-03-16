@@ -19,10 +19,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.*;
-import model.Tablet;
 import service.*;
 
 @Controller
@@ -48,6 +48,8 @@ public class ProductController {
 	private SmartWatchService smartwatchService;
 	@Autowired
 	private TabletService tabletService;
+	@Autowired
+	private ProductService productService;
 		
 	@RequestMapping(value = "/laptop")
 	public ModelAndView listLaptop(ModelAndView model, HttpServletRequest request) throws IOException {
@@ -65,7 +67,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/buyProduct")
-	public ModelAndView buyProduct(ModelAndView model, HttpServletRequest request) throws IOException {
+	public ModelAndView buyProduct(@RequestParam("pid") int pid, ModelAndView model, HttpServletRequest request) throws IOException {
 		HttpSession session = request.getSession();
 		
 		model.setViewName("userhome");
@@ -168,42 +170,6 @@ public class ProductController {
 		return model;
 	}
 
-//	@RequestMapping(value = "/newProduct")
-//	public ModelAndView newProduct(@RequestParam("radio-stacked") String pType, ModelAndView model) {
-//		if(pType.equals("laptop")) {
-//			Laptop laptop = new Laptop();
-//			model.addObject("pType", laptop);
-//			model.setViewName("EmployeeForm");
-//			return new ModelAndView("redirect:/Product/laptop");
-//		}
-//		else if(pType.equals("mobile")) {
-//			Mobile mobile = new Mobile();
-//			model.addObject("pType", mobile);
-//			model.setViewName("EmployeeForm");
-//		}
-//		else if(pType.equals("headphone")) {
-//			HeadPhone headphone = new HeadPhone();
-//			model.addObject("pType", headphone);
-//			model.setViewName("EmployeeForm");
-//		}
-//		else if(pType.equals("smartwatch")) {
-//			SmartWatch smartwatch = new SmartWatch();
-//			model.addObject("pType", smartwatch);
-//			model.setViewName("EmployeeForm");
-//		}
-//		else if(pType.equals("tablet")) {
-//			Tablet tablet = new Tablet();
-//			model.addObject("pType", tablet);
-//			model.setViewName("EmployeeForm");
-//		}
-//		else if(pType.equals("tv")) {
-//			TV tv = new TV();
-//			model.addObject("pType", tv);
-//			model.setViewName("EmployeeForm");
-//		}
-//		return model;
-//	}
-	
 	@RequestMapping(value = "/newLaptop", method = RequestMethod.GET)
 	public ModelAndView newLaptop(ModelAndView model) {
 		Laptop laptop = new Laptop();
@@ -232,7 +198,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/saveHeadPhone", method = RequestMethod.POST)
-	public ModelAndView saveEmployee(@ModelAttribute HeadPhone headphone) {
+	public ModelAndView saveHeadphone(@ModelAttribute HeadPhone headphone) {
 		if (headphone.getP_Id() == 0) { // if employee id is 0 then creating the
 			// employee other updating the employee
 			headphoneService.addHeadPhone(headphone);
@@ -316,5 +282,48 @@ public class ProductController {
 			tvService.updateTV(tv);
 		}
 		return new ModelAndView("redirect:/Product/tv");
+	}
+	
+	@RequestMapping(value = "/singleProduct")
+	public ModelAndView singleProduct(@RequestParam("pid") int pid, ModelAndView model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("uid") == null) {
+			return new ModelAndView("redirect:/");
+		}
+		else {
+			String type = productService.getProduct(pid).getP_Type();
+			
+			if(type.equalsIgnoreCase("laptop")) {
+				Laptop laptop = laptopService.getLaptop(pid);
+				model.addObject(laptop);
+				model.setViewName("singleLaptop");
+			}
+			else if(type.equalsIgnoreCase("mobile")) {
+				Mobile mobile = mobileService.getMobile(pid);
+				model.addObject(mobile);
+				model.setViewName("singleMobile");
+			}
+			else if(type.equalsIgnoreCase("smartWatch")) {
+				SmartWatch smartWatch = smartwatchService.getSmartWatch(pid);
+				model.addObject(smartWatch);
+				model.setViewName("singleSmartWatch");
+			}
+			else if(type.equalsIgnoreCase("headphone")) {
+				HeadPhone headPhone = headphoneService.getHeadPhone(pid);
+				model.addObject(headPhone);
+				model.setViewName("singleHeadphone");
+			}
+			else if(type.equalsIgnoreCase("tv")) {
+				TV TV = tvService.getTV(pid);
+				model.addObject(TV);
+				model.setViewName("singleTV");
+			}
+			else if(type.equalsIgnoreCase("tablet")) {
+				Tablet tablet = tabletService.getTablet(pid);
+				model.addObject(tablet);
+				model.setViewName("singleTablet");
+			}
+			return model;
+		}
 	}
 }

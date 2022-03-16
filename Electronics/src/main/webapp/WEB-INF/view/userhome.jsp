@@ -196,11 +196,13 @@
 						<!-- <a href=""> -->
 							<div class="card-flyer">
 								<div class="text-box">
-									<div class="image-box" style="padding: 15%;">
-										<img
-											src="${laptop.img_Url}"
-											alt="" />
-									</div>
+									<a href="/Electronics/Product/singleProduct?pid=${laptop.p_Id}">
+										<div class="image-box" style="padding: 15%;">
+											<img
+												src="${laptop.img_Url}"
+												alt="" />
+										</div>
+									</a>	
 									<form action="/Electronics/addtocart" method="post">
 										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${laptop.lName}</h6>
@@ -232,11 +234,13 @@
 						<!-- <a href=""> -->
 							<div class="card-flyer">
 								<div class="text-box">
-									<div class="image-box" style="padding: 10%;">
-										<img style="width: 260px;"
-											src="${mobile.img_Url}"
-											alt="" />
-									</div>
+									<a href="/Electronics/Product/singleProduct?pid=${mobile.p_Id}">
+										<div class="image-box" style="padding: 10%;">
+											<img style="width: 260px;"
+												src="${mobile.img_Url}"
+												alt="" />
+										</div>
+									</a>
 									<form action="/Electronics/addtocart" method="post">
 										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${mobile.mName}</h6>
@@ -267,11 +271,13 @@
 						<!-- <a href=""> -->
 							<div class="card-flyer">
 								<div class="text-box">
-									<div class="image-box" style="padding: 15%;">
-										<img
-											src="${smartwatch.img_Url}"
-											alt="" />
-									</div>
+									<a href="/Electronics/Product/singleProduct?pid=${smartwatch.p_Id}">
+										<div class="image-box" style="padding: 15%;">
+											<img
+												src="${smartwatch.img_Url}"
+												alt="" />
+										</div>
+									</a>
 									<form action="/Electronics/addtocart" method="post">
 										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${smartwatch.sName}</h6>
@@ -303,11 +309,13 @@
 						<!-- <a href=""> -->
 							<div class="card-flyer">
 								<div class="text-box">
-									<div class="image-box" style="padding: 10%;">
-										<img style="width: 260px;"
-											src="${headphone.img_Url}"
-											alt="" />
-									</div>
+									<a href="/Electronics/Product/singleProduct?pid=${headphone.p_Id}">
+										<div class="image-box" style="padding: 10%;">
+											<img style="width: 260px;"
+												src="${headphone.img_Url}"
+												alt="" />
+										</div>
+									</a>
 									<form action="/Electronics/addtocart" method="post">
 										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${headphone.hName}</h6>
@@ -338,11 +346,13 @@
 						<!-- <a href=""> -->
 							<div class="card-flyer">
 								<div class="text-box">
-									<div class="image-box" style="padding: 15%;">
-										<img
-											src="${tv.img_Url}"
-											alt="" />
-									</div>
+									<a href="/Electronics/Product/singleProduct?pid=${tv.p_Id}">
+										<div class="image-box" style="padding: 15%;">
+											<img
+												src="${tv.img_Url}"
+												alt="" />
+										</div>
+									</a>
 									<form action="/Electronics/addtocart" method="post">
 										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${tv.tvName}</h6>
@@ -374,11 +384,13 @@
 						<!-- <a href=""> -->
 							<div class="card-flyer">
 								<div class="text-box">
-									<div class="image-box" style="padding: 15%;">
-										<img
-											src="${tablet.img_Url}"
-											alt="" />
-									</div>
+									<a href="/Electronics/Product/singleProduct?pid=${tablet.p_Id}">
+										<div class="image-box" style="padding: 15%;">
+											<img
+												src="${tablet.img_Url}"
+												alt="" />
+										</div>
+									</a>
 									<form action="/Electronics/addtocart" method="post">
 										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${tablet.tName}</h6>
