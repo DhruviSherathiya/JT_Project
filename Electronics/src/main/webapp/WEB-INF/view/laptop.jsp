@@ -1,12 +1,26 @@
 <%@ page language="java"
 	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ include file="usernavbar.jsp" %>
+<%@ include file="adminnavbar.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Laptop Management Screen</title>
+
+<style>
+.card:hover {
+	background: #fff;
+	box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	-ms-transition: all 0.2s ease-in;
+	-o-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+	
+}
+
+</style>
 
 </head>
 <body style="background: #f5eded;">

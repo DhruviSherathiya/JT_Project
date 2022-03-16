@@ -1,8 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ page isELIgnored="false"%>
+<%@ include file="adminnavbar.jsp" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -10,71 +7,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>New/Edit Laptop</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-	crossorigin="anonymous"></script>
+
 </head>
-<body>
-
-
-	<%-- <form:form action="saveLaptop" method="post" modelAttribute="laptop">
-			<table>
-				<form:hidden path="id"/>
-				<form:hidden path="p_Type" value="Laptop" />
-				<tr>
-					<td>Name:</td>
-					<td><form:input path="lName" /></td>
-				</tr>
-				<tr>
-					<td>Ram:</td>
-					<td><form:input path="lRam" /></td>
-				</tr>
-				<tr>
-					<td>Processor:</td>
-					<td><form:input path="lProcessor" /></td>
-				</tr>
-				<tr>
-					<td>Storage:</td>
-					<td><form:input path="lStorage" /></td>
-				</tr>
-				<tr>
-					<td>Color:</td>
-					<td><form:input path="lColor" /></td>
-				</tr>
-				<tr>
-					<td>Graphics:</td>
-					<td><form:input path="lGraphics" /></td>
-				</tr>
-				<tr>
-					<td>Description:</td>
-					<td><form:input path="p_Description" /></td>
-				</tr>
-				<tr>
-					<td>Price:</td>
-					<td><form:input path="p_Price" /></td>
-				</tr>
-				<tr>
-					<td>Quantity:</td>
-					<td><form:input path="p_Quantity" /></td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center"><input type="submit"
-						value="Save"></td>
-				</tr>
-			</table>
-		</form:form>
-	</div>
- --%>
-	<center class="mt-5">
+<body style="background: #f5eded;">
+	<%-- <center class="mt-5">
 		<h1>New/Edit Laptop</h1>
-	</center>
-	<div class="container col-8">
+	</center> --%>
+	<div class="container col-8" style="margin-top: 10vh!important;">
 
 		<form:form action="saveLaptop" method="post" modelAttribute="laptop"
 			class="row g-3 needs-validation form-floating mb-3 mt-2"

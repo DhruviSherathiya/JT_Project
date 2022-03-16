@@ -2,22 +2,14 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%-- <%@ include file = "usernavbar.jsp" %> --%>
+<%@ include file = "usernavbar.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-	crossorigin="anonymous"></script>
+
 <!-- <script type = "text/javascript">  
     window.onload = function () {  
         document.onkeydown = function (e) {  
@@ -41,7 +33,7 @@
 /*----  Main Style  ----*/
 #cards_landscape_wrap-2 {
 	text-align: center;
-	background: #F7F7F7;
+	background: #f5eded;
 }
 
 #cards_landscape_wrap-2 .container {
@@ -134,52 +126,8 @@
 }
 </style>
 </head>
-<body>
+<body style="background: #f5eded;">
 <% session = request.getSession(); %>
-	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Welcome ${uname}</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/Electronics/"><i class="fa fa-fw fa-home"></i> Home</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="/Electronics/profile">Profile</a></li>
-						
-					
-					
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Dropdown </a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
-							<li><hr class="dropdown-divider"></li>
-							<li><a class="dropdown-item" href="#">Something else
-									here</a></li>
-						</ul></li>
-					<li class="nav-item"><a class="nav-link"
-						href="/Electronics/logout"><i class="fa fa-sign-out"></i>Logout</a></li>	
-				</ul>
-				<ul class="nav navbar-nav navbar-right px-4">
-					<li class="nav-item"><a class="nav-link" href="/Electronics/myCart"><i class="fa fa-shopping-cart"></i>MyCart</a></li>
-				</ul>
-				<form class="d-flex">
-					<input class="form-control me-2" type="search" placeholder="Search"
-						aria-label="Search">
-					<button class="btn btn-outline-success" type="submit">Search</button>
-				</form>
-			</div>
-		</div>
-	</nav>
-
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" style="height: 100vh;">
   <div class="carousel-inner">
     <!-- <div class="carousel-item active">
@@ -239,9 +187,10 @@
 	<!-- Topic Cards -->
 	
 	<div id="cards_landscape_wrap-2" class="mt-4 p-5">
-	<h1>Laptops</h1>
+	
 		<div class="container">
-			<div class="row">
+		<h1>Laptops</h1>
+			<div class="row" id="#laptop">
 				<c:forEach var="laptop" items="${listLaptop}">
 					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 						<!-- <a href=""> -->
@@ -253,7 +202,7 @@
 											alt="" />
 									</div>
 									<form action="/Electronics/addtocart" method="post">
-										<div class="text-container">
+										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${laptop.lName}</h6>
 											
 											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${laptop.p_Quantity}">
@@ -274,8 +223,9 @@
 	</div>
 	
 	<div id="cards_landscape_wrap-2">
-	<h1>Mobiles</h1>
+	
 		<div class="container">
+		<h1>Mobiles</h1>
 			<div class="row">
 				<c:forEach var="mobile" items="${listMobile}">
 					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
@@ -288,9 +238,9 @@
 											alt="" />
 									</div>
 									<form action="/Electronics/addtocart" method="post">
-										<div class="text-container">
+										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${mobile.mName}</h6>
-											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${laptop.p_Quantity}">
+											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${mobile.p_Quantity}">
 											<input type="hidden" name="pid" value="${mobile.p_Id}">
 											<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
 											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
@@ -307,7 +257,148 @@
 		</div>
 	</div>
 	
+	<div id="cards_landscape_wrap-2">
+	
+		<div class="container">
+		<h1>Smart Watch</h1>
+			<div class="row">
+				<c:forEach var="smartwatch" items="${listSmartWatch}">
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<!-- <a href=""> -->
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box" style="padding: 15%;">
+										<img
+											src="${smartwatch.img_Url}"
+											alt="" />
+									</div>
+									<form action="/Electronics/addtocart" method="post">
+										<div class="text-container" style="min-height: 22vh;">
+											<h6 class="mb-3">${smartwatch.sName}</h6>
+											
+											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${smartwatch.p_Quantity}">
+											<input type="hidden" name="pid" value="${smartwatch.p_Id}">
+											<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
+										
+										</div>
 									
+									</form>
+								</div>
+							</div>
+						<!-- </a> -->
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+	</div>	
+	
+	<div id="cards_landscape_wrap-2">
+	
+		<div class="container">
+		<h1>Headphones</h1>
+			<div class="row">
+				<c:forEach var="headphone" items="${listHeadPhone}">
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<!-- <a href=""> -->
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box" style="padding: 10%;">
+										<img style="width: 260px;"
+											src="${headphone.img_Url}"
+											alt="" />
+									</div>
+									<form action="/Electronics/addtocart" method="post">
+										<div class="text-container" style="min-height: 22vh;">
+											<h6 class="mb-3">${headphone.hName}</h6>
+											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${headphone.p_Quantity}">
+											<input type="hidden" name="pid" value="${headphone.p_Id}">
+											<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
+										
+										</div>
+									
+									</form>
+								</div>
+							</div>
+						<!-- </a> -->
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+	</div>
+	
+	<div id="cards_landscape_wrap-2">
+	
+		<div class="container">
+		<h1>TVs</h1>
+			<div class="row">
+				<c:forEach var="tv" items="${listTV}">
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<!-- <a href=""> -->
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box" style="padding: 15%;">
+										<img
+											src="${tv.img_Url}"
+											alt="" />
+									</div>
+									<form action="/Electronics/addtocart" method="post">
+										<div class="text-container" style="min-height: 22vh;">
+											<h6 class="mb-3">${tv.tvName}</h6>
+											
+											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${tv.p_Quantity}">
+											<input type="hidden" name="pid" value="${tv.p_Id}">
+											<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
+										
+										</div>
+									
+									</form>
+								</div>
+							</div>
+						<!-- </a> -->
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+	</div>		
+	
+		<div id="cards_landscape_wrap-2">
+	
+		<div class="container">
+		<h1>Tablets</h1>
+			<div class="row">
+				<c:forEach var="tablet" items="${listTablet}">
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<!-- <a href=""> -->
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box" style="padding: 15%;">
+										<img
+											src="${tablet.img_Url}"
+											alt="" />
+									</div>
+									<form action="/Electronics/addtocart" method="post">
+										<div class="text-container" style="min-height: 22vh;">
+											<h6 class="mb-3">${tablet.tName}</h6>
+											
+											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${tablet.p_Quantity}">
+											<input type="hidden" name="pid" value="${tablet.p_Id}">
+											<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
+										
+										</div>
+									
+									</form>
+								</div>
+							</div>
+						<!-- </a> -->
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+	</div>			
 									
 </body>
 </html>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>User Navbar</title>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -36,10 +36,29 @@
 					<li class="nav-item"><a class="nav-link"
 						href="/Electronics/profile">Profile</a></li>
 					<li class="nav-item"><a class="nav-link"
+						href="/Electronics/Product/inventory">Inventory</a></li>	
+					<li class="nav-item"><a class="nav-link"
+						href="/Electronics/users">Users</a></li>	
+					
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+						role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Category </a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="/Electronics/Product/laptop">Laptop</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="/Electronics/Product/headphone">HeadPhone</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="/Electronics/Product/mobile">Mobile</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="/Electronics/Product/smartwatch">SmartWatch</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="/Electronics/Product/tablet">Tablet</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="/Electronics/Product/tv">TV</a></li>
+						</ul></li>
+					<li class="nav-item"><a class="nav-link"
 						href="/Electronics/logout"><i class="fa fa-sign-out"></i>Logout</a></li>	
-				</ul>
-				<ul class="nav navbar-nav navbar-right px-4">
-					<li class="nav-item"><a class="nav-link" href="/Electronics/myCart"><i class="fa fa-shopping-cart"></i>MyCart</a></li>
 				</ul>
 				<form class="d-flex">
 					<input class="form-control me-2" type="search" placeholder="Search"
@@ -49,6 +68,5 @@
 			</div>
 		</div>
 	</nav>
-
 </body>
 </html>
