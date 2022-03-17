@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -17,6 +19,7 @@ import javax.persistence.Table;
 public class Order {
 		
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="Order_Id")
 	int orderId;
 	
@@ -79,6 +82,10 @@ public class Order {
 		this.orderId = orderId;
 		this.orderDate = orderDate;
 		this.totalAmount = totalAmount;
+	}
+
+	public Order() {
+		// TODO Auto-generated constructor stub
 	}
 		
 }

@@ -207,9 +207,10 @@
 										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${laptop.lName}</h6>
 											
-											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${laptop.p_Quantity}">
+											<a href="buyProduct?pid=${laptop.p_Id}" class="btn btn-primary mx-3" type=submit>Buy</a>
+											<input style="width: 50px; height: 38px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${laptop.p_Quantity}">
 											<input type="hidden" name="pid" value="${laptop.p_Id}">
-											<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+											
 											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
 										
 										</div>
@@ -244,9 +245,10 @@
 									<form action="/Electronics/addtocart" method="post">
 										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${mobile.mName}</h6>
-											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${mobile.p_Quantity}">
+											<a href="buyProduct?pid=${mobile.p_Id}" class="btn btn-primary mx-3" type=submit>Buy</a>
+											<input style="width: 50px; height: 38px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${mobile.p_Quantity}">
 											<input type="hidden" name="pid" value="${mobile.p_Id}">
-											<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+											
 											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
 										
 										</div>
@@ -281,10 +283,10 @@
 									<form action="/Electronics/addtocart" method="post">
 										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${smartwatch.sName}</h6>
-											
-											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${smartwatch.p_Quantity}">
+											<a href="buyProduct" class="btn btn-primary mx-3" type=submit>Buy</a>
+											<input style="width: 50px; height: 38px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${smartwatch.p_Quantity}">
 											<input type="hidden" name="pid" value="${smartwatch.p_Id}">
-											<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+											
 											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
 										
 										</div>
@@ -319,9 +321,10 @@
 									<form action="/Electronics/addtocart" method="post">
 										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${headphone.hName}</h6>
-											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${headphone.p_Quantity}">
+											<a href="buyProduct" class="btn btn-primary mx-3" type=submit>Buy</a>
+											<input style="width: 50px; height: 38px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${headphone.p_Quantity}">
 											<input type="hidden" name="pid" value="${headphone.p_Id}">
-											<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+											
 											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
 										
 										</div>
@@ -356,10 +359,10 @@
 									<form action="/Electronics/addtocart" method="post">
 										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${tv.tvName}</h6>
-											
-											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${tv.p_Quantity}">
+											<a href="buyProduct" class="btn btn-primary mx-3" type=submit>Buy</a>
+											<input style="width: 50px; height: 38px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${tv.p_Quantity}">
 											<input type="hidden" name="pid" value="${tv.p_Id}">
-											<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+											
 											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
 										
 										</div>
@@ -394,10 +397,10 @@
 									<form action="/Electronics/addtocart" method="post">
 										<div class="text-container" style="min-height: 22vh;">
 											<h6 class="mb-3">${tablet.tName}</h6>
-											
-											<input style="width: 50px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${tablet.p_Quantity}">
+											<a href="buyProduct" class="btn btn-primary mx-3" type=submit>Buy</a>
+											<input style="width: 50px; height: 38px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${tablet.p_Quantity}">
 											<input type="hidden" name="pid" value="${tablet.p_Id}">
-											<a href="buyProduct" class="btn btn-primary" type=submit>Buy</a>
+											
 											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
 										
 										</div>

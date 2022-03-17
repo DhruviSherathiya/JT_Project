@@ -48,7 +48,7 @@
 								</div>
 								<div class="mt-5">
 									<form action="/Electronics/addtocart" method="post">
-											<a href="buyProduct?pid=${TV.p_Id}" class="btn btn-primary" type=submit>Buy</a>		
+											<a href="/Electronics/buyProduct?pid=${TV.p_Id}" class="btn btn-primary" type=submit>Buy</a>		
 											<input style="width: 50px; margin-left: 50px" type="number" class="py-1" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${TV.p_Quantity}">
 											<input type="hidden" name="pid" value="${TV.p_Id}">
 											

@@ -41,7 +41,7 @@ public class Order_Items {
 	int quantity;
 	
 	@Column(name="Product_Price")
-	int product_Price;
+	double product_Price;
 	
 	public Integer getId() {
 		return id;
@@ -59,7 +59,7 @@ public class Order_Items {
 		this.order = order;
 	}
 	
-	public Order_Items(String product_Name, int quantity, int product_Price) {
+	public Order_Items(String product_Name, int quantity, double product_Price) {
 		super();
 		this.product_Name = product_Name;
 		this.quantity = quantity;
@@ -86,11 +86,11 @@ public class Order_Items {
 		this.quantity = quantity;
 	}
 	
-	public int getProduct_Price() {
+	public double getProduct_Price() {
 		return product_Price;
 	}
 	
-	public void setProduct_Price(int product_Price) {
-		this.product_Price = product_Price;
+	public void setProduct_Price(double price) {
+		this.product_Price = price;
 	}
 }
