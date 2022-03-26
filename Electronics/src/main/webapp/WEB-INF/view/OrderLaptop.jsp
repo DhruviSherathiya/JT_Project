@@ -162,7 +162,7 @@ body {
                     <p>We will be sending shipping confirmation email when the item shipped successfully!</p>
                     <p class="font-weight-bold mb-0">Thanks for shopping with us!</p> <span>Nike Team</span>
                 </div>
-                <div class="d-flex justify-content-between footer p-3"> <span>Need Help? visit our <a href="#"> help center</a></span> <span>12 June, 2020</span> </div>
+                <div class="d-flex justify-content-between footer p-3"> <span>Need Help? visit our <a href="#"> help center</a></span> <span>${order.orderDate}</span> </div>
             </div>
         </div>
     </div>

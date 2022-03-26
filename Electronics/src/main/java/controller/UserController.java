@@ -144,6 +144,7 @@ public class UserController {
 				HttpSession session = request.getSession();
 				session.setAttribute("uname", uname);
 				session.setAttribute("uid", user.getUserId());
+				session.setAttribute("role", user.getRole());
 
 				if (role.equalsIgnoreCase("user")) {
 					List<Laptop> listLaptop = laptopService.getAllLaptops();
