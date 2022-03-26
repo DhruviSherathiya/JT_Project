@@ -70,11 +70,10 @@ public class OrderController2 {
 		HttpSession session = request.getSession();
 		Product product = productService.getProduct(pid);
 		int originalQuantity = product.getP_Quantity();
-		
 		String type = product.getP_Type();
 		
 		if(type.equalsIgnoreCase("laptop")) {
-			ModelAndView model = new ModelAndView("OrderLaptop");
+			ModelAndView model = new ModelAndView("SingleProductConformOrder");
 			
 			if(originalQuantity < 1) {
 		    	model.addObject("message","Product is out of stock currently..!");
@@ -102,12 +101,14 @@ public class OrderController2 {
 			orderItem.setProduct_Price(price);
 			
 			orderItemService.addOrderItem(orderItem);
-//			model.addObject(order);
-//			model.addObject(user.getShipping());
+			model.addObject(order);
+			model.addObject(user);
+			model.addObject("product", product);
+			model.addObject("pname", laptop.getlName());
 			return model;
 		}
 		else if(type.equalsIgnoreCase("mobile")) {
-			ModelAndView model = new ModelAndView("OrderMobile");
+			ModelAndView model = new ModelAndView("SingleProductConformOrder");
 			
 			if(originalQuantity < 1) {
 		    	model.addObject("message","Product is out of stock currently..!");
@@ -136,10 +137,14 @@ public class OrderController2 {
 			
 			orderItemService.addOrderItem(orderItem);
 			
+			model.addObject(order);
+			model.addObject(user);
+			model.addObject("product", product);
+			model.addObject("pname", mobile.getmName());
 			return model;
 		}
 		else if(type.equalsIgnoreCase("smartWatch")) {
-			ModelAndView model = new ModelAndView("OrderSmartWatch");
+			ModelAndView model = new ModelAndView("SingleProductConformOrder");
 			
 			if(originalQuantity < 1) {
 		    	model.addObject("message","Product is out of stock currently..!");
@@ -168,10 +173,14 @@ public class OrderController2 {
 			
 			orderItemService.addOrderItem(orderItem);
 			
+			model.addObject(order);
+			model.addObject(user);
+			model.addObject("product", product);
+			model.addObject("pname", smartwatch.getsName());
 			return model;
 		}
 		else if(type.equalsIgnoreCase("headphone")) {
-			ModelAndView model = new ModelAndView("OrderHeadPhone");
+			ModelAndView model = new ModelAndView("SingleProductConformOrder");
 			
 			if(originalQuantity < 1) {
 		    	model.addObject("message","Product is out of stock currently..!");
@@ -200,10 +209,14 @@ public class OrderController2 {
 			
 			orderItemService.addOrderItem(orderItem);
 			
+			model.addObject(order);
+			model.addObject(user);
+			model.addObject("product", product);
+			model.addObject("pname", headphone.gethName());
 			return model;
 		}
 		else if(type.equalsIgnoreCase("tv")) {
-			ModelAndView model = new ModelAndView("OrderTV");
+			ModelAndView model = new ModelAndView("SingleProductConformOrder");
 			
 			if(originalQuantity < 1) {
 		    	model.addObject("message","Product is out of stock currently..!");
@@ -232,10 +245,14 @@ public class OrderController2 {
 			
 			orderItemService.addOrderItem(orderItem);
 			
+			model.addObject(order);
+			model.addObject(user);
+			model.addObject("product", product);
+			model.addObject("pname", tv.getTvName());
 			return model;
 		}
 		else if(type.equalsIgnoreCase("tablet")) {
-			ModelAndView model = new ModelAndView("OrderTablet");
+			ModelAndView model = new ModelAndView("SingleProductConformOrder");
 			
 			if(originalQuantity < 1) {
 		    	model.addObject("message","Product is out of stock currently..!");
@@ -264,6 +281,10 @@ public class OrderController2 {
 			
 			orderItemService.addOrderItem(orderItem);
 			
+			model.addObject(order);
+			model.addObject(user);
+			model.addObject("product", product);
+			model.addObject("pname", tablet.gettName());
 			return model;
 		}
 		return null;
@@ -334,8 +355,7 @@ public class OrderController2 {
 		model.addObject("listCart",listCart);
 		model.addObject(order);
 		model.addObject(user);
-		model.setViewName("OrderLaptop");
-//		ModelAndView model = new ModelAndView("userhome");
+		model.setViewName("OrderCart");
 		return model;
 	}
 	

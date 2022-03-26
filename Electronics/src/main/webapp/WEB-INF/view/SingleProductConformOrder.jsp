@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Conform Order</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
@@ -97,17 +97,15 @@ body {
                     <div class="product border-bottom table-responsive">
                         <table class="table table-borderless">
                             <tbody>
-	                            <c:forEach var="items" items="${items}" varStatus="theCount">
 	                                <tr>
-	                                    <td width="20%"> <img src="${listCart[theCount.index].product.img_Url}" width="90"> </td>
-	                                    <td width="60%"> <span class="font-weight-bold">${items.product_Name}</span>
-	                                        <div class="product-qty"> <span class="d-block">Quantity:${items.quantity}</span></div>
+	                                    <td width="20%"> <img src="${product.img_Url}" width="90"> </td>
+	                                    <td width="60%"> <span class="font-weight-bold">${pname}</span>
+	                                        <div class="product-qty"> <span class="d-block">Quantity:1</span></div>
 	                                    </td>
 	                                    <td width="20%">
-	                                        <div class="text-right"> <span class="font-weight-bold">${listCart[theCount.index].cart_Amount}</span> </div>
+	                                        <div class="text-right"> <span class="font-weight-bold">$${product.p_Price}</span> </div>
 	                                    </td>
 	                                </tr>
-	                            </c:forEach>
                             </tbody>
                         </table>
                     </div>
@@ -120,7 +118,7 @@ body {
                                             <div class="text-left"> <span class="text-muted">Subtotal</span> </div>
                                         </td>
                                         <td>
-                                            <div class="text-right"> <span>${order.totalAmount}</span> </div>
+                                            <div class="text-right"> <span>$${order.totalAmount}</span> </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -152,7 +150,7 @@ body {
                                             <div class="text-left"> <span class="font-weight-bold">Subtotal</span> </div>
                                         </td>
                                         <td>
-                                            <div class="text-right"> <span class="font-weight-bold">${order.totalAmount}</span> </div>
+                                            <div class="text-right"> <span class="font-weight-bold">$${order.totalAmount}</span> </div>
                                         </td>
                                     </tr>
                                 </tbody>
