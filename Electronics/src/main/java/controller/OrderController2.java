@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import java.time.LocalDateTime;  
-import java.time.format.DateTimeFormatter; 
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.*;
 import service.*;
@@ -46,6 +48,9 @@ public class OrderController2 {
 	
 	@Autowired
 	private OrderItemService orderItemService;
+	
+	@Autowired
+	private CartService cartService;
 	
 	@Autowired
 	private LaptopService laptopService;
@@ -97,7 +102,8 @@ public class OrderController2 {
 			orderItem.setProduct_Price(price);
 			
 			orderItemService.addOrderItem(orderItem);
-			
+//			model.addObject(order);
+//			model.addObject(user.getShipping());
 			return model;
 		}
 		else if(type.equalsIgnoreCase("mobile")) {
@@ -132,35 +138,205 @@ public class OrderController2 {
 			
 			return model;
 		}
-//		else if(type.equalsIgnoreCase("smartWatch")) {
-//			if(originalQuantity < 1) {
-//		    	ModelAndView model = new ModelAndView("Userhome");
-//		    	model.addObject("message","Product is out of stock currently..!");
-//		    	return model;
-//		    }
-//		}
-//		else if(type.equalsIgnoreCase("headphone")) {
-//			if(originalQuantity < 1) {
-//		    	ModelAndView model = new ModelAndView("Userhome");
-//		    	model.addObject("message","Product is out of stock currently..!");
-//		    	return model;
-//		    }
-//		}
-//		else if(type.equalsIgnoreCase("tv")) {
-//			if(originalQuantity < 1) {
-//		    	ModelAndView model = new ModelAndView("Userhome");
-//		    	model.addObject("message","Product is out of stock currently..!");
-//		    	return model;
-//		    }
-//		}
-//		else if(type.equalsIgnoreCase("tablet")) {
-//			if(originalQuantity < 1) {
-//		    	ModelAndView model = new ModelAndView("Userhome");
-//		    	model.addObject("message","Product is out of stock currently..!");
-//		    	return model;
-//		    }
-//		}
+		else if(type.equalsIgnoreCase("smartWatch")) {
+			ModelAndView model = new ModelAndView("OrderSmartWatch");
+			
+			if(originalQuantity < 1) {
+		    	model.addObject("message","Product is out of stock currently..!");
+		    	return model;
+		    }
+			
+			SmartWatch smartwatch = smartwatchService.getSmartWatch(pid);
+			model.addObject(smartwatch);
+			
+			double price = product.getP_Price();
+			User user = userService.getUser((int)session.getAttribute("uid"));
+			Order order = new Order();
+			order.setUser(user);
+			order.setTotalAmount(price);
+			java.sql.Date date = new java.sql.Date(System.currentTimeMillis());
+			order.setOrderDate(date);
+			
+			orderService.addOrder(order);
+			
+			Order_Items orderItem = new Order_Items();
+			orderItem.setOrder(order);
+			orderItem.setProduct(smartwatch);
+			orderItem.setProduct_Name(smartwatch.getsName());
+			orderItem.setQuantity(1);
+			orderItem.setProduct_Price(price);
+			
+			orderItemService.addOrderItem(orderItem);
+			
+			return model;
+		}
+		else if(type.equalsIgnoreCase("headphone")) {
+			ModelAndView model = new ModelAndView("OrderHeadPhone");
+			
+			if(originalQuantity < 1) {
+		    	model.addObject("message","Product is out of stock currently..!");
+		    	return model;
+		    }
+			
+			HeadPhone headphone = headphoneService.getHeadPhone(pid);
+			model.addObject(headphone);
+			
+			double price = product.getP_Price();
+			User user = userService.getUser((int)session.getAttribute("uid"));
+			Order order = new Order();
+			order.setUser(user);
+			order.setTotalAmount(price);
+			java.sql.Date date = new java.sql.Date(System.currentTimeMillis());
+			order.setOrderDate(date);
+			
+			orderService.addOrder(order);
+			
+			Order_Items orderItem = new Order_Items();
+			orderItem.setOrder(order);
+			orderItem.setProduct(headphone);
+			orderItem.setProduct_Name(headphone.gethName());
+			orderItem.setQuantity(1);
+			orderItem.setProduct_Price(price);
+			
+			orderItemService.addOrderItem(orderItem);
+			
+			return model;
+		}
+		else if(type.equalsIgnoreCase("tv")) {
+			ModelAndView model = new ModelAndView("OrderTV");
+			
+			if(originalQuantity < 1) {
+		    	model.addObject("message","Product is out of stock currently..!");
+		    	return model;
+		    }
+			
+			TV tv = tvService.getTV(pid);
+			model.addObject(tv);
+			
+			double price = product.getP_Price();
+			User user = userService.getUser((int)session.getAttribute("uid"));
+			Order order = new Order();
+			order.setUser(user);
+			order.setTotalAmount(price);
+			java.sql.Date date = new java.sql.Date(System.currentTimeMillis());
+			order.setOrderDate(date);
+			
+			orderService.addOrder(order);
+			
+			Order_Items orderItem = new Order_Items();
+			orderItem.setOrder(order);
+			orderItem.setProduct(tv);
+			orderItem.setProduct_Name(tv.getTvName());
+			orderItem.setQuantity(1);
+			orderItem.setProduct_Price(price);
+			
+			orderItemService.addOrderItem(orderItem);
+			
+			return model;
+		}
+		else if(type.equalsIgnoreCase("tablet")) {
+			ModelAndView model = new ModelAndView("OrderTablet");
+			
+			if(originalQuantity < 1) {
+		    	model.addObject("message","Product is out of stock currently..!");
+		    	return model;
+		    }
+			
+			Tablet tablet = tabletService.getTablet(pid);
+			model.addObject(tablet);
+			
+			double price = product.getP_Price();
+			User user = userService.getUser((int)session.getAttribute("uid"));
+			Order order = new Order();
+			order.setUser(user);
+			order.setTotalAmount(price);
+			java.sql.Date date = new java.sql.Date(System.currentTimeMillis());
+			order.setOrderDate(date);
+			
+			orderService.addOrder(order);
+			
+			Order_Items orderItem = new Order_Items();
+			orderItem.setOrder(order);
+			orderItem.setProduct(tablet);
+			orderItem.setProduct_Name(tablet.gettName());
+			orderItem.setQuantity(1);
+			orderItem.setProduct_Price(price);
+			
+			orderItemService.addOrderItem(orderItem);
+			
+			return model;
+		}
 		return null;
 
 	}
+	
+	@RequestMapping(value = "/orderCart")
+	public ModelAndView orderCart(HttpServletRequest request, ModelAndView model) {
+		
+		HttpSession session = request.getSession();
+		
+		User user = userService.getUser((int)session.getAttribute("uid"));
+		
+		Order order = new Order();
+		order.setUser(user);
+		
+		List<Cart> listCart = cartService.getCartByUser(user);
+		
+		double totalCost = 0;
+		for(Cart cart : listCart) {
+			totalCost = totalCost + cart.getCart_Amount();
+		}
+		
+		order.setTotalAmount(totalCost);
+		java.sql.Date date = new java.sql.Date(System.currentTimeMillis());
+		order.setOrderDate(date);
+		orderService.addOrder(order);
+		List<Order_Items> items = new ArrayList<Order_Items>();
+		
+		for(Cart cart : listCart) {
+			Product product = cart.getProduct();
+			int originalQuantity = product.getP_Quantity();
+			product.setP_Quantity(originalQuantity-cart.getCart_quantity());
+			productService.updateProduct(product);
+			
+			Order_Items orderItem = new Order_Items();
+			orderItem.setOrder(order);
+			orderItem.setQuantity(cart.getCart_quantity());
+			orderItem.setProduct_Price(cart.getCart_Amount());
+			orderItem.setProduct(cart.getProduct());
+			items.add(orderItem);
+			
+			if(product.getP_Type().equalsIgnoreCase("laptop")) {
+				orderItem.setProduct_Name(laptopService.getLaptop(product.getP_Id()).getlName());
+			}
+			else if(product.getP_Type().equalsIgnoreCase("HeadPhone")) {
+				orderItem.setProduct_Name(headphoneService.getHeadPhone(product.getP_Id()).gethName());
+			}
+			else if(product.getP_Type().equalsIgnoreCase("mobile")) {
+				orderItem.setProduct_Name(mobileService.getMobile(product.getP_Id()).getmName());
+			}
+			else if(product.getP_Type().equalsIgnoreCase("smartwatch")) {
+				orderItem.setProduct_Name(smartwatchService.getSmartWatch(product.getP_Id()).getsName());
+			}
+			else if(product.getP_Type().equalsIgnoreCase("tablet")) {
+				orderItem.setProduct_Name(tabletService.getTablet(product.getP_Id()).gettName());
+			}
+			else if(product.getP_Type().equalsIgnoreCase("tv")) {
+				orderItem.setProduct_Name(tvService.getTV(product.getP_Id()).getTvName());
+			}
+			
+			
+			
+			orderItemService.addOrderItem(orderItem);
+			cartService.deleteCart(cart.getCart_id());
+		}
+		model.addObject("items",items);
+		model.addObject("listCart",listCart);
+		model.addObject(order);
+		model.addObject(user);
+		model.setViewName("OrderLaptop");
+//		ModelAndView model = new ModelAndView("userhome");
+		return model;
+	}
+	
 }

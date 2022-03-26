@@ -38,6 +38,23 @@
         </c:if>
 	</div>
 	
+	<div class="container col-8 mt-5" style="margin-top: 15vh !important;">        
+        <c:if test = "${not empty listCart}">
+			<div class="container col-3 mb-4">
+				<div class="row">
+					<div class="col"><a class="btn btn-primary" href="orderCart">Purchase</a></div>
+					<div class="col"><a class="btn btn-primary" href="clearCart">Clear Cart</a></div>
+				</div>
+			</div>
+        </c:if>
+	</div>
+	      
+        <c:if test = "${empty listCart}">
+			<div class="container col-8 mt-5 mb-4" style="margin-top: 15vh !important;">
+				<center><h1>Cart is Empty</h1></center>
+			</div>
+        </c:if>
+	
 	<c:forEach var="cart" items="${listCart}" varStatus="theCount">
 		<div class="container mt-3 col-8">
 			<div class="card mb-3">
@@ -67,6 +84,9 @@
 							<div class="row mt-5">
 								<div class="col">
 									<p><strong>Quantity : </strong>${cart.cart_quantity}</p> 
+								</div>
+								<div class="col">
+									<p><strong>Price/Quantity : </strong>${cart.product.p_Price}</p> 
 								</div>
 								<div class="col">
 									<p><strong>Price : </strong>${cart.cart_Amount}</p> 
