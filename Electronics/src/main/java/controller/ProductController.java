@@ -181,6 +181,23 @@ public class ProductController {
 		return new ModelAndView("redirect:/Product/laptop");
 	}
 	
+	@RequestMapping(value = "/editLaptop")
+	public ModelAndView editLaptop(HttpServletRequest request) {
+		int pId = Integer.parseInt(request.getParameter("id"));
+		Laptop laptop = laptopService.getLaptop(pId);
+		ModelAndView model = new ModelAndView("LaptopForm");
+		model.addObject("laptop", laptop);
+
+		return model;
+	}
+	
+	@RequestMapping(value = "/deleteLaptop")
+	public ModelAndView deleteEmployee(HttpServletRequest request) {
+		int pId = Integer.parseInt(request.getParameter("id"));
+		laptopService.deleteLaptop(pId);
+		return new ModelAndView("redirect:/");
+	}
+	
 	@RequestMapping(value = "/newHeadPhone", method = RequestMethod.GET)
 	public ModelAndView newHeadPhone(ModelAndView model) {
 		HeadPhone headphone = new HeadPhone();
@@ -198,6 +215,23 @@ public class ProductController {
 			headphoneService.updateHeadPhone(headphone);
 		}
 		return new ModelAndView("redirect:/Product/headphone");
+	}
+	
+	@RequestMapping(value = "/editHeadPhone")
+	public ModelAndView editHeadPhone(HttpServletRequest request) {
+		int pId = Integer.parseInt(request.getParameter("id"));
+		HeadPhone headphone = headphoneService.getHeadPhone(pId);
+		ModelAndView model = new ModelAndView("HeadPhoneForm");
+		model.addObject("headphone", headphone);
+
+		return model;
+	}
+	
+	@RequestMapping(value = "/deleteHeadPhone")
+	public ModelAndView deleteHeadPhone(HttpServletRequest request) {
+		int pId = Integer.parseInt(request.getParameter("id"));
+		headphoneService.deleteHeadPhone(pId);
+		return new ModelAndView("redirect:/");
 	}
 	
 	@RequestMapping(value = "/newMobile", method = RequestMethod.GET)
@@ -219,6 +253,23 @@ public class ProductController {
 		return new ModelAndView("redirect:/Product/mobile");
 	}
 	
+	@RequestMapping(value = "/editMobile")
+	public ModelAndView editMobile(HttpServletRequest request) {
+		int pId = Integer.parseInt(request.getParameter("id"));
+		Mobile mobile = mobileService.getMobile(pId);
+		ModelAndView model = new ModelAndView("MobileForm");
+		model.addObject("mobile", mobile);
+
+		return model;
+	}
+	
+	@RequestMapping(value = "/deleteMobile")
+	public ModelAndView deleteMobile(HttpServletRequest request) {
+		int pId = Integer.parseInt(request.getParameter("id"));
+		mobileService.deleteMobile(pId);
+		return new ModelAndView("redirect:/");
+	}
+	
 	@RequestMapping(value = "/newSmartWatch", method = RequestMethod.GET)
 	public ModelAndView newSmartWatch(ModelAndView model) {
 		SmartWatch smartwatch = new SmartWatch();
@@ -236,6 +287,23 @@ public class ProductController {
 			smartwatchService.updateSmartWatch(smartwatch);
 		}
 		return new ModelAndView("redirect:/Product/smartwatch");
+	}
+	
+	@RequestMapping(value = "/editSmartWatch")
+	public ModelAndView editSmartWatch(HttpServletRequest request) {
+		int pId = Integer.parseInt(request.getParameter("id"));
+		SmartWatch smartwatch = smartwatchService.getSmartWatch(pId);
+		ModelAndView model = new ModelAndView("SmartWatchForm");
+		model.addObject("smartwatch", smartwatch);
+
+		return model;
+	}
+	
+	@RequestMapping(value = "/deleteSmartWatch")
+	public ModelAndView deleteSmartWatch(HttpServletRequest request) {
+		int pId = Integer.parseInt(request.getParameter("id"));
+		smartwatchService.deleteSmartWatch(pId);
+		return new ModelAndView("redirect:/");
 	}
 	
 	@RequestMapping(value = "/newTablet", method = RequestMethod.GET)
@@ -257,6 +325,23 @@ public class ProductController {
 		return new ModelAndView("redirect:/Product/tablet");
 	}
 	
+	@RequestMapping(value = "/editTablet")
+	public ModelAndView editTablet(HttpServletRequest request) {
+		int pId = Integer.parseInt(request.getParameter("id"));
+		Tablet tablet = tabletService.getTablet(pId);
+		ModelAndView model = new ModelAndView("TabletForm");
+		model.addObject("tablet", tablet);
+
+		return model;
+	}
+	
+	@RequestMapping(value = "/deleteTablet")
+	public ModelAndView deleteTablet(HttpServletRequest request) {
+		int pId = Integer.parseInt(request.getParameter("id"));
+		tabletService.deleteTablet(pId);
+		return new ModelAndView("redirect:/");
+	}
+	
 	@RequestMapping(value = "/newTV", method = RequestMethod.GET)
 	public ModelAndView newTV(ModelAndView model) {
 		TV tv = new TV();
@@ -274,6 +359,23 @@ public class ProductController {
 			tvService.updateTV(tv);
 		}
 		return new ModelAndView("redirect:/Product/tv");
+	}
+	
+	@RequestMapping(value = "/editTV")
+	public ModelAndView editTV(HttpServletRequest request) {
+		int pId = Integer.parseInt(request.getParameter("id"));
+		TV tv = tvService.getTV(pId);
+		ModelAndView model = new ModelAndView("TVForm");
+		model.addObject("tv", tv);
+
+		return model;
+	}
+	
+	@RequestMapping(value = "/deleteTV")
+	public ModelAndView deleteTV(HttpServletRequest request) {
+		int pId = Integer.parseInt(request.getParameter("id"));
+		tvService.deleteTV(pId);
+		return new ModelAndView("redirect:/");
 	}
 	
 	@RequestMapping(value = "/singleProduct")
