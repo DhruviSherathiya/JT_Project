@@ -70,8 +70,13 @@
 								</div>
 							</div>
 							<div class="mt-3">
+<<<<<<< Updated upstream
 									<a href="editMobile?id=${mobile.p_Id}" class="btn btn-primary">Edit</a>
 							&nbsp;&nbsp;&nbsp;&nbsp; <a href="deleteMobile?id=${mobile.p_Id}" class="btn btn-primary">Delete</a>
+=======
+									<a href="editMobile?id=${laptop.p_Id}" class="btn btn-primary">Edit</a>
+							&nbsp;&nbsp;&nbsp;&nbsp; <a href="deleteMobile?id=${laptop.p_Id}" class="btn btn-primary">Delete</a>
+>>>>>>> Stashed changes
 							</div>
 						</div>
 					</div>

@@ -265,4 +265,11 @@ public class UserController {
 
 		return model;
 	}
+	
+	@RequestMapping(value = "/aboutUs")
+	public ModelAndView AboutUs(ModelAndView model, HttpServletRequest request) throws IOException {
+		model.setViewName("AboutUs");
+
+		return model;
+	}
 }
