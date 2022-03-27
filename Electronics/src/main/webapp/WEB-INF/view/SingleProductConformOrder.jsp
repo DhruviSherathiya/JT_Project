@@ -21,6 +21,21 @@
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous"></script>
 	
+<!-- <script>
+window.open ("yourPageURL","mywindow","status=1,toolbar=0");
+</script> -->
+<script>
+	window.onbeforeunload = function() {
+	  return "Are you sure?";
+	};
+
+	window.onkeydown = function(event) {
+	  if (event.keyCode === 116) {
+	    window.location.reload();
+	  }
+	};
+</script>	
+	
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
@@ -153,6 +168,7 @@ body {
                                             <div class="text-right"> <span class="font-weight-bold">$${order.totalAmount}</span> </div>
                                         </td>
                                     </tr>
+                                    <tr><td><div><a href="/Electronics/payment" class="btn btn-primary px-4 py-2">Proceed To Pay</a></div></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -160,6 +176,7 @@ body {
                     <p>We will be sending shipping confirmation email when the item shipped successfully!</p>
                     <p class="font-weight-bold mb-0">Thanks for shopping with us!</p> <span>Nike Team</span>
                 </div>
+                
                 <div class="d-flex justify-content-between footer p-3"> <span>Need Help? visit our <a href="#"> help center</a></span> <span>${order.orderDate}</span> </div>
             </div>
         </div>

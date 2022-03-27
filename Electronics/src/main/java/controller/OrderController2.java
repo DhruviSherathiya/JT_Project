@@ -84,6 +84,7 @@ public class OrderController2 {
 			model.addObject(laptop);
 			
 			double price = product.getP_Price();
+			session.setAttribute("total",price);
 			User user = userService.getUser((int)session.getAttribute("uid"));
 			Order order = new Order();
 			order.setUser(user);
@@ -119,6 +120,7 @@ public class OrderController2 {
 			model.addObject(mobile);
 			
 			double price = product.getP_Price();
+			session.setAttribute("total",price);
 			User user = userService.getUser((int)session.getAttribute("uid"));
 			Order order = new Order();
 			order.setUser(user);
@@ -155,6 +157,7 @@ public class OrderController2 {
 			model.addObject(smartwatch);
 			
 			double price = product.getP_Price();
+			session.setAttribute("total",price);
 			User user = userService.getUser((int)session.getAttribute("uid"));
 			Order order = new Order();
 			order.setUser(user);
@@ -191,6 +194,7 @@ public class OrderController2 {
 			model.addObject(headphone);
 			
 			double price = product.getP_Price();
+			session.setAttribute("total",price);
 			User user = userService.getUser((int)session.getAttribute("uid"));
 			Order order = new Order();
 			order.setUser(user);
@@ -227,6 +231,7 @@ public class OrderController2 {
 			model.addObject(tv);
 			
 			double price = product.getP_Price();
+			session.setAttribute("total",price);
 			User user = userService.getUser((int)session.getAttribute("uid"));
 			Order order = new Order();
 			order.setUser(user);
@@ -263,6 +268,7 @@ public class OrderController2 {
 			model.addObject(tablet);
 			
 			double price = product.getP_Price();
+			session.setAttribute("total",price);
 			User user = userService.getUser((int)session.getAttribute("uid"));
 			Order order = new Order();
 			order.setUser(user);
@@ -309,6 +315,7 @@ public class OrderController2 {
 		}
 		
 		order.setTotalAmount(totalCost);
+		session.setAttribute("total",totalCost);
 		java.sql.Date date = new java.sql.Date(System.currentTimeMillis());
 		order.setOrderDate(date);
 		orderService.addOrder(order);
@@ -357,6 +364,37 @@ public class OrderController2 {
 		model.addObject(user);
 		model.setViewName("OrderCart");
 		return model;
+	}
+	
+	@RequestMapping(value = "/myOrder")
+	public ModelAndView myOrder(ModelAndView model, HttpServletRequest request) throws IOException {
+		
+		HttpSession session = request.getSession();
+		if (session.getAttribute("uid") != null) {
+			User user = userService.getUser((int) session.getAttribute("uid"));
+			List orders = orderService.getOrderByUser(user);
+			model.addObject("orders", orders);
+			model.setViewName("myOrder");
+			return model;
+		}
+		else {
+			model.setViewName("login");
+			return new ModelAndView("redirect:/");
+		}
+	}
+	
+	@RequestMapping(value = "/payment")
+	public ModelAndView payment(ModelAndView model, HttpServletRequest request) throws IOException {
+		
+		HttpSession session = request.getSession();
+		if (session.getAttribute("uid") != null) {
+			model.setViewName("payment");
+			return model;
+		}
+		else {
+			model.setViewName("login");
+			return new ModelAndView("redirect:/");
+		}
 	}
 	
 }

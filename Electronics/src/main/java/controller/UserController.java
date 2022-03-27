@@ -153,23 +153,19 @@ public class UserController {
 					List<TV> listTV = tvService.getAllTVs();
 					List<SmartWatch> listSmartWatch = smartwatchService.getAllSmartWatchs();
 					List<Tablet> listTablet = tabletService.getAllTablets();
-					/*
-					 * model.addObject("listLaptop", listLaptop); model.addObject("listHeadPhone",
-					 * listHeadPhone); model.addObject("listMobile", listMobile);
-					 * model.addObject("listTV", listTV); model.addObject("listSmartWatch",
-					 * listSmartWatch); model.addObject("listTablet", listTablet);
-					 * model.setViewName("inventory"); model.setViewName("userhome");
-					 */
+
 					session.setAttribute("listLaptop", listLaptop);
 					session.setAttribute("listHeadPhone", listHeadPhone);
 					session.setAttribute("listMobile", listMobile);
 					session.setAttribute("listTV", listTV);
 					session.setAttribute("listSmartWatch", listSmartWatch);
 					session.setAttribute("listTablet", listTablet);
-					model.setViewName("userhome");
+//					model.setViewName("userhome");
+					return new ModelAndView("redirect:/");
 
 				} else if (role.equalsIgnoreCase("admin")) {
-					model.setViewName("adminhome");
+//					model.setViewName("adminhome");
+					return new ModelAndView("redirect:/");
 				}
 			}
 		}

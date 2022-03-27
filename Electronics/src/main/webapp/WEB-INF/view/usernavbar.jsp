@@ -35,6 +35,7 @@
 						aria-current="page" href="/Electronics/"><i class="fa fa-fw fa-home"></i> Home</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="/Electronics/profile">Profile</a></li>
+					<li class="nav-item"><a class="nav-link" href="/Electronics/myOrder">My Orders</a></li>	
 					<li class="nav-item"><a class="nav-link"
 						href="/Electronics/logout"><i class="fa fa-sign-out"></i>Logout</a></li>	
 				</ul>
