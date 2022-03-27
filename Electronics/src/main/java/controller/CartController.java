@@ -162,4 +162,17 @@ public class CartController {
 		cartService.updateCart(cart);
 		return new ModelAndView("redirect:/myCart");
 	}
+	
+	@RequestMapping(value = "/clearCart")
+	public ModelAndView clearCart(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		User user = userService.getUser((int)session.getAttribute("uid"));
+		
+		List<Cart> cart = cartService.getCartByUser(user);
+		
+		for(Cart c : cart) {
+			cartService.deleteCart(c.getCart_id());
+		}
+		return new ModelAndView("redirect:/myCart");
+	}
 }
