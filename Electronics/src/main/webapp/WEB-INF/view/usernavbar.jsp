@@ -37,8 +37,6 @@
 						href="/Electronics/profile">Profile</a></li>
 					<li class="nav-item"><a class="nav-link" href="/Electronics/myOrder">My Orders</a></li>	
 					<li class="nav-item"><a class="nav-link"
-						href="/Electronics/aboutUs">About Us</a></li>
-					<li class="nav-item"><a class="nav-link"
 						href="/Electronics/logout"><i class="fa fa-sign-out"></i>Logout</a></li>	
 				</ul>
 				<ul class="nav navbar-nav navbar-right px-4">

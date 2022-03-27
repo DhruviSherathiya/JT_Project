@@ -66,35 +66,6 @@ public class ProductController {
 		return model;
 	}
 	
-<<<<<<< Updated upstream
-=======
-	@RequestMapping(value = "/editLaptop")
-	public ModelAndView editLaptop(HttpServletRequest request) {
-		int pId = Integer.parseInt(request.getParameter("id"));
-		Laptop laptop = laptopService.getLaptop(pId);
-		ModelAndView model = new ModelAndView("LaptopForm");
-		model.addObject("laptop", laptop);
-
-		return model;
-	}
-	
-	@RequestMapping(value = "/deleteLaptop")
-	public ModelAndView deleteEmployee(HttpServletRequest request) {
-		int pId = Integer.parseInt(request.getParameter("id"));
-		laptopService.deleteLaptop(pId);
-		return new ModelAndView("redirect:/");
-	}
-	
-	
-	@RequestMapping(value = "/buyProduct")
-	public ModelAndView buyProduct(ModelAndView model, HttpServletRequest request) throws IOException {
-		HttpSession session = request.getSession();
-		
-		model.setViewName("userhome");
-		return model;
-	}
-	
->>>>>>> Stashed changes
 	@RequestMapping(value = "/headphone")
 	public ModelAndView listheadphone(ModelAndView model, HttpServletRequest request) throws IOException {
 		HttpSession session = request.getSession();
@@ -107,23 +78,6 @@ public class ProductController {
 			return new ModelAndView("redirect:/");
 		}
 		return model;
-	}
-	
-	@RequestMapping(value = "/editHeadphone")
-	public ModelAndView editHeadphone(HttpServletRequest request) {
-		int pId = Integer.parseInt(request.getParameter("id"));
-		HeadPhone headphone = headphoneService.getHeadPhone(pId);
-		ModelAndView model = new ModelAndView("HeadPhoneForm");
-		model.addObject("headphone", headphone);
-
-		return model;
-	}
-	
-	@RequestMapping(value = "/deleteHeadPhone")
-	public ModelAndView deleteHeadphone(HttpServletRequest request) {
-		int pId = Integer.parseInt(request.getParameter("id"));
-		headphoneService.deleteHeadPhone(pId);
-		return new ModelAndView("redirect:/");
 	}
 	
 	@RequestMapping(value = "/mobile")
@@ -140,23 +94,6 @@ public class ProductController {
 		return model;
 	}
 	
-	@RequestMapping(value = "/editMobile")
-	public ModelAndView editMobile(HttpServletRequest request) {
-		int pId = Integer.parseInt(request.getParameter("id"));
-		Mobile mobile = mobileService.getMobile(pId);
-		ModelAndView model = new ModelAndView("MobileForm");
-		model.addObject("mobile", mobile);
-
-		return model;
-	}
-	
-	@RequestMapping(value = "/deleteMobile")
-	public ModelAndView deleteMobile(HttpServletRequest request) {
-		int pId = Integer.parseInt(request.getParameter("id"));
-		mobileService.deleteMobile(pId);
-		return new ModelAndView("redirect:/");
-	}
-	
 	@RequestMapping(value = "/tv")
 	public ModelAndView listTv(ModelAndView model, HttpServletRequest request) throws IOException {
 		HttpSession session = request.getSession();
@@ -169,23 +106,6 @@ public class ProductController {
 			return new ModelAndView("redirect:/");
 		}
 		return model;
-	}
-	
-	@RequestMapping(value = "/editTv")
-	public ModelAndView editTv(HttpServletRequest request) {
-		int pId = Integer.parseInt(request.getParameter("id"));
-		TV tv = tvService.getTV(pId);
-		ModelAndView model = new ModelAndView("TVForm");
-		model.addObject("tv", tv);
-
-		return model;
-	}
-	
-	@RequestMapping(value = "/deleteTV")
-	public ModelAndView deleteTv(HttpServletRequest request) {
-		int pId = Integer.parseInt(request.getParameter("id"));
-		tvService.deleteTV(pId);
-		return new ModelAndView("redirect:/");
 	}
 	
 	@RequestMapping(value = "/smartwatch")
@@ -203,23 +123,6 @@ public class ProductController {
 		return model;
 	}
 	
-	@RequestMapping(value = "/editSmartWatch")
-	public ModelAndView editSmartWatch(HttpServletRequest request) {
-		int pId = Integer.parseInt(request.getParameter("id"));
-		SmartWatch smartwatch = smartwatchService.getSmartWatch(pId);
-		ModelAndView model = new ModelAndView("TVForm");
-		model.addObject("smartwatch", smartwatch);
-
-		return model;
-	}
-	
-	@RequestMapping(value = "/deleteSmartWatch")
-	public ModelAndView deleteSmartWatch(HttpServletRequest request) {
-		int pId = Integer.parseInt(request.getParameter("id"));
-		smartwatchService.deleteSmartWatch(pId);
-		return new ModelAndView("redirect:/");
-	}
-	
 	@RequestMapping(value = "/tablet")
 	public ModelAndView listTablet(ModelAndView model, HttpServletRequest request) throws IOException {
 		HttpSession session = request.getSession();
@@ -232,23 +135,6 @@ public class ProductController {
 			return new ModelAndView("redirect:/");
 		}
 		return model;
-	}
-	
-	@RequestMapping(value = "/editTablet")
-	public ModelAndView editTablet(HttpServletRequest request) {
-		int pId = Integer.parseInt(request.getParameter("id"));
-		Tablet tablet = tabletService.getTablet(pId);
-		ModelAndView model = new ModelAndView("TabletForm");
-		model.addObject("tablet", tablet);
-
-		return model;
-	}
-	
-	@RequestMapping(value = "/deleteTablet")
-	public ModelAndView deleteTablet(HttpServletRequest request) {
-		int pId = Integer.parseInt(request.getParameter("id"));
-		tabletService.deleteTablet(pId);
-		return new ModelAndView("redirect:/");
 	}
 	
 	@RequestMapping(value = "/inventory")
@@ -301,7 +187,7 @@ public class ProductController {
 		Laptop laptop = laptopService.getLaptop(pId);
 		ModelAndView model = new ModelAndView("LaptopForm");
 		model.addObject("laptop", laptop);
-		
+
 		return model;
 	}
 	
