@@ -267,6 +267,7 @@ public class UserController {
 		return model;
 	}
 	
+
 	@RequestMapping(value = "/footer")
 	public ModelAndView footer(ModelAndView model) {
 		model.setViewName("footer");
@@ -274,4 +275,10 @@ public class UserController {
 		
 	}
 
+	@RequestMapping(value = "/aboutUs")
+	public ModelAndView AboutUs(ModelAndView model, HttpServletRequest request) throws IOException {
+		model.setViewName("aboutUs");
+
+		return model;
+	}
 }
