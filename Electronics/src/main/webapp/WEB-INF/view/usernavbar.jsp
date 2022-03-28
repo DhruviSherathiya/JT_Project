@@ -36,6 +36,7 @@
 					<li class="nav-item"><a class="nav-link"
 						href="/Electronics/profile">Profile</a></li>
 					<li class="nav-item"><a class="nav-link" href="/Electronics/myOrder">My Orders</a></li>	
+					<li class="nav-item"><a class="nav-link" href="/Electronics/contactUs">Contact Us</a></li>	
 					<li class="nav-item"><a class="nav-link"
 						href="/Electronics/aboutUs">About Us</a></li>
 					<li class="nav-item"><a class="nav-link"
@@ -52,6 +53,5 @@
 			</div>
 		</div>
 	</nav>
-
 </body>
 </html>

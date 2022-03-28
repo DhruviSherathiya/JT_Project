@@ -23,18 +23,18 @@ body {
 	color: #000;
 	overflow-x: hidden;
 	height: 100%;
-	background-image: linear-gradient(to right, #D500F9, #FFD54F);
+	background-image: linear-gradient(to right,  #CCE6FF, #FFF3E6);
 	background-repeat: no-repeat
 }
 
 input, textarea {
-	background-color: #F3E5F5;
+	background-color: #FFF3E6;
 	border-radius: 50px !important;
 	padding: 12px 15px 12px 15px !important;
 	width: 100%;
 	box-sizing: border-box;
 	border: none !important;
-	border: 1px solid #F3E5F5 !important;
+	border: 1px solid #FFF3E6 !important;
 	font-size: 16px !important;
 	color: #000 !important;
 	font-weight: 400
@@ -44,7 +44,7 @@ input:focus, textarea:focus {
 	-moz-box-shadow: none !important;
 	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
-	border: 1px solid #D500F9 !important;
+	border: 1px solid  #CCE6FF !important;
 	outline-width: 0;
 	font-weight: 400
 }
@@ -68,7 +68,7 @@ button:focus {
 
 .card2 {
 	width: 50%;
-	background-image: linear-gradient(to right, #FFD54F, #D500F9)
+	background-image: linear-gradient(to right, #FFF3E6,  #CCE6FF)
 }
 
 #logo {
@@ -105,8 +105,7 @@ button:focus {
 
 .btn-color {
 	border-radius: 50px;
-	color: #fff;
-	background-image: linear-gradient(to right, #FFD54F, #D500F9);
+	background-image: linear-gradient(to right, #FFF3E6,  #CCE6FF);
 	padding: 15px;
 	cursor: pointer;
 	border: none !important;
@@ -115,21 +114,20 @@ button:focus {
 
 .btn-color:hover {
 	color: #fff;
-	background-image: linear-gradient(to right, #D500F9, #FFD54F)
+	background-image: linear-gradient(to right,  #CCE6FF, #FFF3E6)
 }
 
 .btn-white {
 	border-radius: 50px;
-	color: #D500F9;
 	background-color: #fff;
 	padding: 8px 40px;
 	cursor: pointer;
-	border: 2px solid #D500F9 !important
+	border: 2px solid  #CCE6FF !important
 }
 
 .btn-white:hover {
 	color: #fff;
-	background-image: linear-gradient(to right, #FFD54F, #D500F9)
+	background-image: linear-gradient(to right, #FFF3E6,  #CCE6FF)
 }
 
 a {
@@ -257,8 +255,8 @@ a:hover {
 				</div>
 				<div class="card card2">
 					<div class="my-5 mx-md-5 px-md-5 right" style="margin-top: 40vh!important;">
-						<h3 class="text-white">We are more than just a company</h3>
-						<small class="text-white">Lorem ipsum dolor sit amet,
+						<h3>We are more than just a company</h3>
+						<small>Lorem ipsum dolor sit amet,
 							consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
 							labore et dolore magna aliqua. Ut enim ad minim veniam, quis
 							nostrud exercitation ullamco laboris nisi ut aliquip ex ea
