@@ -89,6 +89,12 @@ public class CartController {
 			if(c.getProduct().getP_Id() == pid) {
 				flag = false;
 				int newquantity = c.getCart_quantity() + quantity;
+				if(newquantity > product.getP_Quantity()) {
+					ModelAndView mv = new ModelAndView();
+					mv.addObject("qty_error","This many Quantity of this product is not available !!");
+					mv.setViewName("userhome");
+					return mv;
+				}
 				c.setCart_quantity(newquantity);
 				c.setCart_Amount(newquantity*product.getP_Price());
 				cartService.updateCart(c);

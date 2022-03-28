@@ -106,6 +106,9 @@ public class OrderController2 {
 			model.addObject(user);
 			model.addObject("product", product);
 			model.addObject("pname", laptop.getlName());
+			
+			product.setP_Quantity(originalQuantity-1);
+			productService.updateProduct(product);
 			return model;
 		}
 		else if(type.equalsIgnoreCase("mobile")) {
@@ -143,6 +146,9 @@ public class OrderController2 {
 			model.addObject(user);
 			model.addObject("product", product);
 			model.addObject("pname", mobile.getmName());
+			
+			product.setP_Quantity(originalQuantity-1);
+			productService.updateProduct(product);
 			return model;
 		}
 		else if(type.equalsIgnoreCase("smartWatch")) {
@@ -180,6 +186,9 @@ public class OrderController2 {
 			model.addObject(user);
 			model.addObject("product", product);
 			model.addObject("pname", smartwatch.getsName());
+			
+			product.setP_Quantity(originalQuantity-1);
+			productService.updateProduct(product);
 			return model;
 		}
 		else if(type.equalsIgnoreCase("headphone")) {
@@ -217,6 +226,9 @@ public class OrderController2 {
 			model.addObject(user);
 			model.addObject("product", product);
 			model.addObject("pname", headphone.gethName());
+			
+			product.setP_Quantity(originalQuantity-1);
+			productService.updateProduct(product);
 			return model;
 		}
 		else if(type.equalsIgnoreCase("tv")) {
@@ -254,6 +266,9 @@ public class OrderController2 {
 			model.addObject(user);
 			model.addObject("product", product);
 			model.addObject("pname", tv.getTvName());
+			
+			product.setP_Quantity(originalQuantity-1);
+			productService.updateProduct(product);
 			return model;
 		}
 		else if(type.equalsIgnoreCase("tablet")) {
@@ -291,6 +306,9 @@ public class OrderController2 {
 			model.addObject(user);
 			model.addObject("product", product);
 			model.addObject("pname", tablet.gettName());
+			
+			product.setP_Quantity(originalQuantity-1);
+			productService.updateProduct(product);
 			return model;
 		}
 		return null;

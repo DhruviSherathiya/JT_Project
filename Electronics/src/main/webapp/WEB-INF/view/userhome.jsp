@@ -128,6 +128,17 @@
 </head>
 <body style="background: #f5eded;">
 <% session = request.getSession(); %>
+
+		<c:if test = "${not empty qty_error}">
+			<div class="container-fluid mt-5">
+				<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+		        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+					  ${qty_error}
+					  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			</div>	
+        </c:if>
+	
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" style="height: 100vh;">
   <div class="carousel-inner">
     <!-- <div class="carousel-item active">
