@@ -66,6 +66,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-	
+
+<%@ include file = "footer.jsp" %>	
 </body>
 </html>

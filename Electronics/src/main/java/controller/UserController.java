@@ -267,16 +267,11 @@ public class UserController {
 		return model;
 	}
 	
-//	@RequestMapping(value = "/error")
-//	public ModelAndView errorPage(ModelAndView model) {
-//		model.setViewName("errorPage");
-//		return model;
-//		
-//	}
-	
-//	@ExceptionHandler(value = Exception.class)
-//	public ModelAndView exceptionHanderNull(ModelAndView model) {
-//		model.setViewName("errorPage");
-//		return model;
-//	}
+	@RequestMapping(value = "/footer")
+	public ModelAndView footer(ModelAndView model) {
+		model.setViewName("footer");
+		return model;
+		
+	}
+
 }

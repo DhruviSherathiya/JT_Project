@@ -18,7 +18,7 @@
 	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <style>
 body {
-	background: rgb(99, 39, 120)
+	background: rgb(99, 39, 120)!important;
 }
 
 .form-control:focus {
@@ -152,10 +152,10 @@ for(var id = 0; id < elements.length; ++id) { elements[id].oncontextmenu = null;
 		</div>
 		</form:form>
 	</div>
-
+	<%@ include file = "footer.jsp" %>
 	<script type='text/javascript'
 		src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
 
-
+	
 </body>
 </html>

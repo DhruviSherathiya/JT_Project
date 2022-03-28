@@ -105,6 +105,6 @@ button.addEventListener(function() {
   document.querySelector("form[name="myform"]").submit();
 });
 </script>
-
+<%@ include file = "footer.jsp" %>
 </body>
 </html>

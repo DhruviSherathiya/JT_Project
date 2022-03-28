@@ -8,7 +8,7 @@
 </head>
 <body style="background: #f5eded;">
 
-	<div align="center" class="container col-4 mt-5">
+	<div align="center" class="container col-4 mt-2"	>
 		<div align="center" class="mb-5" style="margin-top: 20vh !important;">
 			<h2 class="mt-5">Order List</h2>
 		</div>
@@ -31,6 +31,6 @@
 			</tbody>
 		</table>
 	</div>
-
+<%@ include file = "footer.jsp" %>
 </body>
 </html>
