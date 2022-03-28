@@ -43,7 +43,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #b52626;
+	background-color: #00004d;
 	clip-path: circle(120px at 50% 50%);
 	transition: 0.9s;
 	z-index: 10

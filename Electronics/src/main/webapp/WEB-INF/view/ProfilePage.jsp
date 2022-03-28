@@ -18,36 +18,36 @@
 	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <style>
 body {
-	background: rgb(99, 39, 120)!important;
+	background: #CCE6FF!important;
 }
 
 .form-control:focus {
 	box-shadow: none;
-	border-color: #BA68C8
+	border-color: #B3DAFF;
 }
 
 .profile-button {
-	background: rgb(99, 39, 120);
+	background: #CCE6FF;
 	box-shadow: none;
 	border: none
 }
 
 .profile-button:hover {
-	background: #682773
+	background: #B3DAFF
 }
 
 .profile-button:focus {
-	background: #682773;
+	background: #B3DAFF;
 	box-shadow: none
 }
 
 .profile-button:active {
-	background: #682773;
+	background: #B3DAFF;
 	box-shadow: none
 }
 
 .back:hover {
-	color: #682773;
+	color: #B3DAFF;
 	cursor: pointer
 }
 
@@ -56,10 +56,10 @@ body {
 }
 
 .add-experience:hover {
-	background: #BA68C8;
+	background: #B3DAFF;
 	color: #fff;
 	cursor: pointer;
-	border: solid 1px #BA68C8
+	border: solid 1px #B3DAFF
 }
 </style>
 <script>var elements = document.getElementsByTagName("*");
