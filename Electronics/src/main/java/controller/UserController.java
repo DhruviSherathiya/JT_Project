@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -145,7 +146,7 @@ public class UserController {
 				session.setAttribute("uname", uname);
 				session.setAttribute("uid", user.getUserId());
 				session.setAttribute("role", user.getRole());
-
+				
 				if (role.equalsIgnoreCase("user")) {
 					List<Laptop> listLaptop = laptopService.getAllLaptops();
 					List<HeadPhone> listHeadPhone = headphoneService.getAllHeadPhones();
@@ -265,4 +266,17 @@ public class UserController {
 
 		return model;
 	}
+	
+//	@RequestMapping(value = "/error")
+//	public ModelAndView errorPage(ModelAndView model) {
+//		model.setViewName("errorPage");
+//		return model;
+//		
+//	}
+	
+//	@ExceptionHandler(value = Exception.class)
+//	public ModelAndView exceptionHanderNull(ModelAndView model) {
+//		model.setViewName("errorPage");
+//		return model;
+//	}
 }

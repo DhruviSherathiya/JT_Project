@@ -8,7 +8,7 @@
 
 	<!-- Specifying base package of the Components like Controller, Service, 
 		DAO -->
-	<context:component-scan base-package="controller,dao,Product_Class,Products,Users,model,service" />
+	<context:component-scan base-package="controller,dao,Product_Class,Products,Users,model,service,exception" />
 
 	<!-- Getting Database properties -->
 	<context:property-placeholder location="classpath:resources/application.properties" />
