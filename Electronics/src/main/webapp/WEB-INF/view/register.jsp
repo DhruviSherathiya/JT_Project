@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ page isELIgnored = "false" %>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ page isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,106 +17,257 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous"></script>
+
+<style>
+body {
+	color: #000;
+	overflow-x: hidden;
+	height: 100%;
+	background-image: linear-gradient(to right, #D500F9, #FFD54F);
+	background-repeat: no-repeat
+}
+
+input, textarea {
+	background-color: #F3E5F5;
+	border-radius: 50px !important;
+	padding: 12px 15px 12px 15px !important;
+	width: 100%;
+	box-sizing: border-box;
+	border: none !important;
+	border: 1px solid #F3E5F5 !important;
+	font-size: 16px !important;
+	color: #000 !important;
+	font-weight: 400
+}
+
+input:focus, textarea:focus {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	border: 1px solid #D500F9 !important;
+	outline-width: 0;
+	font-weight: 400
+}
+
+button:focus {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	outline-width: 0
+}
+
+.card {
+	border-radius: 0;
+	border: none
+}
+
+.card1 {
+	width: 50%;
+	padding: 40px 30px 10px 30px
+}
+
+.card2 {
+	width: 50%;
+	background-image: linear-gradient(to right, #FFD54F, #D500F9)
+}
+
+#logo {
+	width: 70px;
+	height: 60px
+}
+
+.heading {
+	margin-bottom: 60px !important
+}
+
+::placeholder {
+	color: #000 !important;
+	opacity: 1
+}
+
+:-ms-input-placeholder {
+	color: #000 !important
+}
+
+::-ms-input-placeholder {
+	color: #000 !important
+}
+
+.form-control-label {
+	font-size: 12px;
+	margin-left: 15px
+}
+
+.msg-info {
+	padding-left: 15px;
+	margin-bottom: 30px
+}
+
+.btn-color {
+	border-radius: 50px;
+	color: #fff;
+	background-image: linear-gradient(to right, #FFD54F, #D500F9);
+	padding: 15px;
+	cursor: pointer;
+	border: none !important;
+	margin-top: 40px
+}
+
+.btn-color:hover {
+	color: #fff;
+	background-image: linear-gradient(to right, #D500F9, #FFD54F)
+}
+
+.btn-white {
+	border-radius: 50px;
+	color: #D500F9;
+	background-color: #fff;
+	padding: 8px 40px;
+	cursor: pointer;
+	border: 2px solid #D500F9 !important
+}
+
+.btn-white:hover {
+	color: #fff;
+	background-image: linear-gradient(to right, #FFD54F, #D500F9)
+}
+
+a {
+	color: #000
+}
+
+a:hover {
+	color: #000
+}
+
+.bottom {
+	width: 100%;
+	margin-top: 50px !important
+}
+
+.sm-text {
+	font-size: 15px
+}
+
+@media screen and (max-width: 992px) {
+	.card1 {
+		width: 100%;
+		padding: 40px 30px 10px 30px
+	}
+	.card2 {
+		width: 100%
+	}
+	.right {
+		margin-top: 100px !important;
+		margin-bottom: 100px !important
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		padding: 10px !important
+	}
+	.card2 {
+		padding: 50px
+	}
+	.right {
+		margin-top: 50px !important;
+		margin-bottom: 50px !important
+	}
+}
+</style>
 </head>
 <body>
 
-	<div class="container col-md-8 mt-4 p-5">
-		<center>
-			<h2>Register Form</h2>
-		</center>
-		<c:if test = "${not empty error_msg}">
-			<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-	        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-				  ${error_msg}
-				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	<div class="container col-md-8 mt-3">
+		<c:if test="${not empty error_msg}">
+			<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
+				aria-label="Danger:">
+				<use xlink:href="#exclamation-triangle-fill" /></svg>
+			<div class="alert alert-danger alert-dismissible fade show"
+				role="alert">
+				${error_msg}
+				<button type="button" class="btn-close" data-bs-dismiss="alert"
+					aria-label="Close"></button>
 			</div>
-        </c:if>
-		<form:form action="addUser" method="post" modelAttribute="user" class="row g-3 needs-validation" novalidate="novalidate">
-			<form:hidden path="userId"/>
-			<form:hidden path="role" value="user"/>
-			<div class="col-md-4">
-				<label for="validationCustomUsername" class="form-label">Username</label>
-				<div class="input-group has-validation">
-					<span class="input-group-text" id="inputGroupPrepend">@</span> 
-					<form:input
-						type="text" class="form-control" name="username" id="validationCustomUsername"
-						aria-describedby="inputGroupPrepend" path="userName" required="required"/>
-					    <div class="invalid-feedback">Please choose a username. ${error_msg}</div>
-					<div class="valid-feedback">Nice Username!</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<label for="validationCustom01" class="form-label">Password</label>
-				<form:input type="password" class="form-control" name="password" id="validationCustom01" path="password" required="required"/>
-				<div class="invalid-feedback">Please choose a Password.</div>
-				<div class="valid-feedback">Looks Good!</div>
-			</div>
-			<div class="col-md-4">
-				<label for="validationCustom02" class="form-label">Email</label> 
-				<form:input type="email" class="form-control" id="validationCustom02" name="email" path="email" required="required"/>
-				<div class="invalid-feedback">Please choose a Email!</div>
-				<div class="valid-feedback">Fine!</div>
-			</div>
-			<div class="col-md-6">
-				<label for="validationCustom03" class="form-label">Phone
-					Number</label> <form:input type="text" class="form-control"
-					id="validationCustom03" path="phoneNumber" name="phoneNumber" required="required"/>
-				<div class="invalid-feedback">Please provide a valid Phone Number!</div>
-			</div>
-			<div class="col-md-3">
-				<label for="validationCustom05" class="form-label">Date Of
-					Birth</label> 
-				<form:input type="date" class="form-control" id="validationCustom05" name="dateOfBirth" path="dateOfBirth" required="required"/>
-				<div class="invalid-feedback">Please provide a valid dob.</div>
-			</div>
-			<div class="form-floating col-md-6">
-				<form:textarea class="form-control" placeholder="Leave a comment here"
-					id="floatingTextarea2" style="height: 100px" path="billing" name="billing" required="required"></form:textarea>
-				<label for="floatingTextarea2">Billing Address</label>
-			</div>
-			<div class="form-floating col-md-6">
-				<form:textarea class="form-control" placeholder="Leave a comment here"
-					id="floatingTextarea2" style="height: 100px" path="shipping" name="shipping" required="required"></form:textarea>
-				<label for="floatingTextarea2">Shipping Address</label>
-			</div>
-			<div class="col-12">
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value=""
-						id="invalidCheck" required> <label
-						class="form-check-label" for="invalidCheck"> Agree to
-						terms and conditions </label>
-					<div class="invalid-feedback">You must agree before
-						submitting.</div>
-				</div>
-			</div>
-			<div class="col-12">
-				<button class="btn btn-primary" type="submit">Submit form</button>
-			</div>
-		</form:form>
+		</c:if>
 	</div>
-	
-	<script>
-	
-	(function () {
-		  'use strict'
 
-		  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-		  var forms = document.querySelectorAll('.needs-validation')
-		  // Loop over them and prevent submission
-		  Array.prototype.slice.call(forms)
-		    .forEach(function (form) {
-		      form.addEventListener('submit', function (event) {
-		        if (!form.checkValidity()) {
-		          event.preventDefault()
-		          event.stopPropagation()
-		        }
+	<div class="container px-4 py-3 mb-3 mx-auto">
+		<div class="card card0">
+			<div class="d-flex flex-lg-row flex-column-reverse">
+				<div class="card card1">
+					<div class="row justify-content-center my-auto">
+						<div class="col-md-8 col-10 my-5">
+							<!-- <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="https://i.imgur.com/PSXxjNY.png"> </div> -->
+							<h3 class="mb-5 text-center heading">We are Awesome</h3>
+							<h6 class="msg-info">Register your account here</h6>
+							<form:form action="addUser" method="post" modelAttribute="user">
+								<form:hidden path="userId" />
+								<form:hidden path="role" value="user" />
+								<div class="form-group">
+									<label class="form-control-label text-muted">Username</label> 
+									<form:input type="text" id="username" name="username"
+										placeholder="Enter Your User Name" class="form-control" path="userName" required="required" />
+								</div>
+								<div class="form-group">
+									<label class="form-control-label text-muted">Password</label>
+									<form:input type="password" id="password" name="password"
+										placeholder="Password" class="form-control" path="password" required="required" />
+								</div>
+								<div class="form-group">
+									<label class="form-control-label text-muted">Email</label> 
+									<form:input type="email" id="email" name="email"
+										placeholder="Email" class="form-control" path="email" required="required" />
+								</div>
+								<div class="form-group">
+									<label class="form-control-label text-muted">Phone Number</label> 
+									<form:input type="text" id="phoneNumber" name="phoneNumber"
+										placeholder="Phone Number" class="form-control" path="phoneNumber" required="required" />
+								</div>
+								<div class="form-group">
+									<label class="form-control-label text-muted">Date Of Birth</label> 
+									<form:input type="date" id="dateOfBirth" name="dateOfBirth"
+										placeholder="Date Of Birth" class="form-control" path="dateOfBirth" required="required" />
+								</div>
+								<div class="form-group">
+									<label class="form-control-label text-muted">Billing Address</label> 
+									<form:textarea id="billing" name="billing"
+										placeholder="Billing Address" class="form-control" path="billing" required="required"></form:textarea>
+								</div>
+								<div class="form-group">
+									<label class="form-control-label text-muted">Shipping Address</label> 
+									<form:textarea id="shipping" name="shipping"
+										placeholder="Billing Address" class="form-control" path="shipping" required="required"></form:textarea>
+								</div>
+								<div class="row justify-content-center my-3 px-3">
+									<button class="btn-block btn-color" type="submit">Creat New One</button>
+								</div>
+							</form:form>
+							<!-- <div class="row justify-content-center my-2"> <a href="#"><small class="text-muted">Forgot Password?</small></a> </div> -->
+							<div class="bottom text-center mb-2">
+								<p href="register" class="sm-text mx-auto mb-3">
+									Already have an account?<a href="/Electronics/"
+										class="btn btn-white ml-5" style="margin-left: 10px;">Login</a>
+								</p>
+							</div>
+						</div>
+					</div>
 
-		        form.classList.add('was-validated')
-		      }, false)
-		    })
-		})()
-	
-	</script>
+				</div>
+				<div class="card card2">
+					<div class="my-5 mx-md-5 px-md-5 right" style="margin-top: 40vh!important;">
+						<h3 class="text-white">We are more than just a company</h3>
+						<small class="text-white">Lorem ipsum dolor sit amet,
+							consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+							commodo consequat.</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>

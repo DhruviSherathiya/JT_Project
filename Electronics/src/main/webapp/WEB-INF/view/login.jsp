@@ -243,7 +243,7 @@ a:hover {
 		</form>
 	</div> --%>
 	
-	<div class="container px-4 py-4 mb-3 mx-auto">
+	<div class="container px-4 py-5 mb-5 mx-auto">
     <div class="card card0">
         <div class="d-flex flex-lg-row flex-column-reverse">
             <div class="card card1">
@@ -258,12 +258,13 @@ a:hover {
                         
                         <div class="row justify-content-center my-3 px-3"> <button class="btn-block btn-color" type="submit">Login</button> </div>
                         </form>
-                        <div class="row justify-content-center my-2"> <a href="#"><small class="text-muted">Forgot Password?</small></a> </div>
+                        <!-- <div class="row justify-content-center my-2"> <a href="#"><small class="text-muted">Forgot Password?</small></a> </div> -->
+                        <div class="bottom text-center mb-2">
+		                    <p href="register" class="sm-text mx-auto mb-3">Don't have an account?<a href="register" class="btn btn-white ml-5" style="margin-left: 10px;">Creat New One</a></p>
+		                </div>
                     </div>
                 </div>
-                <div class="bottom text-center mb-5">
-                    <p href="register" class="sm-text mx-auto mb-3">Don't have an account?<a href="register" class="btn btn-white ml-5">Creat New One</a></p>
-                </div>
+                
             </div>
             <div class="card card2">
                 <div class="my-auto mx-md-5 px-md-5 right">
