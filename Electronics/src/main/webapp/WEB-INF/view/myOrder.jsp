@@ -8,7 +8,15 @@
 </head>
 <body style="background: #f5eded;">
 
-	<div align="center" class="container col-4 mt-2"	>
+	<c:if test = "${empty orders}">
+			<div class="container col-8 mt-5 mb-4" style="margin-top: 15vh !important;">
+				<center><h1>No Order !!</h1></center>
+				<center><h3>Please do some shopping</h3></center>
+			</div>
+    </c:if>
+    
+    <c:if test = "${not empty orders}">
+			<div align="center" class="container col-4 mt-2"	>
 		<div align="center" class="mb-5" style="margin-top: 20vh !important;">
 			<h2 class="mt-5">Order List</h2>
 		</div>
@@ -31,6 +39,8 @@
 			</tbody>
 		</table>
 	</div>
+    </c:if>
+
 <%@ include file = "footer.jsp" %>
 </body>
 </html>

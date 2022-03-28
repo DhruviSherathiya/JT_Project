@@ -14,6 +14,7 @@
 		<form:form action="saveHeadPhone" method="post" modelAttribute="headphone"
 			class="row g-3 needs-validation form-floating mb-3 mt-2"
 			novalidate="novalidate">
+				<form:hidden path="p_Id"/>
 				<form:hidden path="p_Type" value="HeadPhone"/>
 				<div class="col">
 					<div class="col-md-12 mt-3">

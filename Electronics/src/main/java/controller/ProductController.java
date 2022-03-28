@@ -175,10 +175,11 @@ public class ProductController {
 		if (laptop.getP_Id() == 0) { // if employee id is 0 then creating the
 			// employee other updating the employee
 			laptopService.addLaptop(laptop);
+			return new ModelAndView("redirect:/Product/laptop");
 		} else {
 			laptopService.updateLaptop(laptop);
+			return new ModelAndView("redirect:/Product/laptop");
 		}
-		return new ModelAndView("redirect:/Product/laptop");
 	}
 	
 	@RequestMapping(value = "/editLaptop")
@@ -195,7 +196,7 @@ public class ProductController {
 	public ModelAndView deleteEmployee(HttpServletRequest request) {
 		int pId = Integer.parseInt(request.getParameter("id"));
 		laptopService.deleteLaptop(pId);
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/Product/laptop");
 	}
 	
 	@RequestMapping(value = "/newHeadPhone", method = RequestMethod.GET)
@@ -211,10 +212,11 @@ public class ProductController {
 		if (headphone.getP_Id() == 0) { // if employee id is 0 then creating the
 			// employee other updating the employee
 			headphoneService.addHeadPhone(headphone);
+			return new ModelAndView("redirect:/Product/headphone");
 		} else {
 			headphoneService.updateHeadPhone(headphone);
+			return new ModelAndView("redirect:/Product/headphone");
 		}
-		return new ModelAndView("redirect:/Product/headphone");
 	}
 	
 	@RequestMapping(value = "/editHeadPhone")
@@ -231,7 +233,7 @@ public class ProductController {
 	public ModelAndView deleteHeadPhone(HttpServletRequest request) {
 		int pId = Integer.parseInt(request.getParameter("id"));
 		headphoneService.deleteHeadPhone(pId);
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/Product/headphone");
 	}
 	
 	@RequestMapping(value = "/newMobile", method = RequestMethod.GET)
@@ -247,10 +249,11 @@ public class ProductController {
 		if (mobile.getP_Id() == 0) { // if employee id is 0 then creating the
 			// employee other updating the employee
 			mobileService.addMobile(mobile);
+			return new ModelAndView("redirect:/Product/mobile");
 		} else {
 			mobileService.updateMobile(mobile);
+			return new ModelAndView("redirect:/Product/mobile");
 		}
-		return new ModelAndView("redirect:/Product/mobile");
 	}
 	
 	@RequestMapping(value = "/editMobile")
@@ -267,7 +270,7 @@ public class ProductController {
 	public ModelAndView deleteMobile(HttpServletRequest request) {
 		int pId = Integer.parseInt(request.getParameter("id"));
 		mobileService.deleteMobile(pId);
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/Product/mobile");
 	}
 	
 	@RequestMapping(value = "/newSmartWatch", method = RequestMethod.GET)
@@ -283,10 +286,11 @@ public class ProductController {
 		if (smartwatch.getP_Id() == 0) { // if employee id is 0 then creating the
 			// employee other updating the employee
 			smartwatchService.addSmartWatch(smartwatch);
+			return new ModelAndView("redirect:/Product/smartwatch");
 		} else {
 			smartwatchService.updateSmartWatch(smartwatch);
+			return new ModelAndView("redirect:/Product/smartwatch");
 		}
-		return new ModelAndView("redirect:/Product/smartwatch");
 	}
 	
 	@RequestMapping(value = "/editSmartWatch")
@@ -303,7 +307,7 @@ public class ProductController {
 	public ModelAndView deleteSmartWatch(HttpServletRequest request) {
 		int pId = Integer.parseInt(request.getParameter("id"));
 		smartwatchService.deleteSmartWatch(pId);
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/Product/smartwatch");
 	}
 	
 	@RequestMapping(value = "/newTablet", method = RequestMethod.GET)
@@ -319,10 +323,11 @@ public class ProductController {
 		if (tablet.getP_Id() == 0) { // if employee id is 0 then creating the
 			// employee other updating the employee
 			tabletService.addTablet(tablet);
+			return new ModelAndView("redirect:/Product/tablet");
 		} else {
 			tabletService.updateTablet(tablet);
+			return new ModelAndView("redirect:/Product/tablet");
 		}
-		return new ModelAndView("redirect:/Product/tablet");
 	}
 	
 	@RequestMapping(value = "/editTablet")
@@ -339,7 +344,7 @@ public class ProductController {
 	public ModelAndView deleteTablet(HttpServletRequest request) {
 		int pId = Integer.parseInt(request.getParameter("id"));
 		tabletService.deleteTablet(pId);
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/Product/tablet");
 	}
 	
 	@RequestMapping(value = "/newTV", method = RequestMethod.GET)
@@ -355,10 +360,11 @@ public class ProductController {
 		if (tv.getP_Id() == 0) { // if employee id is 0 then creating the
 			// employee other updating the employee
 			tvService.addTV(tv);
+			return new ModelAndView("redirect:/Product/tv");
 		} else {
 			tvService.updateTV(tv);
+			return new ModelAndView("redirect:/Product/tv");
 		}
-		return new ModelAndView("redirect:/Product/tv");
 	}
 	
 	@RequestMapping(value = "/editTV")
@@ -375,7 +381,7 @@ public class ProductController {
 	public ModelAndView deleteTV(HttpServletRequest request) {
 		int pId = Integer.parseInt(request.getParameter("id"));
 		tvService.deleteTV(pId);
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/Product/tv");
 	}
 	
 	@RequestMapping(value = "/singleProduct")
