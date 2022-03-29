@@ -301,8 +301,8 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/contact")
-	public ModelAndView contact(@RequestParam("name") String username, @RequestParam("email") String email,@RequestParam("message") String message,ModelAndView model, HttpServletRequest request) throws IOException, AddressException, MessagingException {
-//		model.setViewName("redirect:/contactUs");
+	public ModelAndView contact(@RequestParam("name") String username, @RequestParam("email") String email,@RequestParam("message") String message, HttpServletRequest request) throws IOException, AddressException, MessagingException {
+	    
 		String namestr = "<h3 style='display: inline'>Username: " + username + "<h3>";
 		String emailstr = "<h3 style='display: inline'>Email: " + email + "<h3>";
 		String msgstr = "<h3 style='display: inline'>Message: " + message + "<h3>";
@@ -310,11 +310,25 @@ public class UserController {
 		String body = namestr + emailstr + msgstr;
         JavaEmail javaEmail = new JavaEmail();
         javaEmail.setMailServerProperties();
-        javaEmail.draftEmailMessage(subject, body);
-        javaEmail.sendEmail(subject, body);
+        String to[] = { "dduprojects12@gmail.com" };
+        javaEmail.draftEmailMessage(to, subject, body);
+        javaEmail.sendEmail(to, subject, body);
         return new ModelAndView("redirect:/contactUs");
-        
-//		return model;
+
+	}
+	
+	@RequestMapping(value = "/refer")
+	public ModelAndView refer(@RequestParam("name") String username, @RequestParam("email") String email, HttpServletRequest request) throws IOException, AddressException, MessagingException {
+		String subject = "Electronic Ecommerce Website";
+		String line = "<p>Your friend " + username + " has referred you an electronic ecommerce website. Please go through this link and have amazing shopping</p>";
+		String link = "<p>http://localhost:8080/Electronics/</p>";
+		String body = line + link;
+        JavaEmail javaEmail = new JavaEmail();
+        javaEmail.setMailServerProperties();
+        String to[] = { email };
+        javaEmail.draftEmailMessage(to, subject, body);
+        javaEmail.sendEmail(to, subject, body);
+		return new ModelAndView("redirect:/");
 	}
 	
 }

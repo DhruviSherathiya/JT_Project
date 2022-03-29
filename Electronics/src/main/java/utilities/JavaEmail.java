@@ -26,10 +26,11 @@ public class JavaEmail {
 //    {
 //    	String subject = "testing Subject";
 //    	String body = "testing email body";
+//    	String to[] = { "dduprojects12@gmail.com" };
 //        JavaEmail javaEmail = new JavaEmail();
 //        javaEmail.setMailServerProperties();
-//        javaEmail.draftEmailMessage(subject, body);
-//        javaEmail.sendEmail(subject, body);
+//        javaEmail.draftEmailMessage(to,subject, body);
+//        javaEmail.sendEmail(to, subject, body);
 //    }
  
     public void setMailServerProperties()
@@ -46,9 +47,9 @@ public class JavaEmail {
         mailSession = Session.getDefaultInstance(properties, null);
     }
  
-    public MimeMessage draftEmailMessage(String subject, String body) throws AddressException, MessagingException
+    public MimeMessage draftEmailMessage(String[] to, String subject, String body) throws AddressException, MessagingException
     {
-        String[] toEmails = { "dduprojects12@gmail.com" };
+        String[] toEmails = to;
         String emailSubject = subject;
         String emailBody = body;
         MimeMessage emailMessage = new MimeMessage(mailSession);
@@ -71,7 +72,7 @@ public class JavaEmail {
         return emailMessage;
     }
  
-    public void sendEmail(String subject, String body) throws AddressException, MessagingException
+    public void sendEmail(String[] to, String subject, String body) throws AddressException, MessagingException
     {
         /**
          * Sender's credentials
@@ -85,7 +86,7 @@ public class JavaEmail {
         /**
          * Draft the message
          * */
-        MimeMessage emailMessage = draftEmailMessage(subject, body);
+        MimeMessage emailMessage = draftEmailMessage(to, subject, body);
         /**
          * Send the mail
          * */

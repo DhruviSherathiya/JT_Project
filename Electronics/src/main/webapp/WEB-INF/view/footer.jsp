@@ -41,7 +41,7 @@
      overflow-x: hidden !important
  } */
  
- footer .card:hover {
+ .footer .card:hover {
 	background: #fff;
 	box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
 	-webkit-transition: all 0.2s ease-in;
@@ -230,22 +230,24 @@
 <body>
 
 	<div class="container-fluid justify-content-center mt-5 p-0 mx-0 footer">
-    <div class="row px-0">
-        <div class="col">
-            <div class="card py-5 border-0 card-0">
-                <div class="card-body ">
-                    <div class="form-row">
-                        <div class="col-12 mb-4">
-                            <h5><b>Refer your friends</b></h5>
-                        </div>
-                        <div class="col-sm-auto col-12 my-sm-0 mt-3 text-left"><label for="validationCustom01">First name</label> <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark"></div>
-                        <div class="col-sm-auto col-12 my-sm-0 mt-4 "><label for="validationCustom01 ">Contact Number</label><input type="text" class="form-control" id="validationCustom01" placeholder="Contact Number" value="88888 88888"> </div>
-                        <div class="col-auto align-self-end mt-sm-0 mt-4"><button class="btn btn-block btn-success ml-2 mt-md-0 mt-3">Refer Now</button></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <form action="refer" method="POST">
+    	<div class="row px-0">
+	        <div class="col">
+	            <div class="card py-5 border-0 card-0">
+	                <div class="card-body ">
+	                    <div class="form-row">
+	                        <div class="col-12 mb-4">
+	                            <h5><b>Refer your friends</b></h5>
+	                        </div>
+	                        <div class="col-sm-auto col-12 my-sm-0 mt-3 text-left"><label for="validationCustom01">Your name</label> <input type="text" id="validationCustom01" class="form-control"  placeholder="Your name" name="name"  required></div>
+	                        <div class="col-sm-auto col-12 my-sm-0 mt-4 "><label for="validationCustom02">Friend's Email</label><input type="text" class="form-control" id="validationCustom02" placeholder="Friend's Email" name="email" required> </div>
+	                        <div class="col-auto align-self-end mt-sm-0 mt-4"><button class="btn btn-block btn-success ml-2 mt-md-0 mt-3" type="submit">Refer Now</button></div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </form>
     <footer>
         <div class="card border-0">
             <div class="card-body px-5">
