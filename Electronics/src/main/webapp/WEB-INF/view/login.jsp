@@ -118,7 +118,7 @@ button:focus {
 }
 
 .btn-color:hover {
-    color: #fff;
+    /* color: #fff; */
     background-image: linear-gradient(to right, #CCE6FF, #FFF3E6)
 }
 
@@ -131,7 +131,7 @@ button:focus {
 }
 
 .btn-white:hover {
-    color: #fff;
+    /* color: #fff; */
     background-image: linear-gradient(to right, #FFE6CC, #CCE6FF)
 }
 
