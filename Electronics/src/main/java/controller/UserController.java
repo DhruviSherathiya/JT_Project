@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -35,6 +37,7 @@ import service.SmartWatchService;
 import service.TVService;
 import service.TabletService;
 import service.UserService;
+import utilities.JavaEmail;
 
 /**
  * @author devoza
@@ -295,6 +298,23 @@ public class UserController {
 		model.setViewName("aboutUs");
 
 		return model;
+	}
+	
+	@RequestMapping(value = "/contact")
+	public ModelAndView contact(@RequestParam("name") String username, @RequestParam("email") String email,@RequestParam("message") String message,ModelAndView model, HttpServletRequest request) throws IOException, AddressException, MessagingException {
+//		model.setViewName("redirect:/contactUs");
+		String namestr = "<h3 style='display: inline'>Username: " + username + "<h3>";
+		String emailstr = "<h3 style='display: inline'>Email: " + email + "<h3>";
+		String msgstr = "<h3 style='display: inline'>Message: " + message + "<h3>";
+		String subject = "Feedback For Electronics Ecommerce Website";
+		String body = namestr + emailstr + msgstr;
+        JavaEmail javaEmail = new JavaEmail();
+        javaEmail.setMailServerProperties();
+        javaEmail.draftEmailMessage(subject, body);
+        javaEmail.sendEmail(subject, body);
+        return new ModelAndView("redirect:/contactUs");
+        
+//		return model;
 	}
 	
 }

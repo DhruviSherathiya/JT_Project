@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page isELIgnored="false"%>    
 <%@ include file="usernavbar.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -230,7 +231,6 @@ input[type='text'] {
     border-bottom: 2px solid #c8d2ff;
     outline: 0;
     caret-color: #c8d2ff;
-    color: #c8d2ff;
     margin-bottom: 20px
 }
 
@@ -337,6 +337,8 @@ input[type='text'] {
 </style>
 </head>
 <body>
+        
+<form action="contact" method="POST" clas="p-4">
 <div class="container">
     <div class="card">
         <div class="form">
@@ -356,12 +358,17 @@ input[type='text'] {
                     <div class="stats1"> <i class="fa fa-phone"></i> <span>+02 1203 153</span> </div>
                     <div class="stats1"> <i class="fa fa-envelope"></i> <span>contact@us.fr</span> </div>
                 </div>
-                <div class="card-content"> <span>
-                        <div class="input-text"> <input type="text" required="required"> <small>Name</small> </div>
-                        <div class="input-text"> <input type="text" required="required"> <small>E-mail</small> </div>
-                        <div class="textarea"> <textarea required="required"></textarea> <small>Message</small> </div>
-                    </span> </div>
-                <div class="buttons"> <button>SEND</button> </div>
+                <div class="card-content">
+                	
+                		<span>
+	                        <div class="input-text"> <input type="text" name="name" required="required"> <small>Name</small> </div>
+	                        <div class="input-text"> <input type="text" name="email" required="required"> <small>E-mail</small> </div>
+	                        <div class="textarea"> <textarea name="message" required="required"></textarea> <small>Message</small> </div>
+                    	</span> 
+                	
+                </div>
+                <div class="buttons"> <button type="submit">SEND</button> </div>
+                </form> 
             </div>
         </div>
     </div>
