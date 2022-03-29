@@ -52,13 +52,6 @@ body{
     margin-bottom: 40px;
 }
 
-.skills{
-    display: flex;
-    justify-content: space-between;
-    font-weight: 700;
-    font-size: 13px;
-}
-
 @media screen and (max-width:1200px){
     .inner-container{
         padding: 80px;
@@ -90,13 +83,14 @@ body{
         <div class="inner-container">
             <h1>About Us</h1>
             <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
+                What started out as a primarily computer parts store, has 
+                grown into one of the most trusted Electronic Accessories 
+                eRetailer store found online.  A lot has changed since we 
+                started our humble business over a decade ago for both us and the 
+                consumer.Today we offer thousands of different electronic accessories 
+                like smartphone, tablet, laptop, headphone, and more!
             </p>
-            <div class="skills">
-                <span>Web Design</span>
-                <span>Photoshop & Illustrator</span>
-                <span>Coding</span>
-            </div>
+      
         </div>
     </div>
 </body>
