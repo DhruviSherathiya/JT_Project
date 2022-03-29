@@ -6,6 +6,16 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>About Us</title>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+
 <style>
     *{
     margin: 0;
@@ -16,16 +26,16 @@
 
 body{
     min-height: 100vh;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
-    background-color: #f1f1f1;
+    /* background-color: #f1f1f1; */
 }
 
 .about-section{
     background: url(https://w0.peakpx.com/wallpaper/816/971/HD-wallpaper-headphones-equalizer-music.jpg) no-repeat left;
     background-size: 55%;
-    background-color: black;
+    /* background-color: black; */
     overflow: hidden;
     padding: 100px 0;
 }
@@ -33,9 +43,12 @@ body{
 .inner-container{
     width: 55%;
     float: right;
-    background-color: #fdfdfd;
-    padding: 90px;
-    
+    background: linear-gradient(to bottom, #37d5d6, #36096d);
+    animation: background-color 10s;
+    padding: 60px;
+    color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .inner-container h1{
@@ -46,7 +59,7 @@ body{
 
 .text{
     font-size: 15px;
-    color: #545454;
+    /* color: #545454; */
     line-height: 30px;
     text-align: justify;
     margin-bottom: 40px;
@@ -76,6 +89,140 @@ body{
         padding: 60px;
     }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins', sans-serif
+ }
+
+ body {
+     background: linear-gradient(to bottom, #37d5d6, #36096d);
+     animation: background-color 10s;
+     min-height: 100vh
+ }
+
+ @keyframes background-color {
+     0% {
+        background: linear-gradient(135deg, #380036, #0cbaba)
+        /*background: linear-gradient(135deg, #026d8d, #e01e1e)*/
+
+     }
+
+     25% {
+        background: linear-gradient(to bottom, #37d5d6, #36096d)
+     }
+
+     50% {
+         background: linear-gradient(to bottom, #0b486b, #f56217)
+     }
+
+     100% {
+        background: linear-gradient(45deg, red, blue);
+     }
+ }
+
+ .container {
+     margin-top: 80px
+ }
+
+ .container .col-lg-4 {
+     display: flex;
+     justify-content: center
+ }
+
+ .card {
+     width: 300px;
+     height: 300px;
+     transform-style: preserve-3d;
+     perspective: 500px;
+     border: none;
+     background-color: inherit
+ }
+
+ .card .face {
+     position: absolute;
+     color: #fff;
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+     border-radius: 15px;
+     background: rgba(255, 255, 255, 0.06);
+     transform-style: preserve-3d;
+     transition: 0.5s;
+     backface-visibility: hidden;
+     border-top: 1px solid #ddd;
+     border-left: 1px solid #ddd
+ }
+
+ .card .face.front-face,
+ .card .face.back-face {
+     position: absolute;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center
+ }
+
+ .card .face.front-face .profile {
+     width: 150px;
+     height: 150px;
+     border-radius: 50%;
+     object-fit: cover
+ }
+
+ .card .face.front-face .name {
+     letter-spacing: 2px
+ }
+
+ .card .face.front-face .designation {
+     font-size: 0.8rem;
+     color: #ddd;
+     letter-spacing: 0.8px
+ }
+
+ .card:hover .face.front-face {
+     transform: rotateY(180deg)
+ }
+
+ .card .face.back-face {
+     position: absolute;
+     background: rgba(255, 255, 255, 0.06);
+     transform: rotateY(180deg);
+     padding: 20px 30px;
+     text-align: center;
+     user-select: none
+ }
+
+ .card .face.back-face .fa-quote-left {
+     position: absolute;
+     top: 25px;
+     left: 25px;
+     font-size: 1.2rem
+ }
+
+ .card .face.back-face .fa-quote-right {
+     position: absolute;
+     bottom: 35px;
+     right: 25px;
+     font-size: 1.2rem
+ }
+
+ .card:hover .face.back-face {
+     transform: rotateY(360deg)
+ }
+
+ @media(max-width: 991.5px) {
+     .col-lg-4 {
+         margin-top: 40px;
+         margin-bottom: 20px
+     }
+ }
+
 </style>
 </head>
 <body>
@@ -93,6 +240,56 @@ body{
       
         </div>
     </div>
+    
+    <div class="container p-5 mb-5">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="face front-face"> <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80" alt="" class="profile">
+                    <div class="pt-3 text-uppercase name"> Robert Garrison </div>
+                    <div class="designation">Android Developer</div>
+                </div>
+                <div class="face back-face"> <span class="fas fa-quote-left"></span>
+                    <div class="testimonial"> I made bacck the purchase price in just 48 hours! Thank you for making it pain less, pleasant. The service was execellent. I will refer everyone I know. </div> <span class="fas fa-quote-right"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="face front-face"> <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="" class="profile">
+                    <div class="pt-3 text-uppercase name"> Jeffery Kennan </div>
+                    <div class="designation">Full Stack Developer</div>
+                </div>
+                <div class="face back-face"> <span class="fas fa-quote-left"></span>
+                    <div class="testimonial"> Really good, you have saved our business! I made bacck the purchase price in just 48 hours! man, this thing is getting better and better as I learn more about it. </div> <span class="fas fa-quote-right"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="face front-face"> <img src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" class="profile">
+                    <div class="pt-3 text-uppercase name"> Issac Maxwell </div>
+                    <div class="designation">Finance Director</div>
+                </div>
+                <div class="face back-face"> <span class="fas fa-quote-left"></span>
+                    <div class="testimonial"> Account keeper is the most valuable business research we have EVER purchased. Without electrician, we would ahave gone bankrupt by now. </div> <span class="fas fa-quote-right"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="face front-face"> <img src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" class="profile">
+                    <div class="pt-3 text-uppercase name"> Issac Maxwell </div>
+                    <div class="designation">Finance Director</div>
+                </div>
+                <div class="face back-face"> <span class="fas fa-quote-left"></span>
+                    <div class="testimonial"> Account keeper is the most valuable business research we have EVER purchased. Without electrician, we would ahave gone bankrupt by now. </div> <span class="fas fa-quote-right"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
 
