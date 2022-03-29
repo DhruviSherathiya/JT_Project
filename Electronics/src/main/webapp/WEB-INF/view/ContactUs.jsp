@@ -7,251 +7,364 @@
 <meta charset="ISO-8859-1">
 <title>Contact Us</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 * {
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0
 }
 
-body {
-  background-color: #6a9ac4;
+body{
+	background-image: linear-gradient(to right, #FFF3E6, #CCE6FF);
 }
 
-#contact {
-  background-color: #6a9ac4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #FFF3E6, #CCE6FF);
 }
 
-.contact-box {
-  width: clamp(100px, 90%, 1000px);
-  margin: 80px 50px;
-  display: flex;
-  flex-wrap: wrap;
+.card {
+    height: 500px;
+    width: 800px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-family: 'Poppins', sans-serif
 }
 
-.contact-links, .contact-form-wrapper {
-  width: 50%;
-  padding: 8% 5% 10% 5%;
-}
-
-
-.contact-links {
-  background-color: #1f2e43;
-  background:
-    radial-gradient(
-      circle at 55% 92%, #426691 0 12%, transparent 12.2%
-    ), 
-    radial-gradient(
-      circle at 94% 72%, #426691 0 10%, transparent 10.2%
-    ), 
-    radial-gradient(
-      circle at 20% max(78%, 350px), #263a53 0 7%, transparent 7.2%
-    ), 
-    radial-gradient(
-      circle at 0% 0%, #263a53 0 40%, transparent 40.2%
-    ), 
-    #1f2e43;
-  border-radius: 10px 0 0 10px;
-}
-
-.contact-form-wrapper {
-  background-color: #ffffff8f;
-  border-radius: 0 10px 10px 0;
-}
-
-@media only screen and (max-width: 800px) {
-  .contact-links, .contact-form-wrapper {
+.form {
     width: 100%;
-  }
-  
-  .contact-links {
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .contact-form-wrapper {
-    border-radius: 0 0 10px 10px;
-  }
+    height: 100%;
+    display: flex
 }
 
-@media only screen and (max-width: 400px) {
-  .contact-box {
-    width: 95%;
-    margin: 8% 5%;
-  }
+.left-side {
+    width: 30%;
+    background-color: #fff;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer
 }
 
-h2 {
-  font-family: 'Arimo', sans-serif;
-  color: #fff;
-  font-size: clamp(30px, 6vw, 60px);
-  letter-spacing: 2px;
-  text-align: center;
-  transform: scale(.95, 1);
+.left-side .line1 {
+    height: 350px;
+    width: 100%;
+    background-color: #4b66ef;
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 50% 100%, 0% 50%);
+    z-index: 10
 }
 
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-top: 50px;
+.left-side .line2 {
+    height: 350px;
+    width: 440px;
+    background-color: #31c8ff;
+    position: absolute;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    top: 150px;
+    z-index: 9
 }
 
-.link {
-  margin: 10px;
-  cursor: pointer;
+.left-side .line3 {
+    height: 330px;
+    width: 100%;
+    background-color: #f0aec5;
+    position: absolute;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    z-index: 11;
+    bottom: 0
 }
 
-img {
-  width: 45px;
-  height: 45px;
-  filter: 
-    hue-rotate(220deg)
-    drop-shadow(2px 4px 4px #0006);
-  transition: 0.2s;
-  user-select: none;
+.contact-us {
+    display: flex;
+    justify-content: center
 }
 
-img:hover {
-  transform: scale(1.1, 1.1);
+.contact-us p {
+    z-index: 11;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    transform: rotate(-180deg);
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+    position: absolute;
+    top: 20px;
+    left: 30px
 }
 
-img:active {
-  transform: scale(1.1, 1.1);
-  filter: 
-    hue-rotate(220deg)
-    drop-shadow(2px 4px 4px #222)
-    sepia(0.3);
+.contact-us span {
+    position: absolute;
+    top: 180px;
+    left: 49px;
+    height: 80px;
+    width: 2px;
+    background-color: #fff;
+    z-index: 11
 }
 
-.form-item {
-  position: relative;
+.left-side .social {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    left: 55px
 }
 
-label, input, textarea {
-  font-family: 'Poppins', sans-serif;
+.social i {
+    margin-right: 20px;
+    z-index: 12;
+    font-size: 23px;
+    color: #fff;
+    transition: all 0.6s
 }
 
-label {
-  position: absolute;
-  top: 10px;
-  left: 2%;
-  color: #999;
-  font-size: clamp(14px, 1.5vw, 18px);
-  pointer-events: none;
-  user-select: none;
+.social i:nth-child(1) {
+    position: absolute;
+    bottom: -90px;
+    left: 0
 }
 
-input, textarea {
-  width: 100%;
-  outline: 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  padding: 12px;
-  font-size: clamp(15px, 1.5vw, 18px);
+.social i:nth-child(2) {
+    position: absolute;
+    bottom: -90px;
+    left: 30px;
+    transition-delay: 0.3s
 }
 
-input:focus+label, 
-input:valid+label, 
-textarea:focus+label, 
-textarea:valid+label {
-  font-size: clamp(13px, 1.3vw, 16px);
-  color: #777;
-  top: -20px;
-  transition: all .225s ease;
+.social i:nth-child(3) {
+    position: absolute;
+    bottom: -90px;
+    left: 70px;
+    transition-delay: 0.6s
 }
 
-.submit-btn {
-  background-color: #1f2e43;
-  filter: drop-shadow(2px 2px 3px #0003);
-  color: #fff;
-  font-family: "Poppins",sans-serif;
-  font-size: clamp(16px, 1.6vw, 18px);
-  display: block;
-  padding: 12px 20px;
-  margin: 2px auto;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  user-select: none;
-  transition: 0.2s;
+.social i:nth-child(4) {
+    position: absolute;
+    bottom: -90px;
+    left: 110px;
+    transition-delay: 0.9s
 }
 
-.submit-btn:hover {
-  transform: scale(1.1, 1.1);
+.left-side:hover .social i {
+    bottom: 0
 }
 
-.submit-btn:active {
-  transform: scale(1.1, 1.1);
-  filter: sepia(0.5);
+.right-side {
+    width: 70%;
+    background-color: #fff;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden
 }
 
-@media only screen and (max-width: 800px) {
-  h2 {
-    font-size: clamp(40px, 10vw, 60px);
-  }
+.top-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box
 }
 
-@media only screen and (max-width: 400px) {
-  h2 {
-    font-size: clamp(30px, 12vw, 60px);
-  }
-  
-  .links {
-    padding-top: 30px;
-  }
-  
-  img {
-    width: 38px;
-    height: 38px;
-  }
+.top-div h2 {
+    font-weight: 800;
+    font-size: 25px
 }
 
+.top-div p {
+    font-size: 13px;
+    font-weight: 800
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin-top: 30px
+}
+
+.stats1 i {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    color: #a5f1cf;
+    transition: all 0.5s;
+    transform: scale(0)
+}
+
+.right-side:hover .stats1 i {
+    transform: scale(1.3)
+}
+
+.stats1 span {
+    font-size: 12px;
+    font-weight: 600
+}
+
+.card-content {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px
+}
+
+.card-content span {
+    height: 230px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 2px 2px 20px 5px #c8d2ff;
+    padding: 25px;
+    box-sizing: border-box
+}
+
+input[type='text'] {
+    height: 15px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #c8d2ff;
+    outline: 0;
+    caret-color: #c8d2ff;
+    color: #c8d2ff;
+    margin-bottom: 20px
+}
+
+.input-text {
+    position: relative
+}
+
+.input-text small {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    color: #c8d2ff;
+    font-weight: 600;
+    transition: all 0.5s
+}
+
+.input-text input:focus~small,
+.input-text input:valid~small {
+    top: -15px;
+    font-size: 12px;
+    color: black
+}
+
+.textarea {
+    position: relative;
+    margin-top: 8px;
+    color: #c8d2ff
+}
+
+.textarea textarea {
+    height: 60px;
+    width: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #c8d2ff;
+    caret-color: #c8d2ff;
+    color: #c8d2ff
+}
+
+.textarea small {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    transition: all 0.5s;
+    font-weight: 600
+}
+
+.textarea textarea:focus~small,
+.textarea textarea:valid~small {
+    top: -20px;
+    font-size: 12px;
+    color: black
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    position: relative
+}
+
+.buttons button {
+    height: 40px;
+    width: 150px;
+    position: absolute;
+    bottom: -140px;
+    color: white;
+    background-color: #4b6fef;
+    border-radius: 8px;
+    transition: all 0.5s;
+    cursor: pointer;
+    border: none
+}
+
+.buttons button:hover {
+    background-color: blue
+}
+
+.right-side:hover button {
+    position: absolute;
+    bottom: -20px
+}
+
+@media (max-width:750px) {
+    .container .card {
+        max-width: 350px
+    }
+
+    .container .card .right-side {
+        display: none
+    }
+
+    .container .card .left-side {
+        width: 100%
+    }
+
+    .left-side .social {
+        display: flex;
+        left: 30%;
+        position: absolute;
+        bottom: 20px
+    }
+}
 </style>
 </head>
 <body>
-<section id="contact">
-  <div class="contact-box">
-    <div class="contact-links">
-      <h2>CONTACT</h2>
-      <div class="links">
-        <div class="link">
-          <a><img src="https://i.postimg.cc/m2mg2Hjm/linkedin.png" alt="linkedin"></a>
+<div class="container">
+    <div class="card">
+        <div class="form">
+            <div class="left-side"> <span class="line1"></span> <span class="line2"></span> <span class="line3"></span>
+                <div class="contact-us">
+                    <p>Contact Us</p> <span></span>
+                </div>
+                <div class="social"> <i class="fa fa-facebook-f"></i> <i class="fa fa-twitter"></i> <i class="fa fa-instagram"></i> <i class="fa fa-dribbble"></i> </div>
+            </div>
+            <div class="right-side">
+                <div class="top-div">
+                    <h2>Get in touch !</h2>
+                    <p>Contact us for a quote,help or to join the team. </p>
+                </div>
+                <div class="stats">
+                    <div class="stats1"> <i class="fa fa-map-marker"></i> <span>102 Street<br>2714 DONNZY</span> </div>
+                    <div class="stats1"> <i class="fa fa-phone"></i> <span>+02 1203 153</span> </div>
+                    <div class="stats1"> <i class="fa fa-envelope"></i> <span>contact@us.fr</span> </div>
+                </div>
+                <div class="card-content"> <span>
+                        <div class="input-text"> <input type="text" required="required"> <small>Name</small> </div>
+                        <div class="input-text"> <input type="text" required="required"> <small>E-mail</small> </div>
+                        <div class="textarea"> <textarea required="required"></textarea> <small>Message</small> </div>
+                    </span> </div>
+                <div class="buttons"> <button>SEND</button> </div>
+            </div>
         </div>
-        <div class="link">
-          <a><img src="https://i.postimg.cc/YCV2QBJg/github.png" alt="github"></a>
-        </div>
-        <div class="link">
-          <a><img src="https://i.postimg.cc/W4Znvrry/codepen.png" alt="codepen"></a>
-        </div>
-        <div class="link">
-          <a><img src="https://i.postimg.cc/NjLfyjPB/email.png" alt="email"></a>
-        </div>
-      </div>
     </div>
-    <div class="contact-form-wrapper">
-      <form>
-        <div class="form-item">
-          <input type="text" name="sender" required>
-          <label>Name:</label>
-        </div>
-        <div class="form-item">
-          <input type="text" name="email" required>
-          <label>Email:</label>
-        </div>
-        <div class="form-item">
-          <textarea class="" name="message" required></textarea>
-          <label>Message:</label>
-        </div>
-        <button class="submit-btn">Send</button>  
-      </form>
-    </div>
-  </div>
-</section>
+</div>
 </body>
 </html>

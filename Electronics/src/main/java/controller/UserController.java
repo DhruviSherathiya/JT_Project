@@ -283,12 +283,12 @@ public class UserController {
 	}
 	
 
-	@RequestMapping(value = "/footer")
-	public ModelAndView footer(ModelAndView model) {
-		model.setViewName("footer");
-		return model;
-		
-	}
+	/*
+	 * @RequestMapping(value = "/footer") public ModelAndView footer(ModelAndView
+	 * model) { model.setViewName("footer"); return model;
+	 * 
+	 * }
+	 */
 
 	@RequestMapping(value = "/aboutUs")
 	public ModelAndView AboutUs(ModelAndView model, HttpServletRequest request) throws IOException {

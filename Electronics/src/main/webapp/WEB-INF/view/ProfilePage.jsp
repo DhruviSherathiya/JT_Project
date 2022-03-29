@@ -18,7 +18,7 @@
 	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <style>
 body {
-	background: #CCE6FF!important;
+	background-image: linear-gradient(to right, #FFF3E6, #CCE6FF)!important;
 }
 
 .form-control:focus {
