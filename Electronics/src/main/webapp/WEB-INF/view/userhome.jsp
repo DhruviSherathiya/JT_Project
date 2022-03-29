@@ -19,6 +19,25 @@
 </script>  -->
 <style>
 
+body {
+/*     color: #000;
+    overflow-x: hidden; */
+    height: 100%;
+    background-image: linear-gradient(to right, #FFF3E6, #CCE6FF)!important;
+    background-repeat: no-repeat
+}
+
+.card-flyer .btn{
+	background-image: linear-gradient(to right, #e7bfd4, #bdd5ed);
+	color: black!important;
+	cursor: pointer;
+    border: none !important;
+}
+
+.card-flyer .btn:hover{
+background-image: linear-gradient(to right, #bdd5ed, #e996c1);
+}
+
 .carousel .item {
   height: 300px;
 }
@@ -33,7 +52,7 @@
 /*----  Main Style  ----*/
 #cards_landscape_wrap-2 {
 	text-align: center;
-	background: #f5eded;
+	/* background: #f5eded; */
 }
 
 #cards_landscape_wrap-2 .container {
@@ -126,7 +145,7 @@
 }
 </style>
 </head>
-<body style="background: #f5eded;">
+<body>
 <% session = request.getSession(); %>
 
 		<c:if test = "${not empty qty_error}">
@@ -222,7 +241,7 @@
 											<input style="width: 50px; height: 38px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${laptop.p_Quantity}">
 											<input type="hidden" name="pid" value="${laptop.p_Id}">
 											
-											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
+											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; border: none;"></a>
 										
 										</div>
 									
@@ -260,7 +279,7 @@
 											<input style="width: 50px; height: 38px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${mobile.p_Quantity}">
 											<input type="hidden" name="pid" value="${mobile.p_Id}">
 											
-											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
+											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; border: none;"></a>
 										
 										</div>
 									
@@ -298,7 +317,7 @@
 											<input style="width: 50px; height: 38px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${smartwatch.p_Quantity}">
 											<input type="hidden" name="pid" value="${smartwatch.p_Id}">
 											
-											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
+											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; border: none;"></a>
 										
 										</div>
 									
@@ -336,7 +355,7 @@
 											<input style="width: 50px; height: 38px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${headphone.p_Quantity}">
 											<input type="hidden" name="pid" value="${headphone.p_Id}">
 											
-											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
+											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; border: none;"></a>
 										
 										</div>
 									
@@ -374,7 +393,7 @@
 											<input style="width: 50px; height: 38px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${tv.p_Quantity}">
 											<input type="hidden" name="pid" value="${tv.p_Id}">
 											
-											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
+											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; border: none;"></a>
 										
 										</div>
 									
@@ -412,7 +431,7 @@
 											<input style="width: 50px; height: 38px;" type="number" name="p_quantity" placeholder="Enter Quantity" value="1"  min="1" max="${tablet.p_Quantity}">
 											<input type="hidden" name="pid" value="${tablet.p_Id}">
 											
-											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; color: white; border: none;"></a>
+											<a href="addtocart" class="btn btn-primary" type=submit><input type="submit" value="Add To Cart" style="background:none; border: none;"></a>
 										
 										</div>
 									

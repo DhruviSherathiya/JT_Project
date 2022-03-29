@@ -33,7 +33,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
 
 body {
-    background-color: #f5eee7;
+    background-image: linear-gradient(to right, #FFF3E6, #CCE6FF)!important;
     font-family: "Poppins", sans-serif;
     font-weight: 300
 }
@@ -128,6 +128,17 @@ body {
     padding: 24px 1rem !important
 }
 
+.pay .btn{
+	background-image: linear-gradient(to right, #e7bfd4, #bdd5ed);
+	color: black!important;
+	cursor: pointer;
+    border: none !important;
+}
+
+.pay .btn:hover{
+background-image: linear-gradient(to right, #bdd5ed, #e996c1);
+}
+
 </style>
 
 </head>
@@ -136,7 +147,9 @@ body {
 <div class="container d-flex justify-content-center mt-5 mb-5">
     <div class="row g-3">
     	<div class="col-md-2"></div>
-        <div class="col-md-8"> <span>Payment Method</span>
+    	
+        <div class="col-md-8">
+        <center class="p-4"><h2>Payment Method</h2></center>
             <div class="card">
                 <div class="accordion" id="accordionExample">
                     <div class="card">
@@ -172,7 +185,7 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="m-4"><a href="/Electronics/myOrder" class="btn btn-primary px-4 py-2">Pay $${total}</a></div>
+                <div class="m-4 pay"><a href="/Electronics/myOrder" class="btn btn-primary px-4 py-2">Pay $${total}</a></div>
             </div>
         </div>
         <div class="col-md-2"></div>

@@ -39,12 +39,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
-    background-color: #ffe8d2;
+    background-image: linear-gradient(to right, #FFF3E6, #CCE6FF)!important;
     font-family: 'Montserrat', sans-serif
 }
 
 .card {
     border: none
+}
+
+.btn{
+	background-image: linear-gradient(to right, #e7bfd4, #bdd5ed);
+	color: black!important;
+	cursor: pointer;
+    border: none !important;
+}
+
+.btn:hover{
+background-image: linear-gradient(to right, #bdd5ed, #e996c1);
 }
 
 .logo {

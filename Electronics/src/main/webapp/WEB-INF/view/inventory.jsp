@@ -19,9 +19,20 @@
 	-o-transition: all 0.2s ease-in;
 	transition: all 0.2s ease-in;
 }
+
+.card-body .btn{
+	background-image: linear-gradient(to right, #e7bfd4, #bdd5ed);
+	color: black!important;
+	cursor: pointer;
+    border: none !important;
+}
+
+.card-body .btn:hover{
+background-image: linear-gradient(to right, #bdd5ed, #e996c1);
+}
 </style>
 </head>
-<body style="background: #f5eded;">
+<body style="background-image: linear-gradient(to right, #FFF3E6, #CCE6FF)!important;">
 
 	<div class="container col-10 mt-5">
 		<div align="center" class="mb-5" style="margin-top: 20vh !important;">
@@ -29,7 +40,7 @@
 		</div>
 
 		<c:forEach var="laptop" items="${listLaptop}" varStatus="theCount">
-			<div class="container">
+			<div class="container product">
 				<div class="card mb-3" style="max-width: 100%;">
 					<div class="row g-0">
 						<div class="col-md-4 p-5">
@@ -75,10 +86,10 @@
 										</div>
 									</div>
 								</div>
-								<div class="mt-3">
-									<a href="editLaptop?id=${laptop.p_Id}" class="btn btn-primary">Edit</a>
+								<div class="mt-3" id="#button">
+									<a href="editLaptop?id=${laptop.p_Id}" class="btn btn-primary" class="button">Edit</a>
 									&nbsp;&nbsp;&nbsp;&nbsp; <a
-										href="deleteLaptop?id=${laptop.p_Id}" class="btn btn-primary">Delete</a>
+										href="deleteLaptop?id=${laptop.p_Id}" class="btn btn-primary" class="button">Delete</a>
 								</div>
 							</div>
 						</div>

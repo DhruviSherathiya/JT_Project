@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>User Management Screen</title>
 </head>
-<body style="background: #f5eded;">
+<body style="background-image: linear-gradient(to right, #FFF3E6, #CCE6FF)!important;">
 
 	<div align="center" class="container col-12 mt-5">
 		<div align="center" class="mb-5" style="margin-top: 20vh !important;">

@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>My Orders</title>
 </head>
-<body style="background: #f5eded;">
+<body style="background-image: linear-gradient(to right, #FFF3E6, #CCE6FF)!important;">
 
 	<c:if test = "${empty orders}">
 			<div class="container col-8 mt-5 mb-4" style="margin-top: 15vh !important;">

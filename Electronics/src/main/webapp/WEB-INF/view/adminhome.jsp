@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 
 <style>
+
 .container {
 	height: 100vh;
 	display: flex;
@@ -43,7 +44,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #00004d;
+	background: linear-gradient(to right, #07218b, #e04f4f);
 	clip-path: circle(120px at 50% 50%);
 	transition: 0.9s;
 	z-index: 10
@@ -86,14 +87,15 @@
 	width: auto;
 	height: 35px;
 	border: none;
-	background-color: #0000ffb8;
-	color: #fff;
+	background-image: linear-gradient(to right, #89bdee, #CCE6FF); 
+	color: black;
 	font-size: 14px;
 	border-radius: 4px;
 }
 
 .content button:hover {
-	background-color: blue
+    /* color: #fff; */
+    background-image: linear-gradient(to right, #CCE6FF, #89bdee)
 }
 
 .card1:hover .content {
@@ -107,7 +109,7 @@
 
 <title>Admin Panel</title>
 </head>
-<body style="background: #f5eded;">
+<body style="background: linear-gradient(to right, #FFF3E6, #CCE6FF);">
 
 	<div id="carouselExampleFade" class="carousel slide carousel-fade"
 		data-bs-ride="carousel" style="height: 100vh;">

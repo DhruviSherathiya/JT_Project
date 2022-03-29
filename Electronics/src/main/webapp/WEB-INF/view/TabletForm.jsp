@@ -7,8 +7,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>New/Edit Laptop</title>
+
+<style>
+.col button{
+	background-image: linear-gradient(to right, #e7bfd4, #bdd5ed);
+	color: black!important;
+	cursor: pointer;
+    border: none !important;
+}
+
+.col button:hover{
+background-image: linear-gradient(to right, #bdd5ed, #e996c1);
+}
+</style>
+
+
 </head>
-<body style="background: #f5eded;">
+<body style="background-image: linear-gradient(to right, #FFF3E6, #CCE6FF)!important;">
 	<div class="container col-8" style="margin-top: 10vh!important;">
 
 		<form:form action="saveTablet" method="post" modelAttribute="tablet"

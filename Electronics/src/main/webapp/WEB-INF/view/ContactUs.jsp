@@ -268,7 +268,7 @@ input[type='text'] {
     outline: none;
     border-bottom: 2px solid #c8d2ff;
     caret-color: #c8d2ff;
-    color: #c8d2ff
+    /* color: #c8d2ff */
 }
 
 .textarea small {

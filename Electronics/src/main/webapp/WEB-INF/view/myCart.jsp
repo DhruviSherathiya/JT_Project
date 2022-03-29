@@ -21,7 +21,7 @@
 </style>
 
 </head>
-<body style="background: #f5eded;">
+<body style="background: linear-gradient(to right, #FFF3E6, #CCE6FF);">
 
 <!-- <div class="container col-12 mt-5"> -->
 	<!-- <div align="center" class="container col-8 mt-5">

@@ -140,7 +140,15 @@
  }
 
  .footer .btn {
-     border-radius: 50px
+    /*  border-radius: 50px; */
+     background-image: linear-gradient(to right, #e7bfd4, #bdd5ed);
+	color: black!important;
+	cursor: pointer;
+    border: none !important;
+ }
+
+ .footer .btn:hover{
+   	background-image: linear-gradient(to right, #bdd5ed, #e996c1);
  }
 
  .footer .card-1 {

@@ -20,10 +20,21 @@
 	
 }
 
+.card .btn{
+	background-image: linear-gradient(to right, #e7bfd4, #bdd5ed);
+	color: black!important;
+	cursor: pointer;
+    border: none !important;
+}
+
+.card .btn:hover{
+background-image: linear-gradient(to right, #bdd5ed, #e996c1);
+}
+
 </style>
 
 </head>
-<body style="background: #f5eded;">
+<body style="background-image: linear-gradient(to right, #FFF3E6, #CCE6FF)!important;">
 
 	<div align="center" class="mb-5" style="margin-top: 20vh!important;">	
 		<h5 class="mt-5">

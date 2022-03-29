@@ -19,7 +19,7 @@
 }
 </style>
 </head>
-<body style="background: #f5eded;"> 
+<body style="background-image: linear-gradient(to right, #FFF3E6, #CCE6FF)!important;"> 
 
 	<div class="container col-10 mt-5" style="margin-top: 15vh !important;">
 
