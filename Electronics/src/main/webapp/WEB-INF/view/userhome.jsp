@@ -267,7 +267,7 @@ background-image: linear-gradient(to right, #bdd5ed, #e996c1);
 								<div class="text-box">
 									<a href="/Electronics/Product/singleProduct?pid=${mobile.p_Id}">
 										<div class="image-box" style="padding: 10%;">
-											<img style="width: 260px;"
+											<img style="width: 230px;"
 												src="${mobile.img_Url}"
 												alt="" />
 										</div>
@@ -343,7 +343,7 @@ background-image: linear-gradient(to right, #bdd5ed, #e996c1);
 								<div class="text-box">
 									<a href="/Electronics/Product/singleProduct?pid=${headphone.p_Id}">
 										<div class="image-box" style="padding: 10%;">
-											<img style="width: 260px;"
+											<img style="width: 210px;"
 												src="${headphone.img_Url}"
 												alt="" />
 										</div>
