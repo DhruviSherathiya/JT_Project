@@ -23,4 +23,7 @@ public interface UserService {
 
 	public User updateUser(User user);
 
+	public User getUserByEmail(String email);
+	
+	public User getUserByUserName(String uName);
 }

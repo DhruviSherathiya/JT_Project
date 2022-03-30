@@ -22,4 +22,7 @@ public interface UserDAO {
 
 	public User getUser(int userid);
 
+	public User getUserByEmail(String email);
+	
+	public User getUserByUserName(String uName);
 }

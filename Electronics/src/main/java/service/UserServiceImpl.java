@@ -60,4 +60,16 @@ public class UserServiceImpl implements UserService {
 //		this.UserDAO = UserDAO;
 //	}
 
+	@Override
+	@Transactional
+	public User getUserByEmail(String email) {
+		return UserDAO.getUserByEmail(email);
+	}
+	
+	@Override
+	@Transactional
+	public User getUserByUserName(String uName) {
+		return UserDAO.getUserByUserName(uName);
+	}
+	
 }

@@ -207,18 +207,42 @@ a:hover {
 				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
         </c:if>
-        
-        <c:if test = "${not empty success_reset}">
-			<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-	        <div class="alert alert-success alert-dismissible fade show" role="alert">
-				  ${success_reset}
-				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>
-        </c:if>
-        
+		
+		
 	</div>
 
-	<div class="container px-4 py-4 mb-5 mx-auto">
+<%-- 	<div class="container col-md-4">
+		
+		<form  action="checkLogin" method="post">
+		
+			<div class="form-floating mb-3">
+			  <input type="text" class="form-control" id="floatingInput" name="username" placeholder="Enter You Username" required>
+			  <label for="floatingInput">Username</label>
+			</div>
+			<div class="form-floating">
+			  <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" required>
+			  <label for="floatingPassword">Password</label>
+			</div>
+			
+			<div class="row">
+			
+				<div class="col-md-3">
+					<div class="col mt-4">
+				    	<button type="submit" class="btn btn-primary mb-3">Login</button>
+				    </div>
+				</div>
+				<div class="col-md-3">
+					<div class="col mt-4">
+				    	<a href="register" class="btn btn-primary">Register</a>
+				    </div>
+				</div>
+			
+			</div>
+		
+		</form>
+	</div> --%>
+	
+	<div class="container px-4 py-5 mb-5 mx-auto">
     <div class="card card0">
         <div class="d-flex flex-lg-row flex-column-reverse">
             <div class="card card1">
@@ -226,14 +250,13 @@ a:hover {
                     <div class="col-md-8 col-10 my-5">
                         <!-- <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="https://i.imgur.com/PSXxjNY.png"> </div> -->
                         <h3 class="mb-5 text-center heading">We are Awesome</h3>
-                        <h6 class="msg-info">Please login to your account</h6>
-                        <form action="checkLogin" method="post">
-                        	<div class="form-group"> <label class="form-control-label text-muted">Username</label> <input type="text" id="username" name="username" placeholder="Enter Your User Name" class="form-control" required> </div>
-                        <div class="form-group"> <label class="form-control-label text-muted">Password</label> <input type="password" id="password" name="password" placeholder="Password" class="form-control" required> </div>
+                        <h6 class="msg-info">Please enter your email to verify your account.</h6>
+                        <form action="resetValidate" method="post">
+                        	<div class="form-group"> <label class="form-control-label text-muted">Email</label> <input type="email" id="email" name="email" placeholder="Enter Your Email" class="form-control" required> </div>
                         
-                        <div class="row justify-content-center my-3 px-3"> <button class="btn-block btn-color" type="submit">Login</button> </div>
+                        <div class="row justify-content-center my-3 px-3"> <button class="btn-block btn-color" type="submit">Submit</button> </div>
                         </form>
-                        <div class="row justify-content-center my-2"> <a href="forgotPassword"><small class="text-muted">Forgot Password?</small></a> </div>
+                        <!-- <div class="row justify-content-center my-2"> <a href="forgotPassword"><small class="text-muted">Forgot Password?</small></a> </div> -->
                         <div class="bottom text-center mb-2">
 		                    <p href="register" class="sm-text mx-auto mb-3">Don't have an account?<a href="register" class="btn btn-white ml-5" style="margin-left: 10px;">Creat New One</a></p>
 		                </div>
@@ -243,7 +266,7 @@ a:hover {
             </div>
             <div class="card card2">
                 <div class="my-auto mx-md-5 px-md-5 right">
-                    <h3>We are more than just a company</h3> <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</small>
+                    <h3>Read this before submit</h3> <small>If email entered by you is not register with your account then you will not get an email.</small>
                 </div>
             </div>
         </div>

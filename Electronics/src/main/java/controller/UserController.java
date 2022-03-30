@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
@@ -16,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -68,10 +70,13 @@ public class UserController {
 	private SmartWatchService smartwatchService;
 	@Autowired
 	private TabletService tabletService;
+	
+	int token1 = 0;
 
 	@RequestMapping(value = "/")
 	public ModelAndView login(ModelAndView model, HttpServletRequest request) throws IOException {
 		HttpSession session = request.getSession();
+		session.removeAttribute("error_reset");
 		if (session.getAttribute("uid") != null) {
 			User user = userService.getUser((int) session.getAttribute("uid"));
 			if (user.getRole().equalsIgnoreCase("admin")) {
@@ -82,40 +87,9 @@ public class UserController {
 		} else {
 			model.setViewName("login");
 		}
-
+		
 		return model;
 	}
-
-	/*
-	 * @RequestMapping(value = "Electronicshome/") public ModelAndView
-	 * Electronics(ModelAndView model, HttpServletRequest request) throws
-	 * IOException {
-	 * 
-	 * 
-	 * String role = user.getRole();
-	 * 
-	 * HttpSession session = request.getSession(); session.setAttribute("uname",
-	 * uname); session.setAttribute("uid", user.getUserId());
-	 * 
-	 * List<Laptop> listLaptop = laptopService.getAllLaptops(); List<HeadPhone>
-	 * listHeadPhone = headphoneService.getAllHeadPhones(); List<Mobile> listMobile
-	 * = mobileService.getAllMobiles(); List<TV> listTV = tvService.getAllTVs();
-	 * List<SmartWatch> listSmartWatch = smartwatchService.getAllSmartWatchs();
-	 * List<Tablet> listTablet = tabletService.getAllTablets();
-	 * model.addObject("listLaptop", listLaptop); model.addObject("listHeadPhone",
-	 * listHeadPhone); model.addObject("listMobile", listMobile);
-	 * model.addObject("listTV", listTV); model.addObject("listSmartWatch",
-	 * listSmartWatch); model.addObject("listTablet", listTablet);
-	 * model.setViewName("inventory"); model.setViewName("userhome");
-	 * System.out.println("product");
-	 * 
-	 * if(role.equalsIgnoreCase("user")) {
-	 * 
-	 * } else if(role.equalsIgnoreCase("admin")) { model.setViewName("adminhome"); }
-	 * 
-	 * 
-	 * return model; }
-	 */
 
 	@RequestMapping(value = "register")
 	public ModelAndView register(ModelAndView model) throws IOException {
@@ -137,6 +111,8 @@ public class UserController {
 	public ModelAndView checklogin(@RequestParam("username") String uname, @RequestParam("password") String pass,
 			ModelAndView model, HttpServletRequest request) throws IOException {
 
+		HttpSession session = request.getSession();
+		session.removeAttribute("success_reset");
 		List<User> users = userService.getAllUsers();
 		boolean flag = false;
 		for (User user : users) {
@@ -145,7 +121,6 @@ public class UserController {
 				String role = user.getRole();
 				flag = true;
 
-				HttpSession session = request.getSession();
 				session.setAttribute("uname", uname);
 				session.setAttribute("uid", user.getUserId());
 				session.setAttribute("role", user.getRole());
@@ -329,6 +304,78 @@ public class UserController {
         javaEmail.draftEmailMessage(to, subject, body);
         javaEmail.sendEmail(to, subject, body);
 		return new ModelAndView("redirect:/");
+	}
+	
+	@RequestMapping(value = "/forgotPassword")
+	public ModelAndView forgotPassword(ModelAndView mv) {
+		mv.setViewName("forgotPassword");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/resetValidate")
+	public ModelAndView resetValidate(ModelAndView mv,@RequestParam("email") String email) throws AddressException, MessagingException {
+		
+		User user = userService.getUserByEmail(email);
+		
+		if( user.getUserName() != null ) {
+			
+			Random rand = new Random();
+			token1 = rand.nextInt();
+			
+			String uName = user.getUserName();
+			
+			String subject = "Reset Password For Electronics Ecommerce Website";
+			String body = "<p>Please go through this link to reset your password.</p><br>http://localhost:8080/Electronics/resetPassword/" + uName + "/" + token1;
+	        JavaEmail javaEmail = new JavaEmail();
+	        javaEmail.setMailServerProperties();
+	        String to[] = { email };
+	        javaEmail.draftEmailMessage(to, subject, body);
+	        javaEmail.sendEmail(to, subject, body);
+	        return new ModelAndView("redirect:/");
+			
+			
+		}else
+			return new ModelAndView("redirect:/forgotPassword");
+	}
+	
+	@RequestMapping(value = "/resetPassword/{uName}/{token}")
+	public ModelAndView reset(ModelAndView mv, @PathVariable String uName, @PathVariable String token) {
+		if(token1 == Integer.parseInt(token)) {
+			mv.setViewName("redirect:/{uName}/{token}/resetPassword");
+			return mv;
+		}
+		else
+			return new ModelAndView("redirect:/");
+	}
+	
+	@RequestMapping(value = "/{uName}/{token}/resetPassword")
+	public ModelAndView demo(ModelAndView mv,@PathVariable String uName) {
+		mv.addObject("UserName", uName);
+		mv.setViewName("resetPassword");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/{uName}/{token}/newPassword")
+	public ModelAndView updatePassword(ModelAndView mv,HttpServletRequest req) {
+		
+		String uname = req.getParameter("uname");
+		String newpassword = req.getParameter("newPassword");
+		String renewpassword = req.getParameter("cNewPassword");
+
+		if(!newpassword.equals(renewpassword)) {
+			HttpSession session = req.getSession();
+			session.setAttribute("error_reset", "New password and reenter new password not matching.");
+			return new ModelAndView("redirect:/{uName}/{token}/resetPassword");
+		}
+		User user = userService.getUserByUserName(uname);
+
+		user.setPassword(newpassword);
+		userService.updateUser(user);
+		
+		HttpSession session = req.getSession();
+		session.setAttribute("success_reset", "Your password updated successfuly.");
+		return new ModelAndView("redirect:/");
+		
 	}
 	
 }

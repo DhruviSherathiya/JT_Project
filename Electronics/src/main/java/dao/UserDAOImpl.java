@@ -10,6 +10,9 @@ package dao;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -55,6 +58,34 @@ public class UserDAOImpl implements UserDAO {
 	public User updateUser(User user) {
 		sessionFactory.getCurrentSession().update(user);
 		return user;
+	}
+	
+	@Override
+	public User getUserByEmail(String email) {
+		
+		Query query = sessionFactory.getCurrentSession().createQuery("from User where email = :email");
+		query.setParameter("email",email);
+		try {
+			User u = (User) query.getSingleResult();
+			return u;
+		}catch(NoResultException nre){
+			User user = new User();
+			return user;
+		}
+		
+	}
+	
+	@Override
+	public User getUserByUserName(String uName) {
+		Query query = sessionFactory.getCurrentSession().createQuery("from User where userName = :uName");
+		query.setParameter("uName",uName);
+		try {
+			User u = (User) query.getSingleResult();
+			return u;
+		}catch(NoResultException nre){
+			User user = new User();
+			return user;
+		}
 	}
 
 }

@@ -188,37 +188,16 @@ a:hover {
 <body>
 
 	<div class="container col-md-4 mt-1">
-<%-- 		<center class="mb-4">
-			<h2>Login Form</h2>
-		</center> --%>
-		
-		<c:if test = "${not empty error_message}">
+		<c:if test = "${not empty error_reset}">
 			<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
 	        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-				  ${error_message}
+				  ${error_reset}
 				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
-        </c:if>
-        
-        <c:if test = "${not empty success_msg}">
-			<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-	        <div class="alert alert-success alert-dismissible fade show" role="alert">
-				  ${success_msg}
-				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>
-        </c:if>
-        
-        <c:if test = "${not empty success_reset}">
-			<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-	        <div class="alert alert-success alert-dismissible fade show" role="alert">
-				  ${success_reset}
-				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>
-        </c:if>
-        
+        </c:if>	
 	</div>
-
-	<div class="container px-4 py-4 mb-5 mx-auto">
+	
+	<div class="container px-4 py-3 mb-5 mx-auto">
     <div class="card card0">
         <div class="d-flex flex-lg-row flex-column-reverse">
             <div class="card card1">
@@ -226,14 +205,14 @@ a:hover {
                     <div class="col-md-8 col-10 my-5">
                         <!-- <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="https://i.imgur.com/PSXxjNY.png"> </div> -->
                         <h3 class="mb-5 text-center heading">We are Awesome</h3>
-                        <h6 class="msg-info">Please login to your account</h6>
-                        <form action="checkLogin" method="post">
-                        	<div class="form-group"> <label class="form-control-label text-muted">Username</label> <input type="text" id="username" name="username" placeholder="Enter Your User Name" class="form-control" required> </div>
-                        <div class="form-group"> <label class="form-control-label text-muted">Password</label> <input type="password" id="password" name="password" placeholder="Password" class="form-control" required> </div>
-                        
-                        <div class="row justify-content-center my-3 px-3"> <button class="btn-block btn-color" type="submit">Login</button> </div>
+                        <h6 class="msg-info">Please enter your new password for your account.</h6>
+                        <form action="newPassword" method="post">
+                        	<input type="text" value="${UserName}" name="uname" hidden="true">
+                        	<div class="form-group"> <label class="form-control-label text-muted">New Password</label> <input type="password" id="newPassword" name="newPassword" placeholder="New Password" class="form-control" required> </div>
+                        	<div class="form-group"> <label class="form-control-label text-muted">Reenter New Password</label> <input type="password" id="cNewPassword" name="cNewPassword" placeholder="Reenter New Password" class="form-control" required> </div>
+                        <div class="row justify-content-center my-3 px-3"> <button class="btn-block btn-color" type="submit">Submit</button> </div>
                         </form>
-                        <div class="row justify-content-center my-2"> <a href="forgotPassword"><small class="text-muted">Forgot Password?</small></a> </div>
+                        <!-- <div class="row justify-content-center my-2"> <a href="forgotPassword"><small class="text-muted">Forgot Password?</small></a> </div> -->
                         <div class="bottom text-center mb-2">
 		                    <p href="register" class="sm-text mx-auto mb-3">Don't have an account?<a href="register" class="btn btn-white ml-5" style="margin-left: 10px;">Creat New One</a></p>
 		                </div>
@@ -243,13 +222,12 @@ a:hover {
             </div>
             <div class="card card2">
                 <div class="my-auto mx-md-5 px-md-5 right">
-                    <h3>We are more than just a company</h3> <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</small>
+                    <h3>Read this before submit</h3> <small>Please dont enter the password which is already used before. Try to have your password as strong as possible.</small>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<%-- <%@ include file = "footer.jsp" %> --%>
 </body>
 </html>
