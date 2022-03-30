@@ -265,7 +265,7 @@ body{
         </div>
         <div class="col-lg-3">
             <div class="card">
-                <div class="face front-face"> <img src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" class="profile">
+                <div class="face front-face"> <img src="resources/dhruvi.jpg" alt="" class="profile">
                     <div class="pt-3 text-uppercase name"> Dhruvi Sherathiya </div>
                     <div class="designation">Web Developer</div>
                 </div>
@@ -276,7 +276,7 @@ body{
         </div>
         <div class="col-lg-3">
             <div class="card">
-                <div class="face front-face"> <img src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" class="profile">
+                <div class="face front-face"> <img src="resources/harsh.jpg" alt="" class="profile">
                     <div class="pt-3 text-uppercase name"> Harsh Patel </div>
                     <div class="designation">Web Developer</div>
                 </div>
@@ -287,7 +287,7 @@ body{
         </div>
         <div class="col-lg-3">
             <div class="card">
-                <div class="face front-face"> <img src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" class="profile">
+                <div class="face front-face"> <img src="resources/krupali.jpg" alt="" class="profile">
                     <div class="pt-3 text-uppercase name"> Krupali Pipaliya </div>
                     <div class="designation">Web Developer</div>
                 </div>
