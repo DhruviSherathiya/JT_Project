@@ -225,7 +225,7 @@ a:hover {
                 <div class="row justify-content-center my-auto">
                     <div class="col-md-8 col-10 my-5">
                         <!-- <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="https://i.imgur.com/PSXxjNY.png"> </div> -->
-                        <h3 class="mb-5 text-center heading">We are Awesome</h3>
+                        <h3 class="mb-5 text-center heading">Electronic Store</h3>
                         <h6 class="msg-info">Please login to your account</h6>
                         <form action="checkLogin" method="post">
                         	<div class="form-group"> <label class="form-control-label text-muted">Username</label> <input type="text" id="username" name="username" placeholder="Enter Your User Name" class="form-control" required> </div>
@@ -243,7 +243,7 @@ a:hover {
             </div>
             <div class="card card2">
                 <div class="my-auto mx-md-5 px-md-5 right">
-                    <h3>We are more than just a company</h3> <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</small>
+                    <h3>We are Awesome</h3> <small>In this world of technology, come to our store and buy your favourite products at very reasonable price with jumbo discount and offers.</small>
                 </div>
             </div>
         </div>

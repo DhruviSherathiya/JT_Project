@@ -186,61 +186,6 @@ a:hover {
 </style>
 </head>
 <body>
-
-	<div class="container col-md-4 mt-1">
-<%-- 		<center class="mb-4">
-			<h2>Login Form</h2>
-		</center> --%>
-		
-		<c:if test = "${not empty error_message}">
-			<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-	        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-				  ${error_message}
-				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>
-        </c:if>
-        
-        <c:if test = "${not empty success_msg}">
-			<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-	        <div class="alert alert-success alert-dismissible fade show" role="alert">
-				  ${success_msg}
-				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>
-        </c:if>
-		
-		
-	</div>
-
-<%-- 	<div class="container col-md-4">
-		
-		<form  action="checkLogin" method="post">
-		
-			<div class="form-floating mb-3">
-			  <input type="text" class="form-control" id="floatingInput" name="username" placeholder="Enter You Username" required>
-			  <label for="floatingInput">Username</label>
-			</div>
-			<div class="form-floating">
-			  <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" required>
-			  <label for="floatingPassword">Password</label>
-			</div>
-			
-			<div class="row">
-			
-				<div class="col-md-3">
-					<div class="col mt-4">
-				    	<button type="submit" class="btn btn-primary mb-3">Login</button>
-				    </div>
-				</div>
-				<div class="col-md-3">
-					<div class="col mt-4">
-				    	<a href="register" class="btn btn-primary">Register</a>
-				    </div>
-				</div>
-			
-			</div>
-		
-		</form>
-	</div> --%>
 	
 	<div class="container px-4 py-5 mb-5 mx-auto">
     <div class="card card0">
@@ -249,7 +194,7 @@ a:hover {
                 <div class="row justify-content-center my-auto">
                     <div class="col-md-8 col-10 my-5">
                         <!-- <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="https://i.imgur.com/PSXxjNY.png"> </div> -->
-                        <h3 class="mb-5 text-center heading">We are Awesome</h3>
+                        <h3 class="mb-5 text-center heading">Electronic Store</h3>
                         <h6 class="msg-info">Please enter your email to verify your account.</h6>
                         <form action="resetValidate" method="post">
                         	<div class="form-group"> <label class="form-control-label text-muted">Email</label> <input type="email" id="email" name="email" placeholder="Enter Your Email" class="form-control" required> </div>

@@ -15,7 +15,16 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
 	crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
 <style>
     *{
     margin: 0;
@@ -245,9 +254,9 @@ body{
     <div class="row">
         <div class="col-lg-3">
             <div class="card">
-                <div class="face front-face"> <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80" alt="" class="profile">
-                    <div class="pt-3 text-uppercase name"> Robert Garrison </div>
-                    <div class="designation">Android Developer</div>
+                <div class="face front-face"> <img src="resources/dev.jpg" alt="" class="profile">
+                    <div class="pt-3 text-uppercase name"> Dev Oza </div>
+                    <div class="designation">Web Developer</div>
                 </div>
                 <div class="face back-face"> <span class="fas fa-quote-left"></span>
                     <div class="testimonial"> I made bacck the purchase price in just 48 hours! Thank you for making it pain less, pleasant. The service was execellent. I will refer everyone I know. </div> <span class="fas fa-quote-right"></span>
@@ -256,9 +265,9 @@ body{
         </div>
         <div class="col-lg-3">
             <div class="card">
-                <div class="face front-face"> <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="" class="profile">
-                    <div class="pt-3 text-uppercase name"> Jeffery Kennan </div>
-                    <div class="designation">Full Stack Developer</div>
+                <div class="face front-face"> <img src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" class="profile">
+                    <div class="pt-3 text-uppercase name"> Dhruvi Sherathiya </div>
+                    <div class="designation">Web Developer</div>
                 </div>
                 <div class="face back-face"> <span class="fas fa-quote-left"></span>
                     <div class="testimonial"> Really good, you have saved our business! I made bacck the purchase price in just 48 hours! man, this thing is getting better and better as I learn more about it. </div> <span class="fas fa-quote-right"></span>
@@ -268,8 +277,8 @@ body{
         <div class="col-lg-3">
             <div class="card">
                 <div class="face front-face"> <img src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" class="profile">
-                    <div class="pt-3 text-uppercase name"> Issac Maxwell </div>
-                    <div class="designation">Finance Director</div>
+                    <div class="pt-3 text-uppercase name"> Harsh Patel </div>
+                    <div class="designation">Web Developer</div>
                 </div>
                 <div class="face back-face"> <span class="fas fa-quote-left"></span>
                     <div class="testimonial"> Account keeper is the most valuable business research we have EVER purchased. Without electrician, we would ahave gone bankrupt by now. </div> <span class="fas fa-quote-right"></span>
@@ -279,11 +288,11 @@ body{
         <div class="col-lg-3">
             <div class="card">
                 <div class="face front-face"> <img src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" class="profile">
-                    <div class="pt-3 text-uppercase name"> Issac Maxwell </div>
-                    <div class="designation">Finance Director</div>
+                    <div class="pt-3 text-uppercase name"> Krupali Pipaliya </div>
+                    <div class="designation">Web Developer</div>
                 </div>
                 <div class="face back-face"> <span class="fas fa-quote-left"></span>
-                    <div class="testimonial"> Account keeper is the most valuable business research we have EVER purchased. Without electrician, we would ahave gone bankrupt by now. </div> <span class="fas fa-quote-right"></span>
+                    <div class="testimonial"> I made bacck the purchase price in just 48 hours! Thank you for making it pain less, pleasant. The service was execellent. I will refer everyone I know. </div> <span class="fas fa-quote-right"></span>
                 </div>
             </div>
         </div>

@@ -197,8 +197,7 @@
 			<div class="circle"></div>
 			<div class="content">
 				<h5>Laptops</h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>You can add, remove, delete and see all laptops here.</p>
 				<a href="/Electronics/Product/laptop"><button>All Laptops</button></a>
 			</div>
 			<img width="170" src="https://media.croma.com/image/upload/v1637664814/Croma%20Assets/Computers%20Peripherals/Laptop/Images/245695_nxtbds.png">
@@ -207,8 +206,7 @@
 			<div class="circle"></div>
 			<div class="content">
 				<h5>HeadPhones</h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>You can add, remove, delete and see all headphones here.</p>
 				<a href="/Electronics/Product/headphone" style="width: auto;"><button>All HeadPhones</button></a>
 			</div>
 			<img width="200" src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1605107047/Croma%20Assets/Entertainment/Headphones%20and%20Earphones/Images/8945129619486.png/mxw_2048,f_auto">
@@ -219,8 +217,7 @@
 			<div class="circle"></div>
 			<div class="content">
 				<h5>Mobiles</h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>You can add, remove, delete and see all mobiles here.</p>
 				<a href="/Electronics/Product/mobile" style="width: auto;"><button>All Mobiles</button></a>
 			</div>
 			<img width="200" src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1638446751/Croma%20Assets/Communication/Mobiles/Images/233912_biu7qr.png/mxw_2048,f_auto">
@@ -229,8 +226,7 @@
 			<div class="circle"></div>
 			<div class="content">
 				<h5>Smart Watches</h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>You can add, remove, delete and see all smart watches here.</p>
 				<a href="/Electronics/Product/smartwatch" style="width: auto;"><button>All Smart Watches</button></a>
 			</div>
 			<img width="200" src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1622022828/Croma%20Assets/Communication/Wearable%20Devices/Images/234633_thp0uu.png/mxw_2048,f_auto">
@@ -242,8 +238,7 @@
 			<div class="circle"></div>
 			<div class="content">
 				<h5>Tablets</h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>You can add, remove, delete and see all tablets here.</p>
 				<a href="/Electronics/Product/tablet" style="width: auto;"><button>All Tablets</button></a>
 			</div>
 			<img width="180" src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1631791324/Croma%20Assets/Computers%20Peripherals/Tablets%20and%20iPads/Images/243615_zj2ohe.png/mxw_2048,f_auto">
@@ -252,8 +247,7 @@
 			<div class="circle"></div>
 			<div class="content">
 				<h5>TVs</h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>You can add, remove, delete and see all tvs here.</p>
 				<a href="/Electronics/Product/tv" style="width: auto;"><button>All TVs</button></a>
 			</div>
 			<img width="180" src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1618814193/Croma%20Assets/Entertainment/Television/Images/233045_qwdoto.png/mxw_2048,f_auto">

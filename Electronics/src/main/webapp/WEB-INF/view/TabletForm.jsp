@@ -48,13 +48,13 @@ background-image: linear-gradient(to right, #bdd5ed, #e996c1);
 						<label for="validationCustom05" class="form-label">Storage</label>
 						<form:input type="text" class="form-control"
 							id="validationCustom05" path="tStorage" required="required" />
-						<div class="invalid-feedback">Please provide a valid zip.</div>
+						
 					</div>
 					<div class="col-md-12 mt-3">
 						<label for="validationCustom03" class="form-label">Color</label>
 						<form:input type="text" class="form-control"
 							id="validationCustom03" path="tColor" required="required" />
-						<div class="invalid-feedback">Please provide a valid city.</div>
+						
 					</div>
 
 				
@@ -62,32 +62,32 @@ background-image: linear-gradient(to right, #bdd5ed, #e996c1);
 					<label for="validationCustom03" class="form-label">Size</label>
 					<form:input type="text" class="form-control"
 						id="validationCustom03" path="tSize" required="required" />
-					<div class="invalid-feedback">Please provide a valid city.</div>
+					
 				</div>
 
 				<div class="col-md-12 mt-3">
 					<label for="validationCustom03" class="form-label">Description</label>
 					<form:input type="text" class="form-control"
 						id="validationCustom03" path="p_Description" required="required" />
-					<div class="invalid-feedback">Please provide a valid city.</div>
+					
 				</div>
 				<div class="col-md-12 mt-3">
 					<label for="validationCustom03" class="form-label">Price</label>
 					<form:input type="text" class="form-control"
 						id="validationCustom03" path="p_Price" required="required" />
-					<div class="invalid-feedback">Please provide a valid city.</div>
+					
 				</div>
 				<div class="col-md-12 mt-3">
 					<label for="validationCustom03" class="form-label">Quantity</label>
 					<form:input type="text" class="form-control"
 						id="validationCustom03" path="p_Quantity" required="required" />
-					<div class="invalid-feedback">Please provide a valid city.</div>
+					
 				</div>
 				<div class="col-md-12 mt-3">
 					<label for="validationCustom03" class="form-label">URL</label>
 					<form:input type="text" class="form-control"
 						id="validationCustom03" path="img_Url" required="required" />
-					<div class="invalid-feedback">Please provide a valid city.</div>
+					
 				</div>
 				<div class="col-12 mt-3">
 					<button class="btn btn-primary" type="submit">Save</button>

@@ -331,7 +331,7 @@ public class UserController {
 	        String to[] = { email };
 	        javaEmail.draftEmailMessage(to, subject, body);
 	        javaEmail.sendEmail(to, subject, body);
-	        return new ModelAndView("redirect:/");
+	        return new ModelAndView("redirect:/forgotPassword");
 			
 			
 		}else

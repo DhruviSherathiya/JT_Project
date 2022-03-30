@@ -377,9 +377,9 @@ input[type='text'] {
                     <p>Contact us for a quote,help or to join the team. </p>
                 </div>
                 <div class="stats">
-                    <div class="stats1"> <i class="fa fa-map-marker"></i> <span>102 Street<br>2714 DONNZY</span> </div>
-                    <div class="stats1"> <i class="fa fa-phone"></i> <span>+02 1203 153</span> </div>
-                    <div class="stats1"> <i class="fa fa-envelope"></i> <span>contact@us.fr</span> </div>
+                    <div class="stats1"> <i class="fa fa-map-marker"></i> <span>Dharmsinh Desai University</span> </div>
+                    <div class="stats1"> <i class="fa fa-phone"></i> <span>+91 72010 66052</span> </div>
+                    <div class="stats1"> <i class="fa fa-envelope"></i> <span>dduprojects12@gmail.com</span> </div>
                 </div>
                 <div class="card-content">
                 	

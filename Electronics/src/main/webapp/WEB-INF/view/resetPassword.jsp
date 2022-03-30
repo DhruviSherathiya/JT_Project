@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>User Login</title>
+<title>Reset Password</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -204,7 +204,7 @@ a:hover {
                 <div class="row justify-content-center my-auto">
                     <div class="col-md-8 col-10 my-5">
                         <!-- <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="https://i.imgur.com/PSXxjNY.png"> </div> -->
-                        <h3 class="mb-5 text-center heading">We are Awesome</h3>
+                        <h3 class="mb-5 text-center heading">Electronic Store</h3>
                         <h6 class="msg-info">Please enter your new password for your account.</h6>
                         <form action="newPassword" method="post">
                         	<input type="text" value="${UserName}" name="uname" hidden="true">
